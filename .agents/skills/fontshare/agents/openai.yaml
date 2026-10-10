@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fontshare"
+  short_description: "Rank fonts and pairs for your project"
+  default_prompt: "Use $fontshare to select and compare fonts that fit this project."

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R03",
+    "title": "R03 · Decide with the user",
+    "summary": "Resolve one open decision with the user through a few substantively different options.",
+    "notes": "Use this route when the user wants to make the call. In autopilot the coordinator decides and logs instead of selecting this route. Present 2–4 options with a recommendation through the native question tool; a planning request stops at the recorded decision.",
+    "kind": "workflow",
+    "surface": "any",
+    "stages": [
+      "explore",
+      "refine"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Open decision and existing choices"
+    ],
+    "outputs": [
+      "Recorded decision with criteria, or the assigned UX artifact"
+    ],
+    "budget": {
+      "newDelegations": 2,
+      "concurrent": 2,
+      "repairBatches": 1
+    },
+    "entry": "in",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "in",
+        "kind": "start",
+        "label": "Open decision",
+        "detail": "Reuse recorded choices; isolate the one decision still open."
+      },
+      {
+        "id": "missing",
+        "kind": "decision",
+        "label": "What is missing to decide?",
+        "detail": "Identify missing evidence, flow understanding or visual direction; skip straight to the choice when options are already clear."
+      },
+      {
+        "id": "research",
+        "kind": "skill",
+        "label": "Collect missing evidence",
+        "detail": "Answer the bounded question that blocks the decision.",
+        "ref": "jado-researcher"
+      },
+      {
+        "id": "ux",
+        "kind": "skill",
+        "label": "Clarify flow and states",
+        "detail": "Answer the flow or state question that blocks the decision.",
+        "ref": "jado-ux-architect"
+      },
+      {
+        "id": "visual",
+        "kind": "skill",
+        "label": "Sketch visual directions",
+        "detail": "Use art direction for open concepts; keep sketches at explore fidelity.",
+        "ref": "jado-art-direction"
+      },
+      {
+        "id": "choices",
+        "kind": "action",
+        "label": "Prepare the options",
+        "detail": "Prepare 2–4 substantively different options with explicit criteria, tradeoffs and a recommended option."
+      },
+      {
+        "id": "human",
+        "kind": "human",
+        "label": "Ask the user",
+        "detail": "Ask with the native question tool, recommended option first. Record the answer; it stays valid until its assumptions change."
+      },
+      {
+        "id": "contract",
+        "kind": "action",
+        "label": "Record choice and criteria",
+        "detail": "Record the selection, acceptance criteria and next scope."
+      },
+      {
+        "id": "next",
+        "kind": "end",
+        "label": "Deliver the decision",
+        "detail": "Deliver the decision or the assigned UX artifact; canvas and code need their own mandate."
+      }
+    ],
+    "edges": [
+      {
+        "id": "in-missing",
+        "from": "in",
+        "to": "missing",
+        "label": ""
+      },
+      {
+        "id": "missing-research",
+        "from": "missing",
+        "to": "research",
+        "label": "Evidence"
+      },
+      {
+        "id": "missing-ux",
+        "from": "missing",
+        "to": "ux",
+        "label": "Flow"
+      },
+      {
+        "id": "missing-visual",
+        "from": "missing",
+        "to": "visual",
+        "label": "Direction"
+      },
+      {
+        "id": "missing-choices",
+        "from": "missing",
+        "to": "choices",
+        "label": "Nothing, options are clear"
+      },
+      {
+        "id": "research-choices",
+        "from": "research",
+        "to": "choices",
+        "label": ""
+      },
+      {
+        "id": "ux-choices",
+        "from": "ux",
+        "to": "choices",
+        "label": ""
+      },
+      {
+        "id": "visual-choices",
+        "from": "visual",
+        "to": "choices",
+        "label": ""
+      },
+      {
+        "id": "choices-human",
+        "from": "choices",
+        "to": "human",
+        "label": ""
+      },
+      {
+        "id": "human-contract",
+        "from": "human",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "contract-next",
+        "from": "contract",
+        "to": "next",
+        "label": ""
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "human",
+        "kind": "human"
+      }
+    ],
+    "completionNodes": [
+      "next"
+    ],
+    "checkpointNodes": []
+  },
+  "skills": [
+    {
+      "id": "jado-art-direction",
+      "path": ".agents/skills/jado-art-direction/SKILL.md"
+    },
+    {
+      "id": "jado-researcher",
+      "path": ".agents/skills/jado-researcher/SKILL.md"
+    },
+    {
+      "id": "jado-ux-architect",
+      "path": ".agents/skills/jado-ux-architect/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-ux",
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual",
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ]
+    }
+  ],
+  "subflows": []
+}

@@ -1,0 +1,1468 @@
+{
+  "entries": [
+    {
+      "id": "animation-vocabulary",
+      "name": "animation-vocabulary",
+      "description": "Identifies the name of a motion effect described in words.",
+      "source": {
+        "kind": "external",
+        "author": "emilkowalski",
+        "repository": "emilkowalski/skills",
+        "path": "skills/animation-vocabulary/SKILL.md",
+        "url": "https://github.com/emilkowalski/skills/blob/HEAD/skills/animation-vocabulary/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/emilkowalski/skills/blob/HEAD/skills/animation-vocabulary/SKILL.md"
+      },
+      "does": "Compares your description with a glossary of entrances, transitions, gestures, scrolling and spring animations. Returns the closest term with its definition and explains how to distinguish effects that may look alike. If the glossary has no exact match, states that the proposed name is an approximation.",
+      "when": "Use it when you know the effect you want but not what to call it in the brief: a panel growing from a button, a list entering in sequence or a surface resisting a drag. It names the effect; design and implementation require a subsequent assignment.",
+      "usage": "Describe what appears, where it starts and how it changes, or show a reference. Ask for the name and differences from similar effects; include the chosen term in the interaction brief.",
+      "example": "What is the effect called when a menu seems to grow from the button that opened it?",
+      "outputs": [
+        "Glossary term and definition",
+        "Alternative terms and their differences, if any",
+        "Stated limitation when the match is approximate"
+      ]
+    },
+    {
+      "id": "ask-jado",
+      "name": "ask-jado",
+      "description": "Advises on skills, agents, workflows and next steps; resolves questions during an assignment.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/ask-jado/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/ask-jado/SKILL.md",
+        "localPath": ".agents/skills/ask-jado/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/ask-jado/SKILL.md"
+      },
+      "does": "For user questions, consults the full JADO catalog and, when needed, workflow packets: compares relevant capabilities and proposes the next step with reasons, links, the expected outcome and any availability limitations. For an agent’s question, starts from the current assignment and expands the search only if needed. Preserves existing decisions and distinguishes procedures, profiles and execution.",
+      "when": "Use it at any stage to understand what to do, compare skills or workflows, choose an implementer or resume from the current point. The model also consults it when a missing decision changes the work. Consultation returns guidance without starting agents or modifying the product; execution remains with jado-flow within the authorization received.",
+      "usage": "Describe the situation or ask for an explanation of a JADO capability. Specify decisions to preserve or reconsider. Ask for a recommendation, alternatives or the next step: ask-jado searches the catalog without requiring you to know skill names.",
+      "example": "We have approved the moodboard and need to choose fonts. Use ask-jado to recommend a skill, explain who can apply it and indicate whether this activity is enough or a workflow is needed.",
+      "outputs": [
+        "Reasoned recommendation with instruction links",
+        "Workflow and implementer when relevant, expected outcome and prerequisites",
+        "Next step or missing decision in the current assignment"
+      ],
+      "prerequisites": [
+        "Requires access to the JADO folder and project materials to recognize choices already settled."
+      ]
+    },
+    {
+      "id": "avoid-ai-writing",
+      "name": "avoid-ai-writing",
+      "description": "Revises artificial phrasing while preserving facts, meaning and voice.",
+      "source": {
+        "kind": "external",
+        "author": "conorbronsdon",
+        "repository": "conorbronsdon/avoid-ai-writing",
+        "path": "SKILL.md",
+        "url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/HEAD/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/conorbronsdon/avoid-ai-writing/blob/HEAD/SKILL.md"
+      },
+      "does": "Reads the text and looks for filler, unsupported emphasis, repeated formulas and conversational residue. Can report problems only, propose a rewrite or edit a prose file. Assesses each finding in context, protects quotations and technical content and limits revision to two editorial passes. Matches punctuation in edited passages to the original.",
+      "when": "Use it for text that sounds generic, pompous or repetitive when the underlying content is already available. Applies editorial judgment to phrasing; detector scores do not establish who wrote the text.",
+      "usage": "Provide the text or file, reader, tone and parts to preserve. Specify whether you want findings only or a revision. Request an account of changes, checks performed and any limitations; do not use a score as proof of authorship.",
+      "example": "Revise this chapter for clarity: remove generic formulas and repetition while preserving decisions, skill names and links.",
+      "outputs": [
+        "Revised text or findings, depending on the mode",
+        "Reasons for changes",
+        "Preservation checks and verification limitations"
+      ]
+    },
+    {
+      "id": "better-accessibility",
+      "name": "better-accessibility",
+      "description": "Checks semantics, keyboard interaction, focus, forms and assistive technologies.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-accessibility/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-accessibility/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-accessibility/SKILL.md"
+      },
+      "does": "Walks through the experience first with a keyboard and then with a screen reader, when available. Checks control names and states, native HTML elements, dialog focus, errors associated with fields, dynamic announcements, target sizes and motion. Verifies that content remains reachable with zoom and narrow screens. Contrast and colors are measured with better-colors.",
+      "when": "Use it to examine a complete flow, form, menu or dialog, especially when the experience must work without a mouse. Reading code can reveal some defects but does not replace testing with a keyboard and screen reader.",
+      "usage": "Specify the flow, components, states and devices to cover. Request issues ordered by severity, with location, consequence and correction. If you authorize changes, keep them within the project system and retest affected behaviors.",
+      "example": "Check the invitation dialog: opening, initial focus, Tab, Escape, return to the button and email field errors.",
+      "outputs": [
+        "Findings with severity and location",
+        "Corrections based on semantics and behavior",
+        "Outcome and checks not performed"
+      ]
+    },
+    {
+      "id": "better-colors",
+      "name": "better-colors",
+      "description": "Defines color roles, palettes and measured contrast.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-colors/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-colors/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-colors/SKILL.md"
+      },
+      "does": "Reads the existing color system and distinguishes base values from semantic tokens: names tied to color usage. Builds only the necessary scales and checks hues, themes, gamut and state meanings. Measures text color against the background on which it actually appears. Reports insufficient contrast with its value and threshold; changing the palette requires that the change be within the assignment.",
+      "when": "Use it to create a palette, clarify tokens used for different purposes, fix a theme or verify text/background pairs. It suits problems with the color system, rather than personal hue preferences.",
+      "usage": "Provide tokens, surfaces, themes and brand constraints. Specify whether you want a check or changes as well. Request measured pairs, token roles and checks in both light and dark themes; avoid contrast values estimated by eye.",
+      "example": "Measure the contrast of secondary text and the primary button in both themes; identify failing tokens and propose a correction without applying it.",
+      "outputs": [
+        "Color pairs and measured contrast",
+        "Map of roles and tokens",
+        "Proposal or authorized changes with a new measurement"
+      ]
+    },
+    {
+      "id": "better-interface",
+      "name": "better-interface",
+      "description": "Coordinates an interface review across six areas.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-interface/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-interface/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-interface/SKILL.md"
+      },
+      "does": "Defines a specific screen or flow and applies accessibility, layout, writing, typography, color and UI detail checks, in that order. Combines issues into one list ordered by user impact, consolidating defects with the same cause. Includes empty, loading and error states and relevant widths. The review is read-only until you ask to apply its findings.",
+      "when": "Use it when you explicitly request a comprehensive assessment of an experience. If the problem is already bounded, use the skill for that domain. Reviews of branches, PRs or uncommitted changes instead follow the interface-review procedure, if available.",
+      "usage": "Name the flow, goal, states and review scope. Request one table with evidence, priorities and corrections; the report must distinguish what was observed from what was not checked.",
+      "example": "Review the entire project creation flow, from entry to success, including errors, the empty state and mobile. Deliver findings only for now.",
+      "outputs": [
+        "Scope and coverage of the six areas",
+        "Consolidated issue list, up to 15 findings",
+        "Checks performed and review outcome"
+      ],
+      "prerequisites": [
+        "Requires the six better-* skills in the catalog; a missing area is declared unreviewed."
+      ]
+    },
+    {
+      "id": "better-layout",
+      "name": "better-layout",
+      "description": "Organizes hierarchy, spacing, alignment and responsive behavior.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-layout/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-layout/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-layout/SKILL.md"
+      },
+      "does": "Checks whether spacing and alignment clarify which elements belong together and their reading order. Keeps controls distinct from content, actions reachable and visible cues for hidden parts. Tests the layout on narrow screens, with zoom, longer text and reversed reading direction when relevant. Uses project density and spacing before introducing new rules.",
+      "when": "Use it when a page is hard to scan, groups feel confusing, cards do not align or content is clipped at certain widths. It does not cover icon design or font selection, which have dedicated procedures.",
+      "usage": "Show the screen or components, desired reading order and sizes to support. Provide realistic content, including long titles. Request a structure that preserves actions and explains where the layout changes.",
+      "example": "Reorganize this panel: separate filters and results, keep the primary action visible and check long titles at 390 px.",
+      "outputs": [
+        "Findings on grouping, hierarchy and adaptation",
+        "Structure or changes within the existing styling system",
+        "Coverage of viewports, zoom and long text"
+      ]
+    },
+    {
+      "id": "better-typography",
+      "name": "better-typography",
+      "description": "Checks how text reads, wraps and occupies space.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-typography/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-typography/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-typography/SKILL.md"
+      },
+      "does": "Examines type scale, available weights, heading hierarchy, line height and line length. Checks wrapping, truncation and access to full text; considers changing numbers, variable fonts and content with different reading directions. Reads the rendered result with realistic strings. Text wording belongs to better-writing and contrast measurement to better-colors.",
+      "when": "Use it when headings, descriptions or numerical values seem unstable or hard to read, or text overflows cards. It also helps define a consistent type scale and verify loaded fonts and weights.",
+      "usage": "Provide fonts, components and representative text, including translations or long values. Specify supported widths. Ask for hierarchy, line height and truncation to be verified in the browser, with any missing checks declared.",
+      "example": "Check card titles and descriptions: use long content, verify hierarchy and make any truncated text accessible.",
+      "outputs": [
+        "Typography findings with before/after comparisons",
+        "Rules for scale, weights, line height and wrapping",
+        "Checks on the requested strings and viewports"
+      ]
+    },
+    {
+      "id": "better-ui",
+      "name": "better-ui",
+      "description": "Refines surfaces, icons and feedback in an already defined UI.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-ui/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-ui/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-ui/SKILL.md"
+      },
+      "does": "Checks how corners fit together, optical alignment, shadows, borders and icon consistency. Examines interaction states and transitions, favoring interruptible effects, specific properties and restrained motion. Preserves product components, tokens and density. When motion matters, observes it slowed down as well to detect defects hidden at normal speed.",
+      "when": "Use it for concrete refinement of an established direction: buttons that respond poorly, inconsistent icons, unclear surfaces or abrupt transitions. A new visual direction or flow review requires a separate design assignment.",
+      "usage": "Specify components, states and the observable defect. Request bounded corrections and before/after comparisons. Have hover, focus, pressed, loading and empty states checked only where they exist in the assigned surface.",
+      "example": "Refine the toolbar buttons and menus while preserving the current direction: check icons, press feedback and menu opening.",
+      "outputs": [
+        "Findings on visual details and states",
+        "Corrections or proposals with concrete values",
+        "Checks and remaining defects"
+      ]
+    },
+    {
+      "id": "better-writing",
+      "name": "better-writing",
+      "description": "Writes clear labels, instructions, errors and empty states.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/skills",
+        "path": "skills/better-writing/SKILL.md",
+        "url": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-writing/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-writing/SKILL.md"
+      },
+      "does": "Reads the language already used by the product and keeps terminology consistent throughout the flow. Matches labels to actions, makes links understandable on their own and describes how to recover from errors. An empty state must explain what the section contains and which action populates it. Verification compares each text with the behavior it accompanies.",
+      "when": "Use it for microcopy in forms, confirmations, settings, success messages and errors. It makes the action on a screen understandable; commercial landing page writing follows copywriting.",
+      "usage": "Provide the action, state, validation rule and product terminology. Also show text from neighboring screens. Request complete strings for each state, with recovery guidance and consistent names.",
+      "example": "Rewrite the no-results state and the date filter error: explain what to correct and preserve the existing filter names.",
+      "outputs": [
+        "Strings for the specified states",
+        "Reasons for changes affecting comprehension or tone",
+        "Check against the actual action"
+      ]
+    },
+    {
+      "id": "copy-editing",
+      "name": "copy-editing",
+      "description": "Improves existing marketing copy without changing its message.",
+      "source": {
+        "kind": "external",
+        "author": "coreyhaines31",
+        "repository": "coreyhaines31/marketingskills",
+        "path": "skills/copy-editing/SKILL.md",
+        "url": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copy-editing/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copy-editing/SKILL.md"
+      },
+      "does": "Reviews text through seven distinct checks: clarity, voice, usefulness to the reader, evidence, specificity, emotional tone and barriers to action. Looks for unsupported promises, vague benefits and passages that make it hard to understand what to do. Proposes corrections with reasons and verifies that a style improvement does not change meaning or create a new promise.",
+      "when": "Use it when a draft landing page, product page or commercial message already exists and you want to make it more precise. Use copywriting to write from scratch; use better-writing for labels and operational interface messages.",
+      "usage": "Provide the draft, audience, expected action and available evidence. State any specific concerns. Request editorial changes with reasons, preserving the agreed voice and promises; separate wording corrections from positioning changes.",
+      "example": "Review the export feature page for clarity and specificity: use only benefits supported by the product and keep the current CTA.",
+      "outputs": [
+        "Edited copy or proposed changes",
+        "Reasons for corrections",
+        "Promises and information requiring a source"
+      ]
+    },
+    {
+      "id": "copywriting",
+      "name": "copywriting",
+      "description": "Writes marketing page messages and copy around an action.",
+      "source": {
+        "kind": "external",
+        "author": "coreyhaines31",
+        "repository": "coreyhaines31/marketingskills",
+        "path": "skills/copywriting/SKILL.md",
+        "url": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copywriting/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copywriting/SKILL.md"
+      },
+      "does": "Reads the product marketing context and clarifies the page, audience, offer, traffic source and primary action. Builds the message sequence, from headline to evidence and objections, connecting features to reader benefits. Delivers section-by-section copy, reasons and alternatives for headlines and calls to action. Uses only genuinely available data and testimonials.",
+      "when": "Use it for homepages, landing pages, pricing pages, feature pages or product presentations. It fits defining or rewriting a page message; targeted review of an already sound draft can use copy-editing.",
+      "usage": "Provide the audience, problem, product, differences from alternatives and evidence. State the action the page should encourage. If .agents/product-marketing.md exists, use it as context and clarify only the gaps for this page.",
+      "example": "Write the landing page for our planning tool for freelance designers. Goal: create the first project. Use the benefits and evidence in the marketing document.",
+      "outputs": [
+        "Complete copy for the page sections",
+        "Headline and CTA alternatives",
+        "Reasons for choices and metadata when requested"
+      ]
+    },
+    {
+      "id": "emil-design-eng",
+      "name": "emil-design-eng",
+      "description": "Guides interaction and motion choices based on frequency and purpose.",
+      "source": {
+        "kind": "external",
+        "author": "emilkowalski",
+        "repository": "emilkowalski/skills",
+        "path": "skills/emil-design-eng/SKILL.md",
+        "url": "https://github.com/emilkowalski/skills/blob/HEAD/skills/emil-design-eng/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/emilkowalski/skills/blob/HEAD/skills/emil-design-eng/SKILL.md"
+      },
+      "does": "Before adding motion, assesses how often the action repeats, the purpose of the effect, its curve and duration. Covers buttons, menus, tooltips, toasts and gestures with attention to feedback, origin and interruptibility. Also covers CSS properties, performance, reduced motion and touch devices. In reviews, compares the current implementation, proposal and rationale in a table.",
+      "when": "Use it as a design engineering perspective when building or refining frequent interactions and seeking clear, consistent responses. It may lead to removing motion when it slows the task. For a structured audit of all motion, use improve-animations.",
+      "usage": "Specify the interaction, usage frequency, expected behavior and existing animation system. Show code or evidence of the result. Request a solution proportionate to the task and relevant checks for interruptions, touch and reduced motion.",
+      "example": "The filter menu is opened many times a day: assess whether to animate it and define feedback, duration and behavior when I close it again immediately.",
+      "outputs": [
+        "Reasoned motion decision",
+        "Technical proposal with properties and values",
+        "Before/after comparison and relevant checks"
+      ]
+    },
+    {
+      "id": "find-animation-opportunities",
+      "name": "find-animation-opportunities",
+      "description": "Finds a few static moments where motion serves a purpose.",
+      "source": {
+        "kind": "external",
+        "author": "emilkowalski",
+        "repository": "emilkowalski/skills",
+        "path": "skills/find-animation-opportunities/SKILL.md",
+        "url": "https://github.com/emilkowalski/skills/blob/HEAD/skills/find-animation-opportunities/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/emilkowalski/skills/blob/HEAD/skills/find-animation-opportunities/SKILL.md"
+      },
+      "does": "Examines interactions that currently have no animation and evaluates each proposal through four questions: frequency, purpose, speed and usefulness to the task. Discards decorative effects on data to be read and frequent keyboard actions. Delivers up to five to seven justified opportunities with precise recipes, plus rejected candidates. Works read-only and leaves implementation to a subsequent assignment.",
+      "when": "Use it to ask where motion could clarify a state change or provide feedback in an existing interface. To fix existing animations, choose improve-animations or review-animations.",
+      "usage": "Provide the screen or flow, components and action frequency. Request a limited set of opportunities with purpose, properties, duration and reduced-motion handling; also retain the reasons other animations would be unnecessary.",
+      "example": "Examine the projects screen and propose only animations that help explain creation, deletion or state changes. Do not modify code.",
+      "outputs": [
+        "Opportunities with location, purpose and recipe",
+        "Rejected candidates and reasons",
+        "Priorities and proposed next step"
+      ]
+    },
+    {
+      "id": "fixing-accessibility",
+      "name": "fixing-accessibility",
+      "description": "Fixes bounded accessibility issues in components.",
+      "source": {
+        "kind": "external",
+        "author": "ibelick",
+        "repository": "ibelick/ui-skills",
+        "path": "skills/fixing-accessibility/SKILL.md",
+        "url": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-accessibility/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-accessibility/SKILL.md"
+      },
+      "does": "Applies checks for accessible names, keyboard interaction, focus, dialogs, semantics, forms and dynamic messages. Identifies the line or fragment causing the problem and proposes a small correction, preferring native HTML and existing accessible primitives. Does not restructure unrelated areas or migrate the UI library to apply a single check.",
+      "when": "Use it when adding a control or when a defect is reproducible: an unnamed button, lost focus after closing a dialog, or an error not associated with its field. For an extensive flow review, use better-accessibility.",
+      "usage": "Specify the file, component and failing behavior. Ask for the precise problem, reason and a minimal correction. After a change, test the keyboard path and announced name or state when these are the intervention criteria.",
+      "example": "The icon-only button for removing a filter has no accessible name. Fix it and verify that it is reachable by keyboard.",
+      "outputs": [
+        "Responsible fragment and consequence",
+        "Targeted correction",
+        "Outcome of the relevant check"
+      ]
+    },
+    {
+      "id": "fixing-metadata",
+      "name": "fixing-metadata",
+      "description": "Checks titles, descriptions, canonical URLs and shared previews.",
+      "source": {
+        "kind": "external",
+        "author": "ibelick",
+        "repository": "ibelick/ui-skills",
+        "path": "skills/fixing-metadata/SKILL.md",
+        "url": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-metadata/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-metadata/SKILL.md"
+      },
+      "does": "Verifies that each page has consistent, nonduplicated metadata. Checks indexing, canonical URL, Open Graph, Twitter cards, icons and alternate languages where present. Structured data must reflect real content: the skill does not invent prices, reviews or organization information. Preserves the project metadata system and proposes limited changes.",
+      "when": "Use it when publishing a shareable page, changing titles or previews, or suspecting inconsistent canonical URLs and robots tags. Noindex metadata does not provide access protection for a private site.",
+      "usage": "Provide the pages, preferred domain, intended access and preview materials. Ask to compare title, description, canonical and og:url. Testing a social card requires a real URL reachable by the service that reads it.",
+      "example": "Check the pricing page metadata: avoid duplication, use the correct canonical URL and verify the shared title, description and image.",
+      "outputs": [
+        "Findings on metadata and URLs",
+        "Corrections within the existing mechanism",
+        "Preview checks or access limitations"
+      ]
+    },
+    {
+      "id": "fixing-motion-performance",
+      "name": "fixing-motion-performance",
+      "description": "Reduces rendering work that makes animations stutter.",
+      "source": {
+        "kind": "external",
+        "author": "ibelick",
+        "repository": "ibelick/ui-skills",
+        "path": "skills/fixing-motion-performance/SKILL.md",
+        "url": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-motion-performance/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-motion-performance/SKILL.md"
+      },
+      "does": "Classifies motion costs as compositing, painting or layout recalculation. Looks for interleaved DOM reads and writes, scroll polling, animated inherited variables, large blurs and endless loops. Prefers less expensive properties and measurements collected before animation. Keeps the existing library and verifies layers when performance is part of the problem.",
+      "when": "Use it for stuttering transitions, slow gestures or animations that deteriorate during loading and scrolling. It corrects the technical cost of an effect; the aesthetic direction remains in the brief.",
+      "usage": "Specify the component, interaction, reproduction conditions and animation system. Ask to find the cause before changing values. Request an alternative that preserves behavior and a test under the conditions where the defect appeared.",
+      "example": "The drawer stutters while we load data. Analyze layout reads and animated properties, apply a targeted correction and retest under load.",
+      "outputs": [
+        "Cause and affected fragments",
+        "Technical alternative and bounded change",
+        "Results of the available performance test"
+      ]
+    },
+    {
+      "id": "fontshare",
+      "name": "fontshare",
+      "description": "Selects Fontshare fonts and pairings based on the project and prepares typographic samples.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/fontshare/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/fontshare/SKILL.md",
+        "localPath": ".agents/skills/fontshare/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/fontshare/SKILL.md"
+      },
+      "does": "Compares 100 families and 59 official pairings against the brief, ranks alternatives and creates the requested samples in the available document. Distinguishes official data, editorial judgments and actual font availability.",
+      "when": "Use it to choose typography for a logo, landing page, portal, branding or style guide, or to compare multiple families or pairings on the canvas.",
+      "usage": "Provide the goal, art direction and number of alternatives; specify the document when you want visual samples. The skill uses existing context and asks only for missing decisions that change the selection.",
+      "example": "In the project file, create ten versions of the logo using ten Fontshare fonts, ranked by fit with the established art direction.",
+      "outputs": [
+        "Ranked shortlist with families, roles, styles, reasons and tradeoffs",
+        "Samples in the requested document when the task calls for them",
+        "Availability status and limitations observed during font verification"
+      ],
+      "prerequisites": [
+        "For visual samples: an available document and editing tools",
+        "Fonts actually accessible in the tool; for local apps, active OTF/TTF fonts",
+        "For downloads: network, Python 3 and curl; no automatic permanent installation"
+      ]
+    },
+    {
+      "id": "html-show",
+      "name": "html-show",
+      "description": "Turns real materials into a navigable HTML presentation.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/html-show/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/html-show/SKILL.md",
+        "localPath": ".agents/skills/html-show/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/html-show/SKILL.md"
+      },
+      "does": "Chooses between a feature summary, competitive research, current-state audit and concept explanation. Reads sources, selects the relevant template and prepares a single HTML file with embedded CSS and JavaScript. Can use before/after comparisons, filters, galleries and image zoom when they clarify the content. Verifies navigation, images and readability on desktop, intermediate widths and mobile.",
+      "when": "Use it to present research, redesign results or a concept in a navigable page that opens locally. It is not a slide deck and does not replace canonical operational documentation.",
+      "usage": "Provide materials, audience and the decision to discuss. Specify the presentation type and save path if already decided. Include sources and before/after images; request a page with real content and controls that have a useful effect.",
+      "example": "Prepare an HTML page comparing the three onboarding patterns from the research, with screenshots, sources and selection criteria.",
+      "outputs": [
+        "Standalone HTML file",
+        "Linked sources and assets",
+        "Verification of the requested controls and layouts"
+      ]
+    },
+    {
+      "id": "humanizer",
+      "name": "humanizer",
+      "description": "Rewrites artificial prose while preserving the author’s information.",
+      "source": {
+        "kind": "external",
+        "author": "blader",
+        "repository": "blader/humanizer",
+        "path": "SKILL.md",
+        "url": "https://github.com/blader/humanizer/blob/HEAD/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/blader/humanizer/blob/HEAD/SKILL.md"
+      },
+      "does": "Reads the entire text and looks for repeated contrast formulas, conclusions that restate the point, generic emphasis, uniform rhythm and chat residue. Rewrites using the available information and voice, then checks that facts, quotations and degree of certainty are preserved. In files, edits only prose, leaving code, paths and metadata intact.",
+      "when": "Use it for text with sound content that feels built from automated formulas. It suits documentation, articles and copy; editorial work does not certify whether the author is human or a model.",
+      "usage": "Provide the text, context and an optional voice sample. Specify terms and quotations to preserve. Request a natural, faithful revision without adding personal experiences, examples or data absent from the sources.",
+      "example": "Rewrite this guide for clarity, preserving procedures and constraints. Cut passages that repeat the same idea and leave code examples intact.",
+      "outputs": [
+        "Revised prose",
+        "Preserved information and voice",
+        "Summary of changes when working on files"
+      ]
+    },
+    {
+      "id": "impeccable",
+      "name": "impeccable",
+      "description": "Designs, evaluates or refines an interface through a targeted procedure.",
+      "source": {
+        "kind": "external",
+        "author": "pbakaus",
+        "repository": "pbakaus/impeccable",
+        "path": ".agents/skills/impeccable/SKILL.md",
+        "url": "https://github.com/pbakaus/impeccable/blob/HEAD/.agents/skills/impeccable/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/pbakaus/impeccable/blob/HEAD/.agents/skills/impeccable/SKILL.md"
+      },
+      "does": "Loads product context, visual direction and the surface brief, then selects the relevant procedure: design, critique, audit, polish, clarification, adaptation or other work. Distinguishes refinement that preserves identity from a redesign that replaces it. Follows command instructions and, before changing UI, the minimum quality bar. Limits visual verification and corrections to defined passes.",
+      "when": "Use it to create a surface, redesign it or address a UI problem with a specific outcome. shape helps define UX/UI before code; critique evaluates design; audit examines technical quality; polish completes an approved direction. It is not needed for backend-only work.",
+      "usage": "Specify the surface, goal, constraints and reference material. Name the command if you know it, or describe the need. Request adherence to the brief and project components, with final visual verification and stated limitations.",
+      "example": "Use impeccable clarify on the invitation form: make labels and errors understandable while preserving layout, functionality and the product glossary.",
+      "outputs": [
+        "Outcome defined by the selected command",
+        "Any changes to UI or design documents",
+        "Visual evidence and relevant checks"
+      ],
+      "prerequisites": [
+        "The procedure uses the launcher included in the skill and the command references. If the launcher fails, context must be read from existing documents; the failure is declared."
+      ]
+    },
+    {
+      "id": "improve-animations",
+      "name": "improve-animations",
+      "description": "Examines existing motion and prepares improvement plans.",
+      "source": {
+        "kind": "external",
+        "author": "emilkowalski",
+        "repository": "emilkowalski/skills",
+        "path": "skills/improve-animations/SKILL.md",
+        "url": "https://github.com/emilkowalski/skills/blob/HEAD/skills/improve-animations/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/emilkowalski/skills/blob/HEAD/skills/improve-animations/SKILL.md"
+      },
+      "does": "Maps libraries, tokens, components and interaction frequency. Assesses purpose, curves, duration, origin, interruptions, performance, accessibility and consistency. Confirms findings against the code and ranks them by impact relative to effort. For selected issues, prepares plans with files, excerpts, values and checks sufficient for a separate implementer. The audit and planning phase does not modify product code.",
+      "when": "Use it to survey motion in a feature or app and establish a sequence of changes. For a single diff, use review-animations; to find where to add motion, use find-animation-opportunities. execute mode is a separate assignment to apply a plan.",
+      "usage": "Provide the area, symptoms and depth: quick, standard or deep. Specify whether you want an audit or a plan for an already selected defect. In guided mode, choose which findings become plans; these are saved in the folder specified by the skill.",
+      "example": "Examine motion in menus, dialogs and toasts. Produce a prioritized audit and plans for the two issues I select, without modifying components.",
+      "outputs": [
+        "Audit with evidence and priorities",
+        "Self-contained plans for selected findings",
+        "Plan index with order and dependencies"
+      ]
+    },
+    {
+      "id": "jado-art-direction",
+      "name": "jado-art-direction",
+      "description": "Defines a reasoned art direction before composition.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-art-direction/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-art-direction/SKILL.md",
+        "localPath": ".agents/skills/jado-art-direction/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-art-direction/SKILL.md"
+      },
+      "does": "Turns the brief, observed references and constraints into a visual concept and choices for typography, color, imagery and composition, using fontshare and better-typography for type and better-colors and oklch-skill for palettes. In explore it sketches several contrasting directions; in refine it fixes one with reviewable rules.",
+      "when": "When a visual direction is missing or a new brand, UI or imagery language is requested.",
+      "usage": "Provide the audience, goal, constraints, references, stage and decision authority. Specify the surface and number of directions if you want a specific count.",
+      "example": "Define two structurally different directions for the landing page, with shared content and reasons for the choices.",
+      "outputs": [
+        "Direction proposed or selected according to the mandate",
+        "Observable criteria for the designer and reviewer",
+        "References, limitations and assumptions for the alternatives"
+      ]
+    },
+    {
+      "id": "jado-canvas-layout",
+      "name": "jado-canvas-layout",
+      "description": "Organizes containers and groups when working in Paper.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-canvas-layout/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-canvas-layout/SKILL.md",
+        "localPath": ".agents/skills/jado-canvas-layout/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-canvas-layout/SKILL.md"
+      },
+      "does": "Reads the assigned document and nodes and opens an initial capture. Defines axis, spacing, padding, alignment, growth and limits before fixing coordinates. Uses Flex in groups when supported by the available tools and explains overlays or other absolute positioning. Preserves relevant content and components and proceeds to verification after the final edit.",
+      "when": "Use it to build or reorganize a layout in the Paper canvas. It helps when groups and dimensions must adapt to real text. Only one writer works on a shared document during the phase.",
+      "usage": "Specify the document, nodes and expected result. Provide content and constraints, including long text. For a broad transformation, use a copy or version if available; apply only properties actually exposed by the provider.",
+      "example": "In the assigned Paper document, reorganize the filter section using containers and Flex where available. Preserve the text and verify the result after the final edit.",
+      "outputs": [
+        "Hierarchy and layout of the assigned nodes",
+        "Preserved content",
+        "Result ready for jado-canvas-verify"
+      ],
+      "prerequisites": [
+        "Requires authorized access to the Paper document and tools exposing the necessary properties."
+      ]
+    },
+    {
+      "id": "jado-canvas-verify",
+      "name": "jado-canvas-verify",
+      "description": "Checks canvas structure and rendering after the final edit.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-canvas-verify/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-canvas-verify/SKILL.md",
+        "localPath": ".agents/skills/jado-canvas-verify/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-canvas-verify/SKILL.md"
+      },
+      "does": "Captures each changed surface once per visual group and inspects it at the stage's depth: in explore only broken text, clipping, overlaps and missing content; in refine and ship also hierarchy, alignment, overflow and baselines. Fixes in bounded fix passes and records the inspected capture.",
+      "when": "Use it after editing Paper and before delivering a canvas or declaring it ready. The canvas supports observing rendering; keyboard, screen reader and performance checks require other evidence.",
+      "usage": "Provide the document, nodes, expected state and stage. If you are the author, fix in fix passes up to the stage's cap and list what remains; if you are a read-only reviewer, report defects without editing.",
+      "example": "Verify the final mobile artboard: open the full capture, check long text and cropping and record defective nodes with the observed revision.",
+      "outputs": [
+        "Actually opened captures of the final revision",
+        "Record of structure, rendering and coverage",
+        "Outcome with any defects or missing evidence"
+      ],
+      "prerequisites": [
+        "Requires observable images of the current canvas, not only an author’s description."
+      ]
+    },
+    {
+      "id": "jado-content-designer",
+      "name": "jado-content-designer",
+      "description": "Writes UI text and marketing copy, selecting the procedure suited to the content.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-content-designer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-content-designer/SKILL.md",
+        "localPath": ".agents/skills/jado-content-designer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-content-designer/SKILL.md"
+      },
+      "does": "Selects better-writing for UI text, copywriting for new marketing copy and copy-editing to revise existing marketing copy. Applies only the relevant procedure, preserving meaning, voice and evidence for claims.",
+      "when": "When labels, instructions, errors or marketing copy need to be written or revised.",
+      "usage": "Provide the text type, audience, goal, voice, glossary and sources for claims. For a mixed request, specify the sections: each section follows the relevant procedure.",
+      "example": "Rewrite the invitation form strings: initial instruction, email error, existing invitation and confirmation. Preserve the glossary and do not modify components.",
+      "outputs": [
+        "Assigned strings or copy document",
+        "Text for errors, confirmations and recovery",
+        "Proposed meaning changes requiring a decision and handoff to the UI author"
+      ]
+    },
+    {
+      "id": "jado-craft-core",
+      "name": "jado-craft-core",
+      "description": "Applies the shared quality baseline to UI changes.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-craft-core/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-craft-core/SKILL.md",
+        "localPath": ".agents/skills/jado-craft-core/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-craft-core/SKILL.md"
+      },
+      "does": "Reads the expected outcome, design direction, tokens and components before editing. Requires readable hierarchy and realistic content, then checks contrast, accessible names, focus and keyboard interaction where relevant. On new or redesigned surfaces, removes small headings above the title that are purely decorative, preserving breadcrumbs, states and informative labels.",
+      "when": "Use it when creating or changing a UI, including a quick patch. The check remains within the assigned scope. If Impeccable is selected, this baseline does not replace its prerequisites and steps.",
+      "usage": "Provide the brief, reference and project components. Apply checks to the actual result with representative content. Report what was verified and pass any out-of-scope design questions to the coordinator.",
+      "example": "Apply jado-craft-core to the project card: preserve tokens and components, use realistic content and check hierarchy, focus and button names.",
+      "outputs": [
+        "UI consistent with the reference and scope",
+        "Relevant quality checks applied",
+        "Defects or limitations to carry into the handoff"
+      ]
+    },
+    {
+      "id": "jado-design-systems",
+      "name": "jado-design-systems",
+      "description": "Guides reuse of design system tokens and components.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-design-systems/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-design-systems/SKILL.md",
+        "localPath": ".agents/skills/jado-design-systems/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-design-systems/SKILL.md"
+      },
+      "does": "Maps local tokens and components; applies stack-independent layout rules. Uses shadcn and Tailwind only in projects that adopt them, and better-layout when layout needs to be designed or corrected.",
+      "when": "Use it when a solution affects shared components, requires a new variant or must be translated from canvas to existing tokens. If composing components without changing their contract is sufficient, the UI developer can act directly.",
+      "usage": "Provide the approved result, components, tokens and editable files. Specify views consuming the component. Request a reuse map, reasons for exceptions and checks on affected surfaces.",
+      "example": "Map the approved canvas to design system components and add only the necessary density variant, in the assigned files.",
+      "outputs": [
+        "Mapping from design to tokens/components",
+        "Any authorized variants or tokens",
+        "Exceptions and evidence from affected views"
+      ]
+    },
+    {
+      "id": "jado-evidence-contract",
+      "name": "jado-evidence-contract",
+      "description": "Records evidence and coverage before declaring an outcome verified.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-evidence-contract/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-evidence-contract/SKILL.md",
+        "localPath": ".agents/skills/jado-evidence-contract/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-evidence-contract/SKILL.md"
+      },
+      "does": "Records checks, evidence and coverage at the stage's evidence level: in the handoff for explore, with captures for refine, persisted in the product repository for ship. Defines the handoff every agent returns, including the decisions taken and the questions for the user with a recommended default.",
+      "when": "Use it in role handoffs, before passing a route check and after corrections. Prevents reading a skill from being reported as applying it, or a captured but unopened image from being considered inspected.",
+      "usage": "Provide the result, revision, stage, required checks and available evidence. Associate each check with the portion covered and flag stale evidence. For an independent review, identify a reviewer distinct from the author.",
+      "example": "Check the R04 ship handoff: link each verification to the final revision, persist the record and list the provisional decisions the user still has to confirm.",
+      "outputs": [
+        "Application and verification record",
+        "Outcomes with evidence, revision and coverage",
+        "Gaps and the step needed to complete"
+      ]
+    },
+    {
+      "id": "jado-flow",
+      "name": "jado-flow",
+      "description": "Selects the workflow and coordinates only the necessary contributions.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-flow/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-flow/SKILL.md",
+        "localPath": ".agents/skills/jado-flow/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-flow/SKILL.md"
+      },
+      "does": "Resolves the three dials (stage, involvement, budget), selects the route and records a contract with limits, permissions, owner and checks. Assigns each outcome to the relevant role, keeps one writer per shared artifact, caps every fix loop at the stage's limit and asks the user only at the moments the involvement dial allows. Collects handoffs and evidence before declaring work complete, ending with a decision log and a run summary.",
+      "when": "Use it to move a request for research, UX, UI, copy, design systems, code or review into coordinated execution. It can return only the plan if requested. Explore favors many fast options without reviews; ship applies full verification. Review-only work keeps the product and canvas read-only; VariantHub requires an explicit request.",
+      "usage": "Provide the JADO folder, working repository, goal, reference and scope, plus any dial you want to fix: stage (explore, refine, ship), involvement (autopilot, checkpoints, pair) and budget (lean, normal, deep). Unstated dials come from project defaults or are inferred. The jado:plan command prepares a plan and does not start agents.",
+      "example": "Use jado-flow: explore, autopilot, lean. Produce five directions for the onboarding screen in Paper, pick the strongest provisionally and list the decisions you took.",
+      "outputs": [
+        "Recorded route and decisions",
+        "Role assignments with boundaries and budget",
+        "Outcome, evidence, coverage and handoff limitations"
+      ],
+      "prerequisites": [
+        "The required profiles and tools must be available in the session. A missing capability is declared; it is not installed as a side effect."
+      ]
+    },
+    {
+      "id": "jado-frontend",
+      "name": "jado-frontend",
+      "description": "Design systems, implementation and technical corrections in the same context.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-frontend/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-frontend/SKILL.md",
+        "localPath": ".agents/skills/jado-frontend/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-frontend/SKILL.md"
+      },
+      "does": "Applies the assigned activities: jado-design-systems, jado-ui-builder, jado-ui-engineer and jado-motion. Preserves stack, direction and scope; phases on the same artifact are sequential.",
+      "when": "When the principal or an already active agent needs to apply one or more domain procedures in the same context.",
+      "usage": "Provide the contract, assigned activities, order, scope and required evidence. Use role procedures without starting other agents.",
+      "example": "Apply jado-frontend in the current context, limited to the assigned activities.",
+      "outputs": [
+        "Assigned outcomes with revision, evidence and limitations"
+      ],
+      "prerequisites": [
+        "Readable JADO root and tools required by the assigned procedures."
+      ]
+    },
+    {
+      "id": "jado-install",
+      "name": "jado-install",
+      "description": "Installs JADO locally or globally, links a repository to the global method and guides migration of design instructions.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-install/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-install/SKILL.md",
+        "localPath": ".agents/skills/jado-install/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-install/SKILL.md"
+      },
+      "does": "Prepares the method in the selected .jado folder: a standalone copy in the repository or a global copy for the user. Linking adds only the project entry point. Existing external global skills remain with their current manager; native profiles are prepared for Claude Code, Codex and OpenCode when selected. The AI completes migration of old routers while showing the diff and preserving product contracts.",
+      "when": "When you want to adopt JADO in a repository or across all projects for your user, link a repository to the global setup or update the method and upstream skills with an explicit command.",
+      "usage": "From the JADO checkout, use npm run jado -- install and choose the destination and tools. For AI use, specify --global or --local --target /repo, add --agents and prepare the plan with --dry-run --json; apply it with --yes --revision HASH. Use link --target /repo to link the project to the global setup. With update, choose the destination and, when needed, --component method or skills. Follow migration.md to resolve old instructions and verify an ordinary design request in a new session.",
+      "example": "Install JADO for Claude Code and Codex in this repository. Show me the plan, then complete migration of design routing in the files actually read, preserving domain, design system, verification, Git and release instructions.",
+      "outputs": [
+        "Plan with destination, tools, files and revision; backups of modified files",
+        "Local or global method copy, or linked project entry point",
+        "Skills and profiles only for the selected tools; instructions to migrate and checks still to complete"
+      ],
+      "prerequisites": [
+        "JADO checkout with installed dependencies and current artifacts",
+        "Accessible destination and explicitly selected tools; upstream access for missing skills or updates",
+        "When linking, AI session permissions to read the global method; files verified by the CLI do not prove native loading"
+      ]
+    },
+    {
+      "id": "jado-motion",
+      "name": "jado-motion",
+      "description": "Designs or implements assigned motion and verifies its behavior.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-motion/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-motion/SKILL.md",
+        "localPath": ".agents/skills/jado-motion/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-motion/SKILL.md"
+      },
+      "does": "Distinguishes opportunities, specification, implementation and review. Connects relevant skills to the purpose and stack, keeping reduced motion, interruptions and evidence explicit.",
+      "when": "When deciding where motion helps, building a transition or assessing existing animations.",
+      "usage": "Specify the phase, interaction, expected frequency, stack and scope. Visual can handle specification only; Frontend implements. review-animations requires explicit user invocation.",
+      "example": "Specify save feedback and implement it using existing primitives, also checking reduced motion and repeated actions.",
+      "outputs": [
+        "Specification with triggers, states and criteria, or reasons to avoid motion",
+        "Implementation only if assigned",
+        "Behavior and performance evidence, with stated limitations"
+      ]
+    },
+    {
+      "id": "jado-reference-analysis",
+      "name": "jado-reference-analysis",
+      "description": "Interprets references before using them in design decisions.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-reference-analysis/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-reference-analysis/SKILL.md",
+        "localPath": ".agents/skills/jado-reference-analysis/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-reference-analysis/SKILL.md"
+      },
+      "does": "Defines the question, context and criteria before research. Compares relevant products and observed references, explaining selections, exclusions and adaptations; result order and popularity do not prove effectiveness.",
+      "when": "Use it after visual research and when a reference is about to influence a brief or implementation. An unavailable image remains a gap: the procedure does not reconstruct what it has not seen.",
+      "usage": "Provide the brief, references and already approved decisions. Request an analysis of each reference covering relevance, transferable parts and conflicts. Specify who receives the research and which decision they must be able to make.",
+      "example": "Analyze these three dashboard references for our product: explain what to adapt to the required density and what not to copy.",
+      "outputs": [
+        "References with source and role",
+        "Annotations on adaptations and conflicts",
+        "Research transferable to UX or visual design"
+      ]
+    },
+    {
+      "id": "jado-researcher",
+      "name": "jado-researcher",
+      "description": "Gathers evidence about users, needs, the problem and domain, with stated sources and limitations.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-researcher/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-researcher/SKILL.md",
+        "localPath": ".agents/skills/jado-researcher/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-researcher/SKILL.md"
+      },
+      "does": "Performs documentary research in the current context: question, available sources, gaps, targeted research and synthesis. Separates observations, hypotheses and proposals; user studies require a dedicated assignment and protocol.",
+      "when": "Use it in the researcher role when a choice depends on information that is not yet available or organized. An interface inspection is not a user test; the handoff must preserve this distinction.",
+      "usage": "Provide the question, context, sources, gaps and budget. Ordinary research does not initiate delegation. The external research skill remains available for a separate assignment compatible with its protocol.",
+      "example": "Gather evidence about our onboarding problems from the assigned materials. Write the dossier, distinguish observations from hypotheses and keep the product read-only.",
+      "outputs": [
+        "Assigned research dossier",
+        "Sources and limitations for claims",
+        "Handoff with coverage and open questions"
+      ]
+    },
+    {
+      "id": "jado-run",
+      "name": "jado-run",
+      "description": "Starts an assignment using the current JADO method and catalog.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-run/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-run/SKILL.md",
+        "localPath": ".agents/skills/jado-run/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-run/SKILL.md"
+      },
+      "does": "Locates the JADO folder and verifies the method index. For questions about capabilities or next steps, consults ask-jado and returns guidance; for execution, opens jado-flow, reusing decisions and assignments already received. Method changes go through source files, checks and a PR.",
+      "when": "Use it as the entry point when requesting work from JADO without remembering the coordination procedure. jado-flow handles execution; ask-jado answers guidance requests and clarifies missing decisions during work.",
+      "usage": "Specify the JADO folder when working in another repository and describe the outcome, materials and boundaries, optionally with the stage, involvement and budget dials. Request the activity or plan. If a contract already exists, pass it along so the agent resumes from the assigned point.",
+      "example": "Use jado-run, with this JADO folder, to review the new invitation flow read-only and return issues, evidence and priorities.",
+      "outputs": [
+        "Located method and coordinated route",
+        "Requested outcome or plan",
+        "Any proposed method change for review"
+      ],
+      "prerequisites": [
+        "Requires access to jado/runtime/index.json and the selected route packet in the specified JADO folder."
+      ]
+    },
+    {
+      "id": "jado-ui-builder",
+      "name": "jado-ui-builder",
+      "description": "Guides implementation of the approved solution.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ui-builder/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ui-builder/SKILL.md",
+        "localPath": ".agents/skills/jado-ui-builder/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ui-builder/SKILL.md"
+      },
+      "does": "Requires reading the contract, selected reference, DESIGN.md and local components. Implements within the assigned scope, preserving approved decisions and content and using existing primitives and tokens. Tests the result, relevant states and behaviors in the browser. Delivers changed files, evidence from the final revision and limitations; a new direction requires a separate decision.",
+      "when": "Use it when it is time to implement a selected solution in code, add a feature or make a substantial UI change. Open choices are reported to the principal, rather than resolved by implicitly rewriting the brief.",
+      "usage": "Provide the reference, UX specifications, content, files owned by the role and expected checks. Request the states actually involved and evidence of the final version. The role applies skills according to the conditions in its map.",
+      "example": "Implement the approved project detail using local components. Verify complete, loading and error states and deliver evidence after the final edit.",
+      "outputs": [
+        "Code and assets within the assigned scope",
+        "Current visual and behavioral evidence",
+        "Changed files, coverage and residual risks"
+      ]
+    },
+    {
+      "id": "jado-ui-engineer",
+      "name": "jado-ui-engineer",
+      "description": "Guides a targeted technical correction after implementation.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ui-engineer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ui-engineer/SKILL.md",
+        "localPath": ".agents/skills/jado-ui-engineer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ui-engineer/SKILL.md"
+      },
+      "does": "Resolves assigned technical problems in layout, state, motion and performance. Uses checks compatible with the stack; unit-test-engineer applies in relevant Next.js/React projects. jado-motion distinguishes animation specification, implementation and review.",
+      "when": "Use it when implementation introduces a concrete technical risk, a complex interaction or a defect to reproduce, or when a specific technical check is requested. A simple, already completed change does not automatically require this phase.",
+      "usage": "Provide the reproducible symptom, diff, assigned files and behavior to preserve. Request diagnosis of the cause and a limited correction, accompanied by the command or interaction demonstrating the result.",
+      "example": "After implementation, fix focus lost when changing a filter. Identify the cause in interactive state and preserve design and content.",
+      "outputs": [
+        "Diagnosis and bounded technical correction",
+        "Check capable of detecting the regression",
+        "Handoff with results and unverified parts"
+      ]
+    },
+    {
+      "id": "jado-ux",
+      "name": "jado-ux",
+      "description": "Research, UX architecture, flows, journeys and content in the same context.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux/SKILL.md",
+        "localPath": ".agents/skills/jado-ux/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux/SKILL.md"
+      },
+      "does": "Applies the assigned procedures in the same context: jado-researcher, jado-ux-architect, jado-content-designer.",
+      "when": "When the principal or an already active agent needs to apply one or more domain procedures in the same context.",
+      "usage": "Provide the contract, assigned activities, order, scope and required evidence. Use role procedures without starting other agents.",
+      "example": "Apply jado-ux in the current context, limited to the assigned activities.",
+      "outputs": [
+        "Assigned outcomes with revision, evidence and limitations"
+      ],
+      "prerequisites": [
+        "Readable JADO root and tools required by the assigned procedures."
+      ]
+    },
+    {
+      "id": "jado-ux-architect",
+      "name": "jado-ux-architect",
+      "description": "Analyzes tasks, flows, journeys and states; defines UX architecture and verification criteria.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux-architect/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-architect/SKILL.md",
+        "localPath": ".agents/skills/jado-ux-architect/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-architect/SKILL.md"
+      },
+      "does": "Analyzes tasks, sequences, decisions, states and errors. Uses jado-ux-artifacts for the requested documents; when real examples are needed, first defines criteria with jado-reference-analysis and looks for relevant references, including on Mobbin. Screens alone do not prove a complete flow.",
+      "when": "Use it before building a feature when behaviors are not yet explicit, or to update a UX record after a decision. The role map selects relevant skills without reopening received goals and budgets.",
+      "usage": "Provide the actor’s goal, preconditions, decisions, sources and assigned documents. Specify relevant permissions and alternatives. Request a flow with verifiable outcomes and evidence links; hand unresolved choices to the principal.",
+      "example": "Define the collaborator invitation flow: include permissions, duplicate invitations, network errors and recovery. Write only the assigned UX artifacts.",
+      "outputs": [
+        "Documented flows and states",
+        "Observable success and recovery criteria",
+        "UX Planner artifacts when requested"
+      ]
+    },
+    {
+      "id": "jado-ux-artifacts",
+      "name": "jado-ux-artifacts",
+      "description": "Create or update a flow, journey, persona or story without a mandatory dossier.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux-artifacts/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-artifacts/SKILL.md",
+        "localPath": ".agents/skills/jado-ux-artifacts/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-artifacts/SKILL.md"
+      },
+      "does": "Edits the requested UX artifacts in the current context. Uses docs/ux in new projects, compatible formats and targeted verification.",
+      "when": "Create or update a flow, journey, persona or story without a mandatory dossier.",
+      "usage": "Read the procedure from the JADO root and apply it only to the assigned outcome.",
+      "example": "Update recovery in the login flow.",
+      "outputs": [
+        "Canonical artifacts and relevant evidence",
+        "Open decisions and stated limitations"
+      ]
+    },
+    {
+      "id": "jado-ux-reviewer",
+      "name": "jado-ux-reviewer",
+      "description": "Guides a read-only UX review.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux-reviewer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-reviewer/SKILL.md",
+        "localPath": ".agents/skills/jado-ux-reviewer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-reviewer/SKILL.md"
+      },
+      "does": "Examines tasks, comprehension, states, accessibility and recovery using available evidence. For each issue, records severity, element, criterion, evidence and suggested correction. Keeps files, product and canvas read-only. If browser evidence is missing, explicitly limits judgment to code; distinguishes expert review from user test results.",
+      "when": "Use it to check a flow before delivery or receive an independent assessment without modifying the solution. It does not author corrections: it passes observations to the principal, who assigns changes.",
+      "usage": "Provide the goal, actors, states, criteria and preview or evidence from the latest revision. Request concrete findings and declared coverage. For an independent review, the reviewer’s context must be distinct from the author’s.",
+      "example": "Review the invitation flow read-only. Check comprehension, keyboard interaction and errors against current evidence and suggest corrections without applying them.",
+      "outputs": [
+        "UX findings with severity and evidence",
+        "Flow coverage and missing checks",
+        "Suggested corrections to assign to the author"
+      ]
+    },
+    {
+      "id": "jado-ux-traceability",
+      "name": "jado-ux-traceability",
+      "description": "An extended UX baseline or coverage audit is requested.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux-traceability/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-traceability/SKILL.md",
+        "localPath": ".agents/skills/jado-ux-traceability/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-traceability/SKILL.md"
+      },
+      "does": "Links sources, canonical documents and scenarios in an extended dossier without duplicating content.",
+      "when": "An extended UX baseline or coverage audit is requested.",
+      "usage": "Read the procedure from the JADO root and apply it only to the assigned outcome.",
+      "example": "Verify source coverage for the onboarding baseline.",
+      "outputs": [
+        "Canonical artifacts and relevant evidence",
+        "Open decisions and stated limitations"
+      ]
+    },
+    {
+      "id": "jado-visual",
+      "name": "jado-visual",
+      "description": "References, moodboards, visual direction and canvas in the same context.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-visual/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual/SKILL.md",
+        "localPath": ".agents/skills/jado-visual/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual/SKILL.md"
+      },
+      "does": "Applies the assigned activities in the same context: visual research, art direction and composition. Can specify motion without implementing it. Moodboards and alternatives depend on the assignment.",
+      "when": "When the principal or an already active agent needs to apply one or more domain procedures in the same context.",
+      "usage": "Provide the contract, assigned activities, order, scope and required evidence. Use role procedures without starting other agents.",
+      "example": "Apply jado-visual in the current context, limited to the assigned activities.",
+      "outputs": [
+        "Assigned outcomes with revision, evidence and limitations"
+      ],
+      "prerequisites": [
+        "Readable JADO root and tools required by the assigned procedures."
+      ]
+    },
+    {
+      "id": "jado-visual-designer",
+      "name": "jado-visual-designer",
+      "description": "Guides visual composition and production of the assigned canvas.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-visual-designer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-designer/SKILL.md",
+        "localPath": ".agents/skills/jado-visual-designer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-designer/SKILL.md"
+      },
+      "does": "Builds the assigned canvas at the stage's fidelity: in explore many divergent low-fidelity options built fast, in refine the selected direction with tokens and states, in ship production fidelity. Sole document author during the phase; respects the fix-pass cap and hands the result to the reviewer only when the stage requires one.",
+      "when": "Use it to define or produce the composition of a surface, or to compare authorized alternatives in the canvas. A reference still awaiting selection must be clarified before being presented as an approved direction.",
+      "usage": "Provide the brief, direction or comparison question, content, assigned artboards and stage. Specify what may change and which result must be preserved.",
+      "example": "Prepare the mobile project detail artboard in Paper following the selected direction. Preserve content and tokens and verify cropping and text before delivery.",
+      "outputs": [
+        "Assigned canvas composition and nodes",
+        "Final captures and structural verification",
+        "Handoff to the reviewer or code phase"
+      ],
+      "prerequisites": [
+        "Working in Paper requires document access and an assignment authorizing canvas edits."
+      ]
+    },
+    {
+      "id": "jado-visual-researcher",
+      "name": "jado-visual-researcher",
+      "description": "Compares interface patterns and visual references; selects and documents the moodboard when requested.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-visual-researcher/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-researcher/SKILL.md",
+        "localPath": ".agents/skills/jado-visual-researcher/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-researcher/SKILL.md"
+      },
+      "does": "Selects UI patterns or style references according to the question and context. For style, includes Pinterest, images and websites; for patterns, also Mobbin and real products. Explains selections and exclusions. Builds the moodboard only if assigned.",
+      "when": "When references for developing the UI, a comparison of interface patterns or a moodboard are needed. To analyze a flow, choose jado-ux-architect; a mixed request can combine them.",
+      "usage": "Provide the question, platform, selection criteria and Paper or repository destination. Assign a budget and editable documents. Request references actually observed, usable annotations and declared gaps when sources or images are unavailable.",
+      "example": "Find filter patterns for a web dashboard and prepare an annotated moodboard in the assigned Paper document. Explain what to adapt and what not to copy.",
+      "outputs": [
+        "Comparison and UI or visual references with sources, observations and limitations",
+        "Moodboard only when assigned"
+      ],
+      "prerequisites": [
+        "Required sources, images and providers must be available through authorized tools; repository files do not make credentials or services available."
+      ]
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "name": "jado-visual-reviewer",
+      "description": "Guides visual comparison with the reference using final captures.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-visual-reviewer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-reviewer/SKILL.md",
+        "localPath": ".agents/skills/jado-visual-reviewer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-reviewer/SKILL.md"
+      },
+      "does": "Compares the latest revision with the assigned direction and criteria, read-only. For motion, requires interaction evidence: a screenshot does not verify timing, interruptions or reduced motion.",
+      "when": "Use it after canvas or code production when fidelity to the selected direction needs verification. The capture covers the visual result shown; behaviors, keyboard interaction and performance require different checks.",
+      "usage": "Provide the approved reference and captures of the same revision to be checked. Specify expected states and dimensions. Request findings with an element and evidence, separating defects from personal taste and declaring what cannot be observed.",
+      "example": "Compare final desktop and mobile captures with the approved canvas. Report differences in hierarchy, alignment or cropping without modifying files.",
+      "outputs": [
+        "Comparison based on opened images",
+        "Defects with location and evidence",
+        "Outcome and unobservable parts"
+      ],
+      "prerequisites": [
+        "Requires available, current captures of the revision being assessed."
+      ]
+    },
+    {
+      "id": "make-interfaces-feel-better",
+      "name": "make-interfaces-feel-better",
+      "description": "Reviews typography, surface, icon and interaction details.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/make-interfaces-feel-better",
+        "path": "skills/make-interfaces-feel-better/SKILL.md",
+        "url": "https://github.com/jakubkrehel/make-interfaces-feel-better/blob/HEAD/skills/make-interfaces-feel-better/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/make-interfaces-feel-better/blob/HEAD/skills/make-interfaces-feel-better/SKILL.md"
+      },
+      "does": "Checks five areas: typography, surfaces, animations, icons and performance. Compares nested corners, optical alignment, shadows, changing numbers and control feedback with the skill principles. Uses the project’s established style and tests relevant states. A quick review covers the main path with a few findings; full covers the assigned scope more extensively.",
+      "when": "Use it when a UI works but some details make it feel inconsistent or awkward. It is a design engineering review of details; it does not redefine product goals, flows or identity.",
+      "usage": "Name components and states to examine and choose quick or full. Request a before/after comparison with severity, location and consequence. For motion, also test slowed playback and consider only observed defects.",
+      "example": "Run a quick review of the toolbar: check icon and text alignment, feedback, target sizes and changing numbers.",
+      "outputs": [
+        "Coverage of the five areas",
+        "Findings and concrete replacements",
+        "Rejected candidates, checks and outcome"
+      ]
+    },
+    {
+      "id": "oklch-skill",
+      "name": "oklch-skill",
+      "description": "Converts colors and builds palettes in the OKLCH model.",
+      "source": {
+        "kind": "external",
+        "author": "jakubkrehel",
+        "repository": "jakubkrehel/oklch-skill",
+        "path": "skills/oklch-skill/SKILL.md",
+        "url": "https://github.com/jakubkrehel/oklch-skill/blob/HEAD/skills/oklch-skill/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/jakubkrehel/oklch-skill/blob/HEAD/skills/oklch-skill/SKILL.md"
+      },
+      "does": "Works separately on lightness, chroma and hue to convert colors, generate scales and prepare themes. Loads the relevant reference for conversion, palettes, contrast or gamut. Checks sRGB and P3 limits and prepares fallbacks when needed; also covers Tailwind v4 tokens. Reports all changes in a before/after table.",
+      "when": "Use it when the project uses OKLCH or when you explicitly request conversion, scale generation, contrast correction or gamut handling. To assess the full meaning of color tokens, use better-colors while respecting the project notation.",
+      "usage": "Provide original values, roles, actual backgrounds and the target format. For a scale, specify themes and uses of its steps; for contrast, identify the pairs to measure. Request calculated values, a complete table and relevant fallbacks.",
+      "example": "Convert these tokens to OKLCH and check the secondary text/surface pair in light and dark themes. Show every value before and after.",
+      "outputs": [
+        "OKLCH conversions or scales",
+        "Relevant contrast measurements and gamut checks",
+        "Complete table of modified colors"
+      ]
+    },
+    {
+      "id": "product-marketing",
+      "name": "product-marketing",
+      "description": "Creates and updates shared product and messaging context.",
+      "source": {
+        "kind": "external",
+        "author": "coreyhaines31",
+        "repository": "coreyhaines31/marketingskills",
+        "path": "skills/product-marketing/SKILL.md",
+        "url": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/product-marketing/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/product-marketing/SKILL.md"
+      },
+      "does": "Looks for the existing marketing document and gathers product, audience, problems, alternatives, differences, objections, customer language and evidence. Can prepare a first draft by reading the repository and pages or build it through progressive questions. Saves the context in .agents/product-marketing.md and retains a history of substantive revisions. Other copy skills use this document as their foundation.",
+      "when": "Use it at the start of a project or when positioning, audience, promise or voice changes. It avoids repeating basic information for every landing page. It does not replace user research or missing product evidence.",
+      "usage": "Provide real materials: README, pages, interviews, feedback and approved data. Request a draft to verify or an update to specific sections. Confirm information before saving; every substantive change retains its version, date and rationale.",
+      "example": "Prepare the marketing context by reading the README and landing page. Leave unsourced information open and let me verify the audience, differences and promise before saving it.",
+      "outputs": [
+        ".agents/product-marketing.md document",
+        "Confirmed information and points to clarify",
+        "Version, date and change history"
+      ]
+    },
+    {
+      "id": "research",
+      "name": "research",
+      "description": "Investigates a question through primary sources and saves a citable dossier.",
+      "source": {
+        "kind": "external",
+        "author": "mattpocock",
+        "repository": "mattpocock/skills",
+        "path": "skills/engineering/research/SKILL.md",
+        "url": "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/research/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/research/SKILL.md"
+      },
+      "does": "Assigns research to a background agent, which traces claims to the responsible source: official documentation, code, specifications or the vendor’s API. Collects results in a single Markdown file, with a source for every claim. Saves the file where the repository already keeps research notes and reports its path.",
+      "when": "Use it when you need to read documentation, gather API facts or investigate a topic without stopping the main work. It is documentary research: it does not produce user observations unless they are provided as sources.",
+      "usage": "Frame a bounded question, specify known sources and where to save the result. Request citations directly to primary sources and explicit limitations. In JADO, delegation must be assigned and counted in the route budget.",
+      "example": "Check the official documentation for how the API handles pagination and errors. Save a Markdown note in the research folder with sources and limitations.",
+      "outputs": [
+        "Markdown dossier with claims and sources",
+        "File path in the repository",
+        "Limitations and information still unsupported"
+      ],
+      "prerequisites": [
+        "Requires the ability to delegate research in the background; an adaptation without delegation must be declared and authorized in the JADO contract."
+      ]
+    },
+    {
+      "id": "review-animations",
+      "name": "review-animations",
+      "description": "Assesses a motion change and returns a reasoned verdict.",
+      "source": {
+        "kind": "external",
+        "author": "emilkowalski",
+        "repository": "emilkowalski/skills",
+        "path": "skills/review-animations/SKILL.md",
+        "url": "https://github.com/emilkowalski/skills/blob/HEAD/skills/review-animations/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/emilkowalski/skills/blob/HEAD/skills/review-animations/SKILL.md"
+      },
+      "does": "Checks motion purpose and frequency, curves, duration, origin, interruptions, animated properties, accessibility and consistency. Reads standards to propose precise values. Returns a before/after table with reasons and locations, followed by a Block or Approve outcome based on observed defects. It is a specialized review: it does not build features or fix areas unrelated to motion.",
+      "when": "Use it explicitly to verify a diff or bounded set of animations before considering it ready. For an app-wide motion roadmap, use improve-animations; applying a correction requires a separate execution assignment.",
+      "usage": "Specify the diff, components, expected behavior and available evidence. Request motion findings with file and line, replacement values and an outcome. When behavior cannot be judged from code, provide the preview or record the check still needed.",
+      "example": "Review this drawer diff: check origin, closing during a gesture, reduced motion and animated property costs. Return findings and an outcome.",
+      "outputs": [
+        "Before/after table with rationale",
+        "Issues ordered by impact",
+        "Block or Approve outcome and verification limitations"
+      ]
+    },
+    {
+      "id": "mobbin-search",
+      "name": "search",
+      "description": "Finds real screens and compares their visible patterns.",
+      "source": {
+        "kind": "external",
+        "author": "mobbin",
+        "repository": "mobbin/skills",
+        "path": "skills/search/SKILL.md",
+        "url": "https://github.com/mobbin/skills/blob/HEAD/skills/search/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/mobbin/skills/blob/HEAD/skills/search/SKILL.md"
+      },
+      "does": "Prepares search terms, the iOS or web platform and result count, then uses search_screens to open images returned by Mobbin. Describes only what it sees, such as fields, CTAs and screen structure. Answers bounded questions with a few references; for broader research, proposes an HTML collection and agrees its structure before building it. Each screen retains its product and source link.",
+      "when": "Use it to understand how other products handle login, filters, onboarding or another pattern. A pattern appearing in an app does not prove its effectiveness for your audience. Style research and moodboard selection use the jado-visual-researcher procedure.",
+      "usage": "Specify the problem, platform and desired number of references. Avoid imposing undecided details in the query. Request comparable observations and sources; if the result is a collection, define its grouping and destination.",
+      "example": "Find five web screens with complex table filters. Compare filter and reset action placement and link each example to Mobbin.",
+      "outputs": [
+        "Observed screenshots and Mobbin links",
+        "Comparison of the patterns present",
+        "An agreed HTML collection, if applicable"
+      ],
+      "prerequisites": [
+        "Requires the Mobbin search_screens tool to be available. CDN images used in the HTML collection may expire after about an hour: the page is not a permanent archive."
+      ]
+    },
+    {
+      "id": "shadcn",
+      "name": "shadcn",
+      "description": "Finds, composes and updates shadcn components in the project.",
+      "source": {
+        "kind": "external",
+        "author": "shadcn",
+        "repository": "shadcn/ui",
+        "path": "skills/shadcn/SKILL.md",
+        "url": "https://github.com/shadcn/ui/blob/HEAD/skills/shadcn/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/shadcn/ui/blob/HEAD/skills/shadcn/SKILL.md"
+      },
+      "does": "Reads configuration, installed components, Radix or Base UI primitives, aliases, icons and Tailwind version. Consults component documentation and examples through the CLI before implementing. Reuses variants and semantic tokens, checks form and dialog composition and verifies added files. Updates are first compared with local customizations; overwriting requires an explicit choice.",
+      "when": "Use it in projects with shadcn or components.json when composing a UI, fixing a component, finding a block or updating its version. It is not an implicit request to migrate primitives or replace the project preset.",
+      "usage": "Specify the component, goal and registry if requesting an addition. Provide local changes to preserve. Request a check of existing components, relevant documentation and a comparison of differences before updating.",
+      "example": "Compose the invitation dialog with the shadcn components already installed. Consult the project APIs and preserve tokens, aliases and the icon library.",
+      "outputs": [
+        "Component or composition consistent with the project",
+        "Added or updated files and relevant dependencies",
+        "Check of APIs, structure and customizations"
+      ],
+      "prerequisites": [
+        "The CLI uses the project package runner and may require network access for documentation or registries."
+      ]
+    },
+    {
+      "id": "tailwind",
+      "name": "tailwind",
+      "description": "Applies semantic tokens and layout rules in Tailwind.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/tailwind/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/tailwind/SKILL.md",
+        "localPath": ".agents/skills/tailwind/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/tailwind/SKILL.md"
+      },
+      "does": "Reads the skill rules and local project overrides. Expresses styles through className, reuses tokens for text, surfaces and states, and assigns spacing to the container with grid or flex and gap. Checks fluid layouts, breakpoints and source file discovery when shared folders or symlinks exist. Missing tokens are added to the repository styling system.",
+      "when": "Use it for Tailwind styling, responsive fixes and spacing or token cleanup. Preserves project conventions; it does not introduce a second CSS system for a local change.",
+      "usage": "Specify components and the layout defect, plus viewports and states to support. Have local overrides read if present. Request container-controlled spacing and role tokens, verifying that the result flows with real text.",
+      "example": "Fix the toolbar in Tailwind: container spacing, semantic tokens and wrapping on mobile, without inline styles.",
+      "outputs": [
+        "Classes and tokens consistent with the repository",
+        "Responsive layout and container spacing",
+        "Applied local rules and relevant checks"
+      ]
+    },
+    {
+      "id": "ui-screenshot",
+      "name": "ui-screenshot",
+      "description": "Captures realistic screenshots with source, frame and manifest.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/ui-screenshot/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/ui-screenshot/SKILL.md",
+        "localPath": ".agents/skills/ui-screenshot/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/ui-screenshot/SKILL.md"
+      },
+      "does": "Defines a matrix of pages, states, viewports, density, theme and provenance. Reaches the actual state and verifies that relevant content, authentication and consent are ready; unwanted loaders or errors fail the capture. The driver saves raw PNGs, framed images and a manifest with route, revision, timestamp, dimensions and checksum. Each framed image is opened and checked before delivery.",
+      "when": "Use it explicitly to document a visual version, compare changes or prepare images for Figma. A screenshot demonstrates rendering of the shown state; behaviors require separate verification.",
+      "usage": "Specify the URL, states, viewports and archive destination. For a long page, choose viewport, full-page image or segments. Provide access to the required state and the source revision if historical. Request raw files and a manifest as well as final images.",
+      "example": "Capture the project detail in its complete state on desktop and mobile. For the long page, use consecutive segments and preserve the revision, raw files and manifest.",
+      "outputs": [
+        "Framed PNGs ready for presentation",
+        "Raw PNGs under raw/",
+        "Complete manifest with provenance and checks"
+      ],
+      "prerequisites": [
+        "Requires a reachable app and the capture driver runtime; authentication and consent must be satisfied when applicable."
+      ]
+    },
+    {
+      "id": "unit-test-engineer",
+      "name": "unit-test-engineer",
+      "description": "Turns changed behavior into executable checks.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/unit-test-engineer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/unit-test-engineer/SKILL.md",
+        "localPath": ".agents/skills/unit-test-engineer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/unit-test-engineer/SKILL.md"
+      },
+      "does": "Reads changes, the installed runner, scripts and nearby tests. For each observable behavior, identifies an existing test, a test to add or why a unit test is not the appropriate check. Writes the smallest test that would fail on regression, runs the targeted command and broadens verification when the change affects shared logic or multiple consumers.",
+      "when": "Use it when a rule, interactive state or public interface changes, when a test fails or when updated evidence is needed. A visual correction may require the browser rather than a test that merely repeats the implementation.",
+      "usage": "Specify behavior, changes and the expected result. Request tests through public interfaces with independent expected values. Request commands actually run, outcomes and coverage gaps, reusing the repository structure.",
+      "example": "Add the minimum test proving that the filter excludes archived items and retains active ones. Run affected tests and identify any unverified consumers.",
+      "outputs": [
+        "Added or updated tests that distinguish correct behavior from regressions",
+        "Commands run and current outcomes",
+        "Covered behaviors and declared gaps"
+      ]
+    },
+    {
+      "id": "varianthub",
+      "name": "varianthub",
+      "description": "Creates comparable alternatives and promotes the selected solution.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/varianthub/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/varianthub/SKILL.md",
+        "localPath": ".agents/skills/varianthub/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/varianthub/SKILL.md"
+      },
+      "does": "In an already configured repository, creates and registers component or page variants outside production imports. Distinguishes Explore, which prepares the comparison, from Promote, which transfers a selected variant into the normal product tree. Verifies that every variant is reachable in the preview; promotion removes experimental wrappers and fixtures and follows the product’s ordinary checks.",
+      "when": "Use it only when VariantHub is requested to compare alternatives in code. In Explore, evidence sufficient to assess the design question is enough, without starting the full production cycle. Promote begins after explicit selection of a variant.",
+      "usage": "Provide the component or page, comparison question, alternatives, states and viewports. Specify Explore or Promote. Read the local integration and request a preview of every variant; if infrastructure is missing, separate its setup from design work.",
+      "example": "In VariantHub Explore, prepare two filter alternatives: a side panel and a bar above the table. Compare them in the same states without promoting either to production.",
+      "outputs": [
+        "Registered variants and reachable preview",
+        "Comparison and verification limited to the design question",
+        "Clean production module only in Promote"
+      ],
+      "prerequisites": [
+        "Requires a current VariantHub integration. Bootstrap or updates belong to varianthub-builder under a separate assignment."
+      ]
+    },
+    {
+      "id": "varianthub-builder",
+      "name": "varianthub-builder",
+      "description": "Sets up and updates VariantHub infrastructure.",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/varianthub-builder/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/varianthub-builder/SKILL.md",
+        "localPath": ".agents/skills/varianthub-builder/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/varianthub-builder/SKILL.md"
+      },
+      "does": "Reconstructs the chain from shared source through build, package, installed dependency and served UI. Identifies the target version from the configured source, then sets up or updates the registry, provider, catalog, rendering routes and immersive preview. For a local package, rebuilds and reinstalls the tarball. Verifies that components and pages open and retain comparison, navigation and direct reload behavior.",
+      "when": "Use it for an explicit VariantHub initialization, update or maintenance assignment. It is not needed to create ordinary variants in a ready repository. Changes to the core and consumers keep separate boundaries and commits.",
+      "usage": "Specify the repository to prepare, core source and compatibility constraints. Request a version inventory before changing dependencies, then test the UI actually served. If the source cannot be identified, clarify it before updating.",
+      "example": "Update this repository’s VariantHub integration from the configured core. Verify the installed version, tarball, page routes and immersive comparison in the browser.",
+      "outputs": [
+        "Prepared or updated integration and dependencies",
+        "Local documentation of registry, routes and source",
+        "Evidence that the build, package and served UI match"
+      ],
+      "prerequisites": [
+        "Requires an authoritative core source and access to the repositories or packages within the assignment."
+      ]
+    },
+    {
+      "id": "web-design-guidelines",
+      "name": "web-design-guidelines",
+      "description": "Checks UI code against the Web Interface Guidelines.",
+      "source": {
+        "kind": "external",
+        "author": "vercel-labs",
+        "repository": "vercel-labs/agent-skills",
+        "path": "skills/web-design-guidelines/SKILL.md",
+        "url": "https://github.com/vercel-labs/agent-skills/blob/HEAD/skills/web-design-guidelines/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/vercel-labs/agent-skills/blob/HEAD/skills/web-design-guidelines/SKILL.md"
+      },
+      "does": "Fetches the current guidelines from the Vercel source, reads the specified files and applies the received rules. Delivers findings with file and line references in the format required by the source. The catalog describes the procedure, while rules are reread for each review to avoid an outdated copy.",
+      "when": "Use it for a targeted check of components or pages against these guidelines. A file scope is required: a generic request without a target first requires choosing what to check. Code verification does not imply that the entire experience was tested in the browser.",
+      "usage": "Specify files or file patterns and the check objective. Request guideline retrieval before review and findings with locations. Any correction and its verification must be included in the assignment.",
+      "example": "Check the checkout form components against the current Web Interface Guidelines and return findings with file and line references.",
+      "outputs": [
+        "Findings located in the code",
+        "Rules applied from the current source",
+        "Scope actually examined"
+      ],
+      "prerequisites": [
+        "Requires access to https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md to retrieve the rules before review."
+      ]
+    },
+    {
+      "id": "writing-for-agents",
+      "name": "writing-for-agents",
+      "description": "Organizes instructions an agent can apply predictably.",
+      "source": {
+        "kind": "external",
+        "author": "mattpocock",
+        "repository": "mattpocock/skills",
+        "path": "skills/productivity/writing-for-agents/SKILL.md",
+        "url": "https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/writing-for-agents/SKILL.md",
+        "localPath": null,
+        "localUrl": "https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/writing-for-agents/SKILL.md"
+      },
+      "does": "Distinguishes actions from references and decides what must be read immediately and what only when a condition requires it. Makes explicit the cases that trigger opening a skill or document and the completion criteria for each step. Removes duplication, ineffective instructions and conventions easily inferred from the environment. For skills, also considers descriptions, invocation modes and router boundaries.",
+      "when": "Use it when writing or editing SKILL.md, AGENTS.md, CLAUDE.md or operational documents agents must consult. It is particularly useful when an agent skips steps, opens too many references or cannot tell when a procedure is needed.",
+      "usage": "Provide the document, audience, usage conditions and observed execution problems. Request verifiable criteria and one source of truth per rule. Keep common steps readable and move specific details behind references with clear conditions.",
+      "example": "Review this routing skill: make explicit when it applies, which decisions it preserves and when each step is complete, without duplicating the method graph.",
+      "outputs": [
+        "Instructions with steps and completion criteria",
+        "Conditional links to references",
+        "Consistent description and invocation boundaries"
+      ]
+    }
+  ]
+}

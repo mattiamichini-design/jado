@@ -1,0 +1,44 @@
+{
+  "entries": [
+    {
+      "id": "ux-planner",
+      "name": "UX Planner",
+      "repository": "https://github.com/mattiamichini-design/uxplanner",
+      "source": "README.md",
+      "page": "/docs/tools/ux-planner"
+    },
+    {
+      "id": "varianthub",
+      "name": "VariantHub",
+      "repository": "https://github.com/mattiamichini-design/varianthub",
+      "source": "README.md",
+      "page": "/docs/tools/varianthub"
+    },
+    {
+      "id": "storybook",
+      "name": "Storybook",
+      "repository": "https://github.com/storybookjs/storybook",
+      "page": "/docs/tools/storybook"
+    },
+    {
+      "id": "coding-agents",
+      "name": "AI coding tools",
+      "page": "/docs/tools/codex"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "page": "/docs/tools/figma"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "page": "/docs/engineering/git"
+    },
+    {
+      "id": "paper",
+      "name": "Paper",
+      "page": "/docs/jado/r05"
+    }
+  ]
+}

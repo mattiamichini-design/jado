@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "00-router",
+    "title": "Entry and route selection",
+    "summary": "Resolve the three dials, then pick the smallest route that delivers the requested outcome.",
+    "notes": "Stage, involvement and budget are the only run-level choices; execution mode follows the budget unless the user names one. Infer missing dials from the request and project defaults instead of asking, except in pair involvement. A review-only request authorizes findings, not product changes.",
+    "kind": "router",
+    "surface": "any",
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Request and project materials"
+    ],
+    "outputs": [
+      "Selected route and contract, or review-only findings"
+    ],
+    "budget": {
+      "newDelegations": 8,
+      "concurrent": 3,
+      "repairBatches": 2
+    },
+    "entry": "start",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "start",
+        "kind": "start",
+        "label": "Design request",
+        "detail": "Read the request and the supplied project materials."
+      },
+      {
+        "id": "dials",
+        "kind": "action",
+        "label": "Resolve stage, involvement and budget",
+        "detail": "Use explicit choices, then a valid checkpoint, then the project's 'JADO defaults' line, then policy defaults. When the stage is unstated, infer it: ideas, options or moodboards mean explore; a selected direction means refine; production code or release means ship. Announce the resolved dials in one line; ask only in pair involvement or when two readings would produce different work."
+      },
+      {
+        "id": "intent",
+        "kind": "decision",
+        "label": "Is this a review-only request?",
+        "detail": "Keep product and canvas read-only when only review is assigned."
+      },
+      {
+        "id": "review_kind",
+        "kind": "decision",
+        "label": "Which review is required?",
+        "detail": "Choose task and behavior review or composition and fidelity review from the request."
+      },
+      {
+        "id": "review_ux",
+        "kind": "skill",
+        "label": "Review tasks and accessibility",
+        "detail": "Collect read-only findings, evidence and coverage limits in an independent context.",
+        "ref": "jado-ux-reviewer"
+      },
+      {
+        "id": "review_visual",
+        "kind": "skill",
+        "label": "Review visual output",
+        "detail": "Collect read-only findings, evidence and coverage limits in an independent context.",
+        "ref": "jado-visual-reviewer"
+      },
+      {
+        "id": "review_done",
+        "kind": "end",
+        "label": "Deliver findings and limits",
+        "detail": "Return findings and unverified criteria; a review alone does not authorize fixes."
+      },
+      {
+        "id": "route",
+        "kind": "decision",
+        "label": "Which route fits the outcome?",
+        "detail": "Pick the smallest route that produces the requested result. A defined fix goes straight to the patch route."
+      },
+      {
+        "id": "ask",
+        "kind": "skill",
+        "label": "Resolve a route-changing gap",
+        "detail": "Use ask-jado only when two routes remain plausible and the choice changes the work; return to route selection with the answer.",
+        "ref": "ask-jado"
+      },
+      {
+        "id": "rpatch",
+        "kind": "subflow",
+        "label": "Patch",
+        "detail": "Select R01.",
+        "ref": "R01"
+      },
+      {
+        "id": "rdecide",
+        "kind": "subflow",
+        "label": "Decide with the user",
+        "detail": "Select R03.",
+        "ref": "R03"
+      },
+      {
+        "id": "rbuild",
+        "kind": "subflow",
+        "label": "Build",
+        "detail": "Select R04.",
+        "ref": "R04"
+      },
+      {
+        "id": "rexplore",
+        "kind": "subflow",
+        "label": "Explore alternatives",
+        "detail": "Select R05.",
+        "ref": "R05"
+      },
+      {
+        "id": "rstaged",
+        "kind": "subflow",
+        "label": "Staged delivery",
+        "detail": "Select R07.",
+        "ref": "R07"
+      },
+      {
+        "id": "rcouncil",
+        "kind": "subflow",
+        "label": "Council",
+        "detail": "Select R08.",
+        "ref": "R08"
+      },
+      {
+        "id": "rvh",
+        "kind": "subflow",
+        "label": "VariantHub",
+        "detail": "Select R09 only when the user names VariantHub.",
+        "ref": "R09"
+      },
+      {
+        "id": "rresearch",
+        "kind": "subflow",
+        "label": "Visual research",
+        "detail": "Select visual-research for references or a moodboard.",
+        "ref": "visual-research"
+      },
+      {
+        "id": "contract",
+        "kind": "action",
+        "label": "Record the contract",
+        "detail": "Record route and revision, the dials with their resolved limits (variant count, maxFixPasses, independent review, evidence level, model tier), goal, scope, owner, writable files or nodes, settled decisions, stopAfter and remaining budget. Resolve evidence storage with jado-evidence-contract when the stage persists evidence."
+      },
+      {
+        "id": "execute",
+        "kind": "action",
+        "label": "Coordinate the route with jado-flow",
+        "detail": "Execute the selected route; pass the contract to each assignment and apply the involvement dial at checkpoints."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver result and run summary",
+        "detail": "Declare complete, partial or blocked from checks actually performed, with the run summary."
+      }
+    ],
+    "edges": [
+      {
+        "id": "start-dials",
+        "from": "start",
+        "to": "dials",
+        "label": ""
+      },
+      {
+        "id": "dials-intent",
+        "from": "dials",
+        "to": "intent",
+        "label": ""
+      },
+      {
+        "id": "intent-review_kind",
+        "from": "intent",
+        "to": "review_kind",
+        "label": "Yes"
+      },
+      {
+        "id": "intent-route",
+        "from": "intent",
+        "to": "route",
+        "label": "No"
+      },
+      {
+        "id": "review_kind-review_ux",
+        "from": "review_kind",
+        "to": "review_ux",
+        "label": "Tasks and behavior"
+      },
+      {
+        "id": "review_kind-review_visual",
+        "from": "review_kind",
+        "to": "review_visual",
+        "label": "Composition and fidelity"
+      },
+      {
+        "id": "review_ux-review_done",
+        "from": "review_ux",
+        "to": "review_done",
+        "label": ""
+      },
+      {
+        "id": "review_visual-review_done",
+        "from": "review_visual",
+        "to": "review_done",
+        "label": ""
+      },
+      {
+        "id": "route-ask",
+        "from": "route",
+        "to": "ask",
+        "label": "Route-changing gap"
+      },
+      {
+        "id": "ask-route",
+        "from": "ask",
+        "to": "route",
+        "label": "Gap resolved"
+      },
+      {
+        "id": "route-rpatch",
+        "from": "route",
+        "to": "rpatch",
+        "label": "Precise fix"
+      },
+      {
+        "id": "route-rdecide",
+        "from": "route",
+        "to": "rdecide",
+        "label": "Open decision the user wants to make"
+      },
+      {
+        "id": "route-rbuild",
+        "from": "route",
+        "to": "rbuild",
+        "label": "Code from a direction or selected canvas"
+      },
+      {
+        "id": "route-rexplore",
+        "from": "route",
+        "to": "rexplore",
+        "label": "Paper alternatives"
+      },
+      {
+        "id": "route-rstaged",
+        "from": "route",
+        "to": "rstaged",
+        "label": "Several stages in one mandate"
+      },
+      {
+        "id": "route-rcouncil",
+        "from": "route",
+        "to": "rcouncil",
+        "label": "Competing perspectives on one decision"
+      },
+      {
+        "id": "route-rvh",
+        "from": "route",
+        "to": "rvh",
+        "label": "VariantHub named"
+      },
+      {
+        "id": "route-rresearch",
+        "from": "route",
+        "to": "rresearch",
+        "label": "References or moodboard"
+      },
+      {
+        "id": "rpatch-contract",
+        "from": "rpatch",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rdecide-contract",
+        "from": "rdecide",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rbuild-contract",
+        "from": "rbuild",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rexplore-contract",
+        "from": "rexplore",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rstaged-contract",
+        "from": "rstaged",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rcouncil-contract",
+        "from": "rcouncil",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rvh-contract",
+        "from": "rvh",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "rresearch-contract",
+        "from": "rresearch",
+        "to": "contract",
+        "label": ""
+      },
+      {
+        "id": "contract-execute",
+        "from": "contract",
+        "to": "execute",
+        "label": ""
+      },
+      {
+        "id": "execute-done",
+        "from": "execute",
+        "to": "done",
+        "label": ""
+      }
+    ]
+  },
+  "guards": {
+    "required": [],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [],
+    "independentNodes": [
+      "review_ux",
+      "review_visual"
+    ]
+  },
+  "skills": [
+    {
+      "id": "ask-jado",
+      "path": ".agents/skills/ask-jado/SKILL.md"
+    },
+    {
+      "id": "jado-ux-reviewer",
+      "path": ".agents/skills/jado-ux-reviewer/SKILL.md"
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "path": ".agents/skills/jado-visual-reviewer/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-ux-reviewer",
+      "procedure": ".agents/skills/jado-ux-reviewer/SKILL.md",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-ux-reviewer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-visual-reviewer"
+      ]
+    }
+  ],
+  "subflows": [
+    {
+      "node": "rpatch",
+      "packet": "jado/runtime/R01.json"
+    },
+    {
+      "node": "rdecide",
+      "packet": "jado/runtime/R03.json"
+    },
+    {
+      "node": "rbuild",
+      "packet": "jado/runtime/R04.json"
+    },
+    {
+      "node": "rexplore",
+      "packet": "jado/runtime/R05.json"
+    },
+    {
+      "node": "rstaged",
+      "packet": "jado/runtime/R07.json"
+    },
+    {
+      "node": "rcouncil",
+      "packet": "jado/runtime/R08.json"
+    },
+    {
+      "node": "rvh",
+      "packet": "jado/runtime/R09.json"
+    },
+    {
+      "node": "rresearch",
+      "packet": "jado/runtime/visual-research.json"
+    }
+  ]
+}

@@ -1,0 +1,572 @@
+{
+  "importedAt": "2026-09-30T13:43:30.365Z",
+  "source": "upstream-references",
+  "entries": [
+    {
+      "id": "animation-vocabulary",
+      "name": "animation-vocabulary",
+      "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" → Pop in; \"the iOS rubber-band scroll\" → Rubber-banding). Use when the user asks \"what's it called when…\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
+      "path": "skills/animation-vocabulary/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/animation-vocabulary/SKILL.md",
+      "hash": "6ac7c5c1cc9a674dc7c3555634bb0090b6b1610ed45047eaf9b5be13220ef339",
+      "design": true,
+      "sourceRecord": {
+        "source": "emilkowalski/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/emilkowalski/skills.git",
+        "skillPath": "skills/animation-vocabulary/SKILL.md",
+        "skillFolderHash": "d49565744427887a1f719de1ceee04d941d4e681",
+        "installedAt": "2026-06-30T01:20:57.166Z",
+        "updatedAt": "2026-09-28T06:37:33.062Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "avoid-ai-writing",
+      "name": "avoid-ai-writing",
+      "description": "Audit and rewrite content to remove AI writing patterns (\"AI-isms\"). Use this skill when asked to \"remove AI-isms,\" \"clean up AI writing,\" \"edit writing for AI patterns,\" \"audit writing for AI tells,\" or \"make this sound less like AI.\" Supports a detect-only mode, an edit-in-place mode for files, an optional voice profile (casual / professional / technical / warm / blunt), and an iterate-to-convergence pass.",
+      "path": "skills/avoid-ai-writing/SKILL.md",
+      "source": "https://github.com/conorbronsdon/avoid-ai-writing/blob/HEAD/SKILL.md",
+      "hash": "252dc680d54bfd06a043e3aeacca3a632832007d95451309454b52e0cb8969b6",
+      "design": true,
+      "sourceRecord": {
+        "source": "conorbronsdon/avoid-ai-writing",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/conorbronsdon/avoid-ai-writing.git",
+        "skillPath": "SKILL.md",
+        "skillFolderHash": "9b8d030ce5c846af9520a4f6e5eb7d3b8d80ff43",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-09-30T06:34:01.210Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": [
+        "avoid-ai-writing/LICENSE",
+        "avoid-ai-writing/NOTICE.md"
+      ]
+    },
+    {
+      "id": "better-accessibility",
+      "name": "better-accessibility",
+      "description": "Helps your project comply with accessibility standards and best practices.",
+      "path": "skills/better-accessibility/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-accessibility/SKILL.md",
+      "hash": "d951feb2eee2222eb1fd885d04341f9ee4b331ae8102ce80bfcd0eec405f61b5",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-accessibility/SKILL.md",
+        "skillFolderHash": "ebf9388ad7f6acc424584674ac97406e2118616f",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:35.584Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "better-colors",
+      "name": "better-colors",
+      "description": "Helps you build a color system and answer anything about color in your project. You can generate palettes, use semantic tokens, convert between formats, check contrast and more.",
+      "path": "skills/better-colors/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-colors/SKILL.md",
+      "hash": "e5c80868406f7dbd5a93a5122b8b64357b64fc23bea7c53bc093803ddc5d3515",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-colors/SKILL.md",
+        "skillFolderHash": "2bf09c8493b760bc4449fed26079244368eaaa16",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:37.037Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "better-interface",
+      "name": "better-interface",
+      "description": "Combines all of the `better-*` skills into a single review across accessibility, layout, writing, typography, color and UI polish.",
+      "path": "skills/better-interface/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-interface/SKILL.md",
+      "hash": "15340ab034066bccfe2fd3a1b3f918e20e6909bba0791f1d2875a2dc47f5f99b",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-interface/SKILL.md",
+        "skillFolderHash": "828b477582842f5890fe307b4f95cdf05bd88d92",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:38.702Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "better-layout",
+      "name": "better-layout",
+      "description": "Helps with grouping, alignment, reading order, progressive disclosure and other details that make a good layout.",
+      "path": "skills/better-layout/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-layout/SKILL.md",
+      "hash": "8b08b3b75522f7b781d94c1ec6884731aa430f044619885eb4eee4613e78c0ad",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-layout/SKILL.md",
+        "skillFolderHash": "8f1f1b163848cec18aea8143b9fe10cfb3226874",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:40.350Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "better-typography",
+      "name": "better-typography",
+      "description": "Focuses on type scale, spacing, sizing, variable fonts, OpenType features, wrapping, truncation and other details that make typography feel great across your product.",
+      "path": "skills/better-typography/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-typography/SKILL.md",
+      "hash": "37dcfec6df593dc1d8f87bfd44dac6a34893d324e797e4a2bf874ef03fdfcb80",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-typography/SKILL.md",
+        "skillFolderHash": "b0c51ed316e9cca63f5182bc569066985b25b9c0",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:42.100Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "better-ui",
+      "name": "better-ui",
+      "description": "Polishes and improves the UI in your project. Covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas and more.",
+      "path": "skills/better-ui/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-ui/SKILL.md",
+      "hash": "400fef927262d83f19c5a09e366802b7523ea2232fb18be0d0bf90b63583b907",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-ui/SKILL.md",
+        "skillFolderHash": "710b8e9a1b4086594d24050bbb6768dbc421e9dc",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:43.732Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "better-writing",
+      "name": "better-writing",
+      "description": "Focuses on improving product copy in your project.",
+      "path": "skills/better-writing/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-writing/SKILL.md",
+      "hash": "b749f51d853306b11e10e8fb7b1d6269cb76ba298a5473c95b8329b5d67bc5f6",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+        "skillPath": "skills/better-writing/SKILL.md",
+        "skillFolderHash": "f0637167d46253f6f5d2d09776552df4979ea562",
+        "installedAt": "2026-08-07T06:32:27.019Z",
+        "updatedAt": "2026-08-30T06:32:45.243Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "copy-editing",
+      "name": "copy-editing",
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' or 'sharpen the messaging.' Use this when the user already has copy and wants it improved rather than rewritten from scratch. For writing new copy, see copywriting.",
+      "path": "skills/copy-editing/SKILL.md",
+      "source": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copy-editing/SKILL.md",
+      "hash": "3a2385a757c43884106055a9ddd6c10f5f9d1a18263ea421546aa32afc66f8f2",
+      "design": true,
+      "sourceRecord": {
+        "source": "coreyhaines31/marketingskills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+        "skillPath": "skills/copy-editing/SKILL.md",
+        "skillFolderHash": "4d29a5bcbbf92f159f713c17db9d3d0bf6217b48",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-06-25T03:09:02.908Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "copywriting",
+      "name": "copywriting",
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" \"CTA copy,\" \"value proposition,\" \"tagline,\" \"subheadline,\" \"hero section copy,\" \"above the fold,\" \"this copy is weak,\" \"make this more compelling,\" or \"help me describe my product.\" Use this whenever someone is working on website text that needs to persuade or convert. For email copy, see emails. For popup copy, see popups. For editing existing copy, see copy-editing. For the offer underneath the copy (bonuses, guarantees, value framing), see offers.",
+      "path": "skills/copywriting/SKILL.md",
+      "source": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copywriting/SKILL.md",
+      "hash": "055d926496ac87595be82a4e0bc18e080fc67d6a5ff852f9e7b266a120f1dfd4",
+      "design": true,
+      "sourceRecord": {
+        "source": "coreyhaines31/marketingskills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+        "skillPath": "skills/copywriting/SKILL.md",
+        "skillFolderHash": "e5457b0306878bac731cda9a05e8b68d882b7b40",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-08-25T06:35:59.119Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "emil-design-eng",
+      "name": "emil-design-eng",
+      "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
+      "path": "skills/emil-design-eng/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/emil-design-eng/SKILL.md",
+      "hash": "a993a1e593a9ac53e0c72b319ff4ef273dcfe17569a2da510fab68deb070e273",
+      "design": true,
+      "sourceRecord": {
+        "source": "emilkowalski/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/emilkowalski/skills.git",
+        "skillPath": "skills/emil-design-eng/SKILL.md",
+        "skillFolderHash": "db7a20dc1d8ad26a0307dcb45ebc79fc372f5c69",
+        "installedAt": "2026-06-25T04:30:04.303Z",
+        "updatedAt": "2026-09-28T06:37:29.788Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "find-animation-opportunities",
+      "name": "find-animation-opportunities",
+      "description": "Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead.",
+      "path": "skills/find-animation-opportunities/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/find-animation-opportunities/SKILL.md",
+      "hash": "423427212a66d9d1ea2648399c9bd9d7fc7003c196e8c250f9578a8409abd184",
+      "design": true,
+      "sourceRecord": {
+        "source": "emilkowalski/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/emilkowalski/skills.git",
+        "skillPath": "skills/find-animation-opportunities/SKILL.md",
+        "skillFolderHash": "e6443880f38e33cf78e5d678471eed35e8566763",
+        "installedAt": "2026-07-16T20:00:39.226Z",
+        "updatedAt": "2026-09-28T06:37:34.734Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "fixing-accessibility",
+      "name": "fixing-accessibility",
+      "description": "Fix accessibility issues.",
+      "path": "skills/fixing-accessibility/SKILL.md",
+      "source": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-accessibility/SKILL.md",
+      "hash": "de5339a29426a88d1ae0a34b83c1a0cd7157e59518490d0cb6b15ebfbfc7f789",
+      "design": true,
+      "sourceRecord": {
+        "source": "ibelick/ui-skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+        "skillPath": "skills/fixing-accessibility/SKILL.md",
+        "skillFolderHash": "e825388bce62e4456ed3b2b899c9bc58f5873c5b",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-06-25T03:09:02.908Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "fixing-metadata",
+      "name": "fixing-metadata",
+      "description": "Ship correct, complete metadata.",
+      "path": "skills/fixing-metadata/SKILL.md",
+      "source": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-metadata/SKILL.md",
+      "hash": "a9fcb77ed0e5bb66d508184185065e005a1c97e626c38f6eda38bc711581e3df",
+      "design": true,
+      "sourceRecord": {
+        "source": "ibelick/ui-skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+        "skillPath": "skills/fixing-metadata/SKILL.md",
+        "skillFolderHash": "2906fa056416dff36892d1ff17c37de3090625b6",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-06-25T03:09:02.908Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "fixing-motion-performance",
+      "name": "fixing-motion-performance",
+      "description": "Fix animation performance issues.",
+      "path": "skills/fixing-motion-performance/SKILL.md",
+      "source": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-motion-performance/SKILL.md",
+      "hash": "e16e77536d75b6fcfe520a564464c4b22dcc6d2d6bf24d971cccec8eb7600028",
+      "design": true,
+      "sourceRecord": {
+        "source": "ibelick/ui-skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+        "skillPath": "skills/fixing-motion-performance/SKILL.md",
+        "skillFolderHash": "76e5757bd2eb8ff38ff667eca9b665cbd707a386",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-06-25T03:09:02.908Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "humanizer",
+      "name": "humanizer",
+      "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.\nUse when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line\nclosers, staged openers, forced triads, dashes everywhere, inflated claims, sales\nlanguage, stock AI words, bold labels, or filler. Based on Wikipedia's \"Signs of AI writing.\"\n",
+      "path": "skills/humanizer/SKILL.md",
+      "source": "https://github.com/blader/humanizer/blob/HEAD/SKILL.md",
+      "hash": "167b854a9c0882497f53068cf42a11cd5940d9af2288eeead34da29b18cee253",
+      "design": true,
+      "sourceRecord": {
+        "source": "blader/humanizer",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/blader/humanizer.git",
+        "skillPath": "SKILL.md",
+        "skillFolderHash": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+        "pluginName": "humanizer",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-09-28T06:37:25.292Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": [
+        "humanizer/LICENSE"
+      ]
+    },
+    {
+      "id": "impeccable",
+      "name": "impeccable",
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
+      "path": "skills/impeccable/SKILL.md",
+      "source": "https://github.com/pbakaus/impeccable/blob/HEAD/.agents/skills/impeccable/SKILL.md",
+      "hash": "ea398b4c314c9d890a2427b64f41cd74c635bb09ca3ee7b700449d0981a9fed9",
+      "design": true,
+      "sourceRecord": {
+        "source": "pbakaus/impeccable",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/pbakaus/impeccable.git",
+        "skillPath": ".agents/skills/impeccable/SKILL.md",
+        "skillFolderHash": "98dc8642f86c9778ef343627045c50c9032f305c",
+        "installedAt": "2026-05-29T14:48:48.094Z",
+        "updatedAt": "2026-09-30T06:33:58.178Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "improve-animations",
+      "name": "improve-animations",
+      "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code — it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
+      "path": "skills/improve-animations/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/improve-animations/SKILL.md",
+      "hash": "a2195202b98259e09cd87dce0bdf7a2bee2c156aa03ed66d2d52e7b9d056be74",
+      "design": true,
+      "sourceRecord": {
+        "source": "emilkowalski/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/emilkowalski/skills.git",
+        "skillPath": "skills/improve-animations/SKILL.md",
+        "skillFolderHash": "cf1f7aabac34c08f2cf833f039fa99af2f415183",
+        "installedAt": "2026-07-16T20:00:39.227Z",
+        "updatedAt": "2026-09-28T06:37:36.303Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "make-interfaces-feel-better",
+      "name": "make-interfaces-feel-better",
+      "description": "Design engineering principles for making interfaces feel polished. Use when building UI components, reviewing frontend code, implementing animations, hover states, shadows, borders, typography, icons, micro-interactions, enter/exit animations, or any visual detail work. Supports quick and full review modes. Triggers on UI polish, design details, \"make it feel better\", \"feels off\", stagger animations, border radius, optical alignment, font smoothing, tabular numbers, image outlines, box shadows, icons, icon stroke weight, icon states, motion restraint.",
+      "path": "skills/make-interfaces-feel-better/SKILL.md",
+      "source": "https://github.com/jakubkrehel/make-interfaces-feel-better/blob/HEAD/skills/make-interfaces-feel-better/SKILL.md",
+      "hash": "2dee747c20c6638690488e727bcc0e27af91b9f35385a0ed71c135f0940b2615",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/make-interfaces-feel-better",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/make-interfaces-feel-better.git",
+        "skillPath": "skills/make-interfaces-feel-better/SKILL.md",
+        "skillFolderHash": "e880ad90e8a0a8384f5cfae2cdd6a854e2de5d89",
+        "installedAt": "2026-06-25T04:28:55.707Z",
+        "updatedAt": "2026-07-24T11:57:23.902Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "mobbin-search",
+      "name": "search",
+      "description": "Search Mobbin for real app UI screenshots and visually analyze them. Required before calling the `search_screens` MCP tool — this skill defines how to plan searches, respond, and build HTML evidence boards when the screens are the answer. Use whenever the user asks about UI/UX design patterns, wants to see how other apps handle a screen or flow, needs design inspiration or references, asks to compare UI approaches across apps, mentions Mobbin, or whenever `search_screens` would be relevant. Trigger aggressively for any design-related question — even if screenshots aren't explicitly requested.",
+      "path": "skills/mobbin-search/SKILL.md",
+      "source": "https://github.com/mobbin/skills/blob/HEAD/skills/search/SKILL.md",
+      "hash": "3c91c4da4a818f7162f566dd0b08d46d7057eeeea150bdd5eb3a2b8fc7d551f0",
+      "design": true,
+      "sourceRecord": {
+        "source": "mobbin/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/mobbin/skills.git",
+        "skillPath": "skills/search/SKILL.md",
+        "skillFolderHash": "a38a64b19f2cd787b3f04e4923a0ba866e1e5505",
+        "installedAt": "2026-05-20T12:05:15.438Z",
+        "updatedAt": "2026-06-25T03:09:02.908Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "oklch-skill",
+      "name": "oklch-skill",
+      "description": "OKLCH color space for web projects. Convert hex/rgb/hsl to oklch, generate palettes, check contrast, handle gamut boundaries, and theme with Tailwind v4. Triggers on oklch, color conversion, palette generation, contrast ratio, gamut, display p3, design tokens, hue drift, chroma, dark mode colors.",
+      "path": "skills/oklch-skill/SKILL.md",
+      "source": "https://github.com/jakubkrehel/oklch-skill/blob/HEAD/skills/oklch-skill/SKILL.md",
+      "hash": "4b9046110f27d2214ca5930cbbb5ab17d53303229211453009c9218e68fdb6ca",
+      "design": true,
+      "sourceRecord": {
+        "source": "jakubkrehel/oklch-skill",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/jakubkrehel/oklch-skill.git",
+        "skillPath": "skills/oklch-skill/SKILL.md",
+        "skillFolderHash": "9831d14b4bf20f3267370470cc0912ca47798143",
+        "installedAt": "2026-06-30T01:27:31.190Z",
+        "updatedAt": "2026-06-30T01:27:31.190Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "product-marketing",
+      "name": "product-marketing",
+      "description": "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills — it creates `.agents/product-marketing.md` that all other skills reference for product, audience, and positioning context.",
+      "path": "skills/product-marketing/SKILL.md",
+      "source": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/product-marketing/SKILL.md",
+      "hash": "f40efe0027fc987f07a6b8ae6c31e62b9f698ec6fa2f31ad00d352992dd1e33a",
+      "design": true,
+      "sourceRecord": {
+        "source": "coreyhaines31/marketingskills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+        "skillPath": "skills/product-marketing/SKILL.md",
+        "skillFolderHash": "1bca9cf1bf416c4809f06370aa5503b067d270ca",
+        "installedAt": "2026-06-25T03:09:02.908Z",
+        "updatedAt": "2026-07-22T06:32:55.647Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "research",
+      "name": "research",
+      "description": "Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.",
+      "path": "skills/research/SKILL.md",
+      "source": "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/research/SKILL.md",
+      "hash": "75b7f9bbd7ccff6755a006f8b25d319a46ecbf6bd4b4c3323965ed9cb65e78ff",
+      "design": true,
+      "sourceRecord": {
+        "source": "mattpocock/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "skillPath": "skills/engineering/research/SKILL.md",
+        "skillFolderHash": "0a6796c5667e95ed2301ba7381c123b4acb2ae1a",
+        "installedAt": "2026-07-08T15:16:45.378Z",
+        "updatedAt": "2026-08-21T06:33:10.783Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "review-animations",
+      "name": "review-animations",
+      "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
+      "path": "skills/review-animations/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/review-animations/SKILL.md",
+      "hash": "50ba5cd273ab0def08d140fd1329319b23b42bd0165c8f67644c590d3b57bbc6",
+      "design": true,
+      "sourceRecord": {
+        "source": "emilkowalski/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/emilkowalski/skills.git",
+        "skillPath": "skills/review-animations/SKILL.md",
+        "skillFolderHash": "0e0d3cb3e07ca307fe946ccaf57f6c82eb75124a",
+        "installedAt": "2026-06-25T04:45:01.341Z",
+        "updatedAt": "2026-09-28T06:37:31.389Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "shadcn",
+      "name": "shadcn",
+      "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI, including chat interfaces. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
+      "path": "skills/shadcn/SKILL.md",
+      "source": "https://github.com/shadcn/ui/blob/HEAD/skills/shadcn/SKILL.md",
+      "hash": "72daebc2486fbfe58651dcf28bade9c6ae13ddd88e66789564cea7901ef2f0c6",
+      "design": true,
+      "sourceRecord": {
+        "source": "shadcn/ui",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/shadcn/ui.git",
+        "skillPath": "skills/shadcn/SKILL.md",
+        "skillFolderHash": "b5791523e07794a4deb201e78eab3f3adbd022c0",
+        "installedAt": "2026-07-16T06:39:02.046Z",
+        "updatedAt": "2026-09-28T06:37:46.709Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "web-design-guidelines",
+      "name": "web-design-guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+      "path": "skills/web-design-guidelines/SKILL.md",
+      "source": "https://github.com/vercel-labs/agent-skills/blob/HEAD/skills/web-design-guidelines/SKILL.md",
+      "hash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474",
+      "design": true,
+      "sourceRecord": {
+        "source": "vercel-labs/agent-skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+        "skillPath": "skills/web-design-guidelines/SKILL.md",
+        "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
+        "installedAt": "2026-07-15T10:16:41.429Z",
+        "updatedAt": "2026-07-15T10:16:41.429Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    },
+    {
+      "id": "writing-for-agents",
+      "name": "writing-for-agents",
+      "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.",
+      "path": "skills/writing-for-agents/SKILL.md",
+      "source": "https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/writing-for-agents/SKILL.md",
+      "hash": "0071124a923559493bc8924a90fb87bceb048d31ad2ce785fa4281d7c506bfa7",
+      "design": true,
+      "sourceRecord": {
+        "source": "mattpocock/skills",
+        "sourceType": "github",
+        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "skillPath": "skills/productivity/writing-for-agents/SKILL.md",
+        "skillFolderHash": "ad2925850efb8973a72d2e666f7a975f9a2d4a9b",
+        "installedAt": "2026-08-05T12:00:46.936Z",
+        "updatedAt": "2026-08-21T06:33:19.423Z"
+      },
+      "absolutePathReferences": [],
+      "licenseFiles": []
+    }
+  ]
+}

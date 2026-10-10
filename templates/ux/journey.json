@@ -1,0 +1,46 @@
+{
+  "title": "Access recovery · synthetic example",
+  "meta": {
+    "persona": "Product user (declared assumption)",
+    "journeyType": "access"
+  },
+  "columns": [
+    {
+      "id": "accesso",
+      "label": "Access"
+    },
+    {
+      "id": "recupero",
+      "label": "Recovery"
+    }
+  ],
+  "rows": [
+    {
+      "id": "azioni",
+      "label": "Actions",
+      "cells": [
+        {
+          "columnId": "accesso",
+          "items": [
+            {
+              "text": "The session has expired",
+              "emphasis": "negative"
+            }
+          ]
+        },
+        {
+          "columnId": "recupero",
+          "items": [
+            {
+              "text": "Resumes after authentication or cancels",
+              "emphasis": "neutral"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Format example, not user research or validation."
+  ]
+}

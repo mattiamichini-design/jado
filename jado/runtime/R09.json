@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R09",
+    "title": "R09 · VariantHub on explicit request",
+    "summary": "Use VariantHub for code alternatives only when the user explicitly selects it.",
+    "notes": "A request for variants alone does not select VariantHub. Use the requested count, distinct structural hypotheses and comparable content and states. Selecting a variant and promoting it into shared code are separate decisions. Missing infrastructure requires a separate setup mandate.",
+    "kind": "workflow",
+    "surface": "varianthub",
+    "stages": [
+      "explore",
+      "refine"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Explicit VariantHub request and ready infrastructure"
+    ],
+    "outputs": [
+      "Comparable alternatives and any authorized promotion"
+    ],
+    "budget": {
+      "newDelegations": 4,
+      "concurrent": 2,
+      "repairBatches": 1
+    },
+    "entry": "p",
+    "requiredNodes": [
+      "gate",
+      "human"
+    ],
+    "nodes": [
+      {
+        "id": "p",
+        "kind": "start",
+        "label": "Explicit VariantHub request",
+        "detail": "Record the request to use VariantHub and the requested number of alternatives."
+      },
+      {
+        "id": "ready",
+        "kind": "decision",
+        "label": "Is infrastructure ready?",
+        "detail": "Check the project infrastructure before building alternatives."
+      },
+      {
+        "id": "blocked",
+        "kind": "end",
+        "label": "Request separate setup",
+        "detail": "varianthub-builder needs a separately authorized setup assignment."
+      },
+      {
+        "id": "b",
+        "kind": "skill",
+        "label": "Build code alternatives",
+        "ref": "jado-ui-builder",
+        "detail": "Use varianthub Explore with the requested count and one distinct structural hypothesis per alternative."
+      },
+      {
+        "id": "variants",
+        "kind": "action",
+        "label": "Keep alternatives isolated",
+        "detail": "Keep comparable content and states. Production code imports only a promoted alternative."
+      },
+      {
+        "id": "smoke",
+        "kind": "action",
+        "label": "Check opening and comparison",
+        "detail": "Open catalog and direct routes; check comparison, visibility and reload for every option."
+      },
+      {
+        "id": "human",
+        "kind": "human",
+        "label": "Ask the user to select",
+        "detail": "Present the verified comparison with the native question tool; in autopilot record a provisional selection and leave promotion to the user."
+      },
+      {
+        "id": "promote",
+        "kind": "decision",
+        "label": "Is promotion authorized?",
+        "detail": "Check that integration into shared production code is explicitly authorized."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver the alternatives",
+        "detail": "Return alternatives and comparison checks."
+      },
+      {
+        "id": "production",
+        "kind": "end",
+        "label": "Hand off to verified integration",
+        "detail": "Use varianthub Promote and R04 integration checks."
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "label": "Is comparison working and verified?",
+        "detail": "Check visual comparison and targeted behavior for required functions."
+      },
+      {
+        "id": "fix",
+        "kind": "action",
+        "label": "Repair the comparison",
+        "detail": "Use one repair batch and rerun the affected checks."
+      },
+      {
+        "id": "stop",
+        "kind": "end",
+        "label": "Report unverified comparison",
+        "detail": "Deliver a partial result identifying what remains unverified."
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "p",
+        "to": "ready",
+        "label": ""
+      },
+      {
+        "id": "e2",
+        "from": "ready",
+        "to": "blocked",
+        "label": "No"
+      },
+      {
+        "id": "e3",
+        "from": "ready",
+        "to": "b",
+        "label": "Yes"
+      },
+      {
+        "id": "e4",
+        "from": "b",
+        "to": "variants",
+        "label": ""
+      },
+      {
+        "id": "e5",
+        "from": "variants",
+        "to": "smoke",
+        "label": ""
+      },
+      {
+        "id": "e6",
+        "from": "human",
+        "to": "promote",
+        "label": ""
+      },
+      {
+        "id": "e7",
+        "from": "promote",
+        "to": "done",
+        "label": "No"
+      },
+      {
+        "id": "e8",
+        "from": "promote",
+        "to": "production",
+        "label": "Yes, authorized"
+      },
+      {
+        "id": "e9",
+        "from": "smoke",
+        "to": "gate",
+        "label": ""
+      },
+      {
+        "id": "e10",
+        "from": "gate",
+        "to": "human",
+        "label": "Yes"
+      },
+      {
+        "id": "e11",
+        "from": "gate",
+        "to": "fix",
+        "label": "No, within budget"
+      },
+      {
+        "id": "e12",
+        "from": "fix",
+        "to": "smoke",
+        "label": "Recheck"
+      },
+      {
+        "id": "e13",
+        "from": "gate",
+        "to": "stop",
+        "label": "Budget exhausted or blocked"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "gate",
+        "kind": "gate"
+      },
+      {
+        "id": "human",
+        "kind": "human"
+      }
+    ],
+    "completionNodes": [
+      "done",
+      "production"
+    ],
+    "checkpointNodes": [
+      "blocked",
+      "stop"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-ui-builder",
+      "path": ".agents/skills/jado-ui-builder/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-frontend",
+      "procedure": ".agents/skills/jado-frontend/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ]
+    }
+  ],
+  "subflows": []
+}

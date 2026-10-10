@@ -1,0 +1,14 @@
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { z } from 'zod';
+import { parseArgs } from 'node:util';
+import { readJado } from '../../lib/jado/store.ts';
+import { workflowSchema, validateDocument } from '../../lib/jado/schema.ts';
+const {values}=parseArgs({options:{root:{type:'string',default:process.cwd()}}});
+const root = values.root;
+const server = new McpServer({name:'jado',version:'0.1.0'});
+const result = (value) => ({content:[{type:'text',text:JSON.stringify(value,null,2)}]});
+server.registerTool('get_catalog',{description:'Read JADO profiles, skills and tools. This tool does not execute agents.',inputSchema:{}},async()=>result((await readJado(root)).catalog));
+server.registerTool('get_workflows',{description:'Read the canonical JADO graph and revision for a method change. Product tasks use the selected runtime packet.',inputSchema:{id:z.string().optional()}},async({id})=>{const state=await readJado(root);return result({jadoRoot:root,revision:state.revision,workflows:state.document.workflows.filter((w)=>!id||w.id===id)});});
+server.registerTool('validate_workflow',{description:'Validate a draft against the catalog and protected gates without applying it.',inputSchema:{workflow:workflowSchema}},async({workflow})=>{const state=await readJado(root);return result({errors:!state.document.workflows.some((w)=>w.id===workflow.id)?['Unknown workflow.']:validateDocument({...state.document,workflows:state.document.workflows.map((w)=>w.id===workflow.id?workflow:w)},state.catalog,state.guards)});});
+await server.connect(new StdioServerTransport());

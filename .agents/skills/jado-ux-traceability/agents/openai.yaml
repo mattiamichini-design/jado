@@ -1,0 +1,6 @@
+interface:
+  display_name: "JADO UX Traceability"
+  short_description: "Trace evidence into testable UX flows"
+  default_prompt: "Use $jado-ux-traceability to turn our planning evidence into traceable user stories, journeys, and flows."
+policy:
+  allow_implicit_invocation: false

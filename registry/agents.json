@@ -1,0 +1,130 @@
+{
+  "entries": [
+    {
+      "id": "jado-agent-ux",
+      "name": "JADO Agent UX",
+      "description": "Research, UX architecture, flows, journeys and content in the same context.",
+      "routing": "jado-flow",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux/SKILL.md",
+        "localPath": ".agents/skills/jado-ux/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux/SKILL.md"
+      },
+      "does": "Applies the assigned skills in the same context: jado-researcher, jado-ux-architect, jado-content-designer. The contract may select just one or combine several.",
+      "when": "When an assignment within its domain is needed: several activities in the same instance in macro, or a bounded assignment in a new instance in specialists.",
+      "usage": "Provide the contract, assigned activities, order, scope and required evidence. Use role procedures without starting other agents.",
+      "example": "Assign jado-researcher to jado-agent-ux for the requested outcome, with explicit sources, scope and budget.",
+      "outputs": [
+        "Assigned outcomes with revision, evidence and limitations"
+      ],
+      "prerequisites": [
+        "Readable JADO root and tools required by the assigned procedures."
+      ]
+    },
+    {
+      "id": "jado-agent-visual",
+      "name": "JADO Agent Visual",
+      "description": "References, moodboards, visual direction and canvas in the same context.",
+      "routing": "jado-flow",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-visual/SKILL.md",
+        "localPath": ".agents/skills/jado-visual/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual/SKILL.md"
+      },
+      "does": "Applies the assigned activities in the same context: visual research, art direction and composition. Can specify motion without implementing it. Moodboards and alternatives depend on the assignment.",
+      "when": "When an assignment within its domain is needed: several activities in the same instance in macro, or a bounded assignment in a new instance in specialists.",
+      "usage": "Provide the contract, assigned activities, order, scope and required evidence. Use role procedures without starting other agents.",
+      "example": "Assign jado-visual-researcher to jado-agent-visual for the requested outcome, with explicit sources, scope and budget.",
+      "outputs": [
+        "Assigned outcomes with revision, evidence and limitations"
+      ],
+      "prerequisites": [
+        "Readable JADO root and tools required by the assigned procedures."
+      ]
+    },
+    {
+      "id": "jado-agent-frontend",
+      "name": "JADO Agent Frontend",
+      "description": "Design systems, implementation and technical corrections in the same context.",
+      "routing": "jado-flow",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-frontend/SKILL.md",
+        "localPath": ".agents/skills/jado-frontend/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-frontend/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-frontend/SKILL.md"
+      },
+      "does": "Applies the assigned activities: jado-design-systems, jado-ui-builder, jado-ui-engineer and jado-motion. Preserves stack, direction and scope; phases on the same artifact are sequential.",
+      "when": "When an assignment within its domain is needed: several activities in the same instance in macro, or a bounded assignment in a new instance in specialists.",
+      "usage": "Provide the contract, assigned activities, order, scope and required evidence. Use role procedures without starting other agents.",
+      "example": "Assign jado-design-systems to jado-agent-frontend for the requested outcome, with explicit sources, scope and budget.",
+      "outputs": [
+        "Assigned outcomes with revision, evidence and limitations"
+      ],
+      "prerequisites": [
+        "Readable JADO root and tools required by the assigned procedures."
+      ]
+    },
+    {
+      "id": "jado-agent-ux-reviewer",
+      "name": "JADO Agent UX Reviewer",
+      "description": "Verifies tasks, comprehension, states and accessibility without modifying the product.",
+      "routing": "jado-flow",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-ux-reviewer/SKILL.md",
+        "localPath": ".agents/skills/jado-ux-reviewer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-reviewer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-ux-reviewer/SKILL.md"
+      },
+      "does": "Examines whether the flow allows the task to be completed and whether actions, states and messages are understandable. Checks accessibility and error recovery using available evidence; uses fixing-accessibility criteria for relevant checks. For every issue, records severity, affected element, criterion, evidence and suggested correction. Works read-only on files, product and canvas and returns observations to the principal.",
+      "when": "Involve it for an explicit UX review or when the route includes independent verification before delivery. It applies to a prototype or implemented feature, especially when tasks, permissions or error handling change. Its judgment is an expert assessment: user test conclusions require data collected with those people.",
+      "usage": "Provide the task, audience, success criteria, states to check and access to evidence from the latest revision. Specify that you want observations without edits. Request reproducible issues with severity and suggestions, not a generic score. If browser evidence is missing, the handoff must declare that verification covers code only; the principal assigns corrections separately.",
+      "example": "“Ask jado-agent-ux-reviewer for a read-only review of the invitation flow. Check action comprehension, error recovery and keyboard interaction. Link each issue to the screen or step that demonstrates it.”",
+      "outputs": [
+        "UX findings with severity, criterion, element, evidence and suggested correction.",
+        "Review coverage: tasks and states examined, checks performed and limitations.",
+        "Verification outcome and missing requirements for completion."
+      ]
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "name": "JADO Agent Visual Reviewer",
+      "description": "Compares the result with the selected direction and verifies defects in the final captures.",
+      "routing": "jado-flow",
+      "source": {
+        "kind": "local",
+        "author": "JADO",
+        "repository": "mattiamichini-design/jado",
+        "path": ".agents/skills/jado-visual-reviewer/SKILL.md",
+        "localPath": ".agents/skills/jado-visual-reviewer/SKILL.md",
+        "url": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-reviewer/SKILL.md",
+        "localUrl": "https://github.com/mattiamichini-design/jado/blob/HEAD/.agents/skills/jado-visual-reviewer/SKILL.md"
+      },
+      "does": "Compares captures of the result with the selected visual direction. Verifies composition, fidelity, alignment, text, cropping and content overflowing containers. Checks viewport, state and revision using jado-canvas-verify and records evidence according to jado-evidence-contract. Works read-only on code and canvas. If required captures are missing or stale, declares verification blocked.",
+      "when": "Use it to verify the canvas before moving to code, check implementation fidelity to the approved result or perform an independent visual review required by the route. It applies to both Paper and UI in code. A request to change visual direction returns to the visual designer; the reviewer reports defects against the choice received.",
+      "usage": "Provide the approved reference and captures from the latest revision, specifying the viewport and state for every image. Ask to associate each defect with a visible element and evidence. Keep the product read-only during verification. After a correction, collect new captures: the builder’s description is insufficient to prove that the defect is resolved.",
+      "example": "“Involve jado-agent-visual-reviewer to compare the implementation with the approved canvas. Use final desktop and mobile captures, report incorrect cropping and alignment, and keep code and Paper read-only.”",
+      "outputs": [
+        "Visual defects linked to specific elements and captures.",
+        "Comparison with the expected result and coverage of verified viewports and states.",
+        "Review outcome or list of missing evidence that blocks it."
+      ],
+      "prerequisites": [
+        "Current captures of the result and the selected visual reference."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "JADO",
+  "pages": [
+    "index",
+    "configuration",
+    "execution",
+    "roles",
+    "---Routing---",
+    "00-router",
+    "---Operational workflows---",
+    "r01",
+    "r03",
+    "r04",
+    "r05",
+    "r07",
+    "r08",
+    "r09",
+    "visual-research",
+    "---Setup and governance---",
+    "setup-project"
+  ]
+}

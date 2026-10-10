@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "visual-research",
+    "title": "Visual research · patterns and style",
+    "summary": "Select comparable UI or style references and deliver the assigned comparison or moodboard.",
+    "notes": "The question determines sources: UI patterns use real products; visual language may use Pinterest, images and websites. Apply jado-reference-analysis before search and again when comparing inspected candidates. A moodboard is a conditional output.",
+    "kind": "workflow",
+    "surface": "any",
+    "stages": [
+      "explore",
+      "refine"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "discovery",
+    "inputs": [
+      "Research question, brief and available references"
+    ],
+    "outputs": [
+      "Reasoned reference selection or assigned moodboard with limits"
+    ],
+    "budget": {
+      "newDelegations": 2,
+      "concurrent": 1,
+      "repairBatches": 1
+    },
+    "entry": "start",
+    "requiredNodes": [
+      "curate",
+      "evidence"
+    ],
+    "nodes": [
+      {
+        "id": "start",
+        "kind": "start",
+        "label": "Read the research question",
+        "detail": "Read the brief, sources and evidence gaps."
+      },
+      {
+        "id": "need",
+        "kind": "decision",
+        "label": "Is visual research needed?",
+        "detail": "Search when a missing UI pattern or style reference is necessary for a decision."
+      },
+      {
+        "id": "researcher",
+        "kind": "skill",
+        "label": "Define question and search coverage",
+        "ref": "jado-visual-researcher",
+        "detail": "Frame the assignment with jado-visual-researcher; record audience, platform, domain, constraints and candidate rationale before search."
+      },
+      {
+        "id": "mode",
+        "kind": "decision",
+        "label": "UI patterns or visual language?",
+        "detail": "Separate component and composition comparisons from style research. Use jado-ux-architect for sequences, decisions and recovery."
+      },
+      {
+        "id": "mobbin",
+        "kind": "skill",
+        "label": "Find real-product UI examples",
+        "ref": "mobbin-search",
+        "detail": "Use mobbin-search for relevant inspected screens. Screen search alone does not prove a complete flow."
+      },
+      {
+        "id": "web",
+        "kind": "tool",
+        "label": "Find style references",
+        "ref": "browser",
+        "detail": "Use available browser tools for accessible Pinterest, image search and relevant product or editorial websites."
+      },
+      {
+        "id": "curate",
+        "kind": "skill",
+        "label": "Compare and select references",
+        "ref": "jado-reference-analysis",
+        "detail": "Apply jado-reference-analysis to inspected candidates. Record selected and rejected reasons, transferable ideas and limits; search order and brand fame are not quality evidence."
+      },
+      {
+        "id": "surface",
+        "kind": "decision",
+        "label": "Which collection output is assigned?",
+        "detail": "A pattern comparison may end with findings. Build a moodboard only when assigned, in Paper or project-owned files."
+      },
+      {
+        "id": "paper",
+        "kind": "tool",
+        "label": "Build the Paper moodboard",
+        "ref": "paper",
+        "detail": "Organize inspected references in the assigned document as its single writer, using jado-canvas-layout."
+      },
+      {
+        "id": "pack",
+        "kind": "action",
+        "label": "Prepare the reference collection",
+        "detail": "Write references.json and moodboard.md at the project-owned location resolved by jado-evidence-contract. Include images only through available authorized tools."
+      },
+      {
+        "id": "evidence",
+        "kind": "skill",
+        "label": "Verify sources and coverage",
+        "ref": "jado-evidence-contract",
+        "detail": "Record inspected sources, selection coverage, actual evidence paths and missing observations."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Hand off to UX or visual design",
+        "detail": "Transfer sequence findings to UX and style or composition references to visual work, with selection criteria and limits."
+      },
+      {
+        "id": "skip",
+        "kind": "end",
+        "label": "Continue with sufficient references",
+        "detail": "Reuse available sources and record why new research is unnecessary."
+      },
+      {
+        "id": "reference-plan",
+        "kind": "skill",
+        "label": "Plan candidate coverage before searching",
+        "detail": "Define comparable candidates, source relevance and a search budget with jado-reference-analysis. Explore: a broad, quick sweep of 6–10 candidates. Refine: fewer, deeper comparisons.",
+        "ref": "jado-reference-analysis"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "start",
+        "to": "need",
+        "label": ""
+      },
+      {
+        "id": "e2",
+        "from": "need",
+        "to": "researcher",
+        "label": "Yes"
+      },
+      {
+        "id": "e3",
+        "from": "need",
+        "to": "skip",
+        "label": "No"
+      },
+      {
+        "id": "e4",
+        "from": "researcher",
+        "to": "reference-plan",
+        "label": ""
+      },
+      {
+        "id": "e5",
+        "from": "mode",
+        "to": "mobbin",
+        "label": "Pattern"
+      },
+      {
+        "id": "e6",
+        "from": "mode",
+        "to": "web",
+        "label": "Mood/style"
+      },
+      {
+        "id": "e7",
+        "from": "mobbin",
+        "to": "curate",
+        "label": ""
+      },
+      {
+        "id": "e8",
+        "from": "web",
+        "to": "curate",
+        "label": ""
+      },
+      {
+        "id": "e9",
+        "from": "curate",
+        "to": "surface",
+        "label": ""
+      },
+      {
+        "id": "e10",
+        "from": "surface",
+        "to": "paper",
+        "label": "Paper"
+      },
+      {
+        "id": "e11",
+        "from": "surface",
+        "to": "pack",
+        "label": "Code"
+      },
+      {
+        "id": "e12",
+        "from": "paper",
+        "to": "evidence",
+        "label": ""
+      },
+      {
+        "id": "e13",
+        "from": "pack",
+        "to": "evidence",
+        "label": ""
+      },
+      {
+        "id": "e14",
+        "from": "evidence",
+        "to": "done",
+        "label": ""
+      },
+      {
+        "id": "surface-analysis",
+        "from": "surface",
+        "to": "evidence",
+        "label": "Comparison only, no moodboard"
+      },
+      {
+        "id": "reference-plan-mode",
+        "from": "reference-plan",
+        "to": "mode",
+        "label": ""
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "curate",
+        "kind": "skill"
+      },
+      {
+        "id": "evidence",
+        "kind": "skill"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "skip"
+    ]
+  },
+  "skills": [
+    {
+      "id": "mobbin-search",
+      "path": "skills/mobbin-search/SKILL.md"
+    },
+    {
+      "id": "jado-evidence-contract",
+      "path": ".agents/skills/jado-evidence-contract/SKILL.md"
+    },
+    {
+      "id": "jado-reference-analysis",
+      "path": ".agents/skills/jado-reference-analysis/SKILL.md"
+    },
+    {
+      "id": "jado-visual-researcher",
+      "path": ".agents/skills/jado-visual-researcher/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-visual",
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ]
+    }
+  ],
+  "subflows": []
+}

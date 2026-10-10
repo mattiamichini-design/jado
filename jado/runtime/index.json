@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "policy": {
+    "name": "JADO",
+    "version": "2026-10-06-v6",
+    "sourceOfSkills": "owned-procedures-and-upstream-references",
+    "execution": "native-profiles",
+    "dials": {
+      "resolution": "Explicit request > valid checkpoint > project instructions line 'JADO defaults: stage=… involvement=… budget=…' > the defaults below. Announce the resolved dials in one line before work starts. The user can change any dial mid-run, for example 'jado: autopilot' or 'jado: lean'.",
+      "stage": {
+        "default": "refine",
+        "values": {
+          "explore": {
+            "purpose": "Find a direction fast: many divergent options, low fidelity, user taste decides.",
+            "variants": 4,
+            "fidelity": "Real content and structure; rough type, color and spacing. Polish waits for refine.",
+            "selfCheck": "One capture per artboard after building it; fix only broken text, clipping, overlapping nodes or missing content.",
+            "maxFixPasses": 1,
+            "independentReview": "none",
+            "evidence": "handoff"
+          },
+          "refine": {
+            "purpose": "Mature the selected direction: hierarchy, states, consistency and craft.",
+            "variants": 2,
+            "fidelity": "Project tokens and components where they exist; relevant states covered.",
+            "selfCheck": "jado-canvas-verify or browser check on the final revision of each changed surface.",
+            "maxFixPasses": 2,
+            "independentReview": "when budget is normal or deep",
+            "evidence": "handoff with captures"
+          },
+          "ship": {
+            "purpose": "Production quality: fidelity, accessibility, behavior and regressions.",
+            "variants": 1,
+            "fidelity": "Production: tokens, components, responsive behavior, accessibility and edge states.",
+            "selfCheck": "Full applicable checks on the final revision.",
+            "maxFixPasses": 3,
+            "independentReview": "required",
+            "evidence": "persisted"
+          }
+        }
+      },
+      "involvement": {
+        "default": "checkpoints",
+        "values": {
+          "autopilot": "Run without questions. Decide taste and direction within scope, log each choice with its alternatives in the decision log, mark user-owned choices provisional and present them at delivery. Stop only for irreversible actions, scope or authorization expansion, or missing access.",
+          "checkpoints": "Ask at checkpoints only: an open direction-changing decision after framing, variant selection, and before advancing stage or starting code. Ask in one round of at most four questions; decide and log everything else.",
+          "pair": "Ask before each taste or direction decision and show intermediate results. Batch related questions into one round, each answerable in a click."
+        }
+      },
+      "budget": {
+        "default": "normal",
+        "values": {
+          "lean": {
+            "newDelegations": 1,
+            "concurrent": 1,
+            "repairBatches": 1,
+            "mode": "solo",
+            "modelTier": "fast",
+            "note": "The single delegation is reserved for an independent review that the stage requires."
+          },
+          "normal": {
+            "newDelegations": 4,
+            "concurrent": 2,
+            "repairBatches": 1,
+            "mode": "macro",
+            "modelTier": "default"
+          },
+          "deep": {
+            "newDelegations": 8,
+            "concurrent": 3,
+            "repairBatches": 2,
+            "mode": "macro",
+            "modelTier": "strong"
+          }
+        },
+        "modelTiers": {
+          "fast": {
+            "claude": "sonnet",
+            "codexReasoning": "medium",
+            "use": "Generators in explore, and every agent on a lean budget."
+          },
+          "default": {
+            "claude": "profile",
+            "codexReasoning": "profile",
+            "use": "The profile's own model and effort."
+          },
+          "strong": {
+            "claude": "opus",
+            "codexReasoning": "high",
+            "use": "Generators and reviewers on a deep budget."
+          },
+          "apply": "Pass the tier as the delegation call's model override when the tool supports one (Claude Code Agent tool: model); otherwise continue with the profile default."
+        }
+      }
+    },
+    "rules": [
+      "The effective budget is the lower of the budget dial and the route cap. A stage-required review takes precedence over a lean budget unless the user waives it.",
+      "A fix pass is one batch of edits, one fresh capture and one check. Each artifact gets the stage's maxFixPasses; at the cap, deliver with the remaining issues listed.",
+      "Capture after each visual group and once at the end. Review each changed revision once per repair batch.",
+      "Only the primary agent asks the user. Facts are the agent's job; decisions are the user's. Delegated agents return questions with a recommended default and continue on it when it is reversible.",
+      "Use one writer per shared artifact; default to one writer per Paper document.",
+      "Use VariantHub only on explicit request.",
+      "Required checks pass only with current-revision evidence; the stage decides which checks are required, and an independent review runs in a context distinct from the author.",
+      "The primary agent coordinates and may author. Delegate for context isolation, permissions or independent judgment.",
+      "Deployment, merging, global configuration and method changes need authorization beyond a design assignment.",
+      "Load the index and only the selected route packet; read a skill only when its condition applies."
+    ],
+    "runtimeEnforcement": "cooperative; graph guards are validated at compile time, runtime behavior follows instructions",
+    "executionModes": {
+      "default": "macro",
+      "modes": [
+        "solo",
+        "macro",
+        "specialists"
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "00-router",
+      "summary": "Resolve the three dials, then pick the smallest route that delivers the requested outcome.",
+      "packet": "jado/runtime/00-router.json"
+    },
+    {
+      "id": "R01",
+      "summary": "Apply a precise, reversible fix to code or Paper nodes and check the result.",
+      "stages": [
+        "explore",
+        "refine",
+        "ship"
+      ],
+      "packet": "jado/runtime/R01.json"
+    },
+    {
+      "id": "R03",
+      "summary": "Resolve one open decision with the user through a few substantively different options.",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "packet": "jado/runtime/R03.json"
+    },
+    {
+      "id": "R04",
+      "summary": "Implement an approved direction or a selected canvas in code and verify it at the stage's rigor.",
+      "stages": [
+        "refine",
+        "ship"
+      ],
+      "packet": "jado/runtime/R04.json"
+    },
+    {
+      "id": "R05",
+      "summary": "Produce comparable Paper alternatives fast, let the user pick or iterate, then record the selection.",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "packet": "jado/runtime/R05.json"
+    },
+    {
+      "id": "R07",
+      "summary": "Carry one mandate through UX, canvas and code up to the recorded stopAfter, with shared budget and stage-appropriate checks.",
+      "stages": [
+        "explore",
+        "refine",
+        "ship"
+      ],
+      "packet": "jado/runtime/R07.json"
+    },
+    {
+      "id": "R08",
+      "summary": "Collect independent research, UX and visual proposals on one consequential decision, then decide or ask.",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "packet": "jado/runtime/R08.json"
+    },
+    {
+      "id": "R09",
+      "summary": "Use VariantHub for code alternatives only when the user explicitly selects it.",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "packet": "jado/runtime/R09.json"
+    },
+    {
+      "id": "visual-research",
+      "summary": "Select comparable UI or style references and deliver the assigned comparison or moodboard.",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "packet": "jado/runtime/visual-research.json"
+    },
+    {
+      "id": "setup-project",
+      "summary": "Choose local, global or linked setup, prepare selected tools and migrate design instructions.",
+      "packet": "jado/runtime/setup-project.json"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R01",
+    "title": "R01 · Patch",
+    "summary": "Apply a precise, reversible fix to code or Paper nodes and check the result.",
+    "notes": "The change is already defined: no exploration, research or delegation. One targeted fix pass after the first check; report remaining issues instead of iterating.",
+    "kind": "workflow",
+    "surface": "any",
+    "stages": [
+      "explore",
+      "refine",
+      "ship"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Precise problem and affected files or nodes"
+    ],
+    "outputs": [
+      "Local fix with current evidence"
+    ],
+    "budget": {
+      "newDelegations": 0,
+      "concurrent": 0,
+      "repairBatches": 1
+    },
+    "entry": "in",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "in",
+        "kind": "start",
+        "label": "Precise fix",
+        "detail": "Read the expected result, the target files or nodes and the constraints."
+      },
+      {
+        "id": "surface",
+        "kind": "decision",
+        "label": "Where is the change?",
+        "detail": "Distinguish code from Paper nodes."
+      },
+      {
+        "id": "code",
+        "kind": "skill",
+        "label": "Edit the code",
+        "detail": "Apply jado-craft-core in code mode; change only the assigned scope.",
+        "ref": "jado-craft-core"
+      },
+      {
+        "id": "paper",
+        "kind": "skill",
+        "label": "Edit the Paper nodes",
+        "detail": "Read the affected nodes and an initial capture, then edit with jado-canvas-layout.",
+        "ref": "jado-canvas-layout"
+      },
+      {
+        "id": "proof",
+        "kind": "action",
+        "label": "Capture and check",
+        "detail": "Code: check the affected viewport and state in the browser. Paper: apply jado-canvas-verify to the changed nodes."
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "label": "Is the problem resolved?",
+        "detail": "Compare the capture with the expected result."
+      },
+      {
+        "id": "fix",
+        "kind": "action",
+        "label": "One targeted fix pass",
+        "detail": "Fix only what the check found, then capture again."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver the fix and evidence",
+        "detail": "Return changed files or nodes and the capture."
+      },
+      {
+        "id": "stop",
+        "kind": "end",
+        "label": "Report the remaining issue",
+        "detail": "State what is still wrong and why the cap or a blocker stopped the work."
+      }
+    ],
+    "edges": [
+      {
+        "id": "in-surface",
+        "from": "in",
+        "to": "surface",
+        "label": ""
+      },
+      {
+        "id": "surface-code",
+        "from": "surface",
+        "to": "code",
+        "label": "Code"
+      },
+      {
+        "id": "surface-paper",
+        "from": "surface",
+        "to": "paper",
+        "label": "Paper"
+      },
+      {
+        "id": "code-proof",
+        "from": "code",
+        "to": "proof",
+        "label": ""
+      },
+      {
+        "id": "paper-proof",
+        "from": "paper",
+        "to": "proof",
+        "label": ""
+      },
+      {
+        "id": "proof-gate",
+        "from": "proof",
+        "to": "gate",
+        "label": ""
+      },
+      {
+        "id": "gate-done",
+        "from": "gate",
+        "to": "done",
+        "label": "Yes"
+      },
+      {
+        "id": "gate-fix",
+        "from": "gate",
+        "to": "fix",
+        "label": "No, fix pass left"
+      },
+      {
+        "id": "fix-proof",
+        "from": "fix",
+        "to": "proof",
+        "label": ""
+      },
+      {
+        "id": "gate-stop",
+        "from": "gate",
+        "to": "stop",
+        "label": "Cap reached or blocked"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "gate",
+        "kind": "gate"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-canvas-layout",
+      "path": ".agents/skills/jado-canvas-layout/SKILL.md"
+    },
+    {
+      "id": "jado-craft-core",
+      "path": ".agents/skills/jado-craft-core/SKILL.md"
+    }
+  ],
+  "profiles": [],
+  "subflows": []
+}

@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import { frontmatter, validate } from './validate-content.mjs';
+const entry = { file: 'content/docs/index.md', ...frontmatter('---\ntitle: Test\ndescription: Check\nstatus: observed\nlastReviewed: "2026-09-28"\nskills: [ui-flow]\n---\n[Self](/docs)') };
+const registries = { skills: [{id:'ui-flow'}], agents: [], tools: [] };
+assert.deepEqual(validate([entry], registries), []);
+const invalid = { ...entry, data: { ...entry.data, workflow: true, skills: ['missing'] }, body: '[Broken](/docs/missing)\n```md\n[Example](/docs/example)\n```' };
+const errors = validate([invalid], registries);
+assert(errors.some((error) => error.includes('unknown skills missing')));
+assert(errors.some((error) => error.includes('broken page link /docs/missing')));
+assert(errors.some((error) => error.includes('workflow missing inputs')));
+assert(!errors.some((error) => error.includes('/docs/example')));
+assert(validate([entry], {...registries, skills:[{id:'ui-flow'},{id:'ui-flow'}]}).includes('Duplicate skills IDs'));
+assert(validate([{...entry,body:'[Retired editor](/graph)'}],registries).some(e=>e.includes('broken page link /graph')));
+assert(validate([{...entry,data:{...entry.data,owner:'Someone'}}],registries).some(e=>e.includes('unsupported owner field')));
+assert.throws(() => frontmatter('No metadata'), /Missing frontmatter/);
+console.log('Content validator regression check passed.');

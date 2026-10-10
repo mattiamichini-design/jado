@@ -1,0 +1,72 @@
+{
+  "name": "jado",
+  "version": "0.1.0",
+  "private": true,
+  "description": "JADO (Just Another Design Orchestrator): a design and design-engineering method for AI coding tools, with a playbook site and installable skills and agent profiles.",
+  "license": "MIT",
+  "author": "Mattia Michini",
+  "homepage": "https://github.com/mattiamichini-design/jado#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattiamichini-design/jado.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mattiamichini-design/jado/issues"
+  },
+  "scripts": {
+    "build": "next build --webpack",
+    "dev": "next dev --webpack --hostname 127.0.0.1",
+    "start": "next start",
+    "types:check": "next typegen && tsc --noEmit",
+    "lint": "eslint",
+    "sync:catalog": "node scripts/sync-catalog.mjs",
+    "validate:content": "node scripts/validate-content.mjs",
+    "validate:mermaid": "node scripts/validate-mermaid.mjs",
+    "test": "node --test \"scripts/**/*.test.mjs\"",
+    "check": "npm run jado:check && npm run validate:content && npm run validate:mermaid && npm test && npm run lint && npm run types:check",
+    "jado:import": "node scripts/jado/import-local.mjs",
+    "jado:compile": "node scripts/jado/compile.mjs",
+    "jado:check": "node scripts/jado/compile.mjs --check",
+    "jado:plan": "node scripts/jado/cli.mjs plan",
+    "jado:mcp": "node scripts/jado/mcp.mjs",
+    "jado:configure": "node scripts/jado/configure.mjs",
+    "jado": "node scripts/jado/cli.mjs",
+    "jado:install": "node scripts/jado/install.mjs",
+    "jado:link": "node scripts/jado/install.mjs link",
+    "jado:update": "node scripts/jado/install.mjs update",
+    "jado:stress": "node scripts/jado/install.stress.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "cn": "^0.3.0",
+    "fumadocs-core": "16.15.15",
+    "fumadocs-mdx": "15.4.5",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.15.15",
+    "lucide-react": "^1.47.0",
+    "mermaid": "^11.17.2",
+    "next": "16.3.8",
+    "next-themes": "^0.4.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.6.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.3.8",
+    "jsdom": "^30.1.1",
+    "postcss": "^8.5.28",
+    "skills": "1.7.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "yaml": "^2.9.1"
+  },
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "type": "module"
+}

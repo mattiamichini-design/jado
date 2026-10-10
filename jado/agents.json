@@ -1,0 +1,494 @@
+{
+  "entries": [
+    {
+      "id": "jado-agent-ux",
+      "name": "JADO Agent UX",
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "workspace-write",
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ],
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "jado-agent-visual",
+      "name": "JADO Agent Visual",
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "workspace-write",
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ],
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "jado-agent-frontend",
+      "name": "JADO Agent Frontend",
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "sandbox": "workspace-write",
+      "procedure": ".agents/skills/jado-frontend/SKILL.md",
+      "roles": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ],
+      "claude": {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    },
+    {
+      "id": "jado-agent-ux-reviewer",
+      "name": "JADO Agent UX Reviewer",
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "read-only",
+      "procedure": ".agents/skills/jado-ux-reviewer/SKILL.md",
+      "roles": [
+        "jado-ux-reviewer"
+      ],
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "name": "JADO Agent Visual Reviewer",
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "read-only",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "roles": [
+        "jado-visual-reviewer"
+      ],
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    }
+  ],
+  "procedures": [
+    {
+      "id": "jado-researcher",
+      "name": "Researcher",
+      "description": "Research user needs, product questions and domain facts from documented sources; report evidence and uncertainty.",
+      "procedure": ".agents/skills/jado-researcher/SKILL.md",
+      "instructions": "Frame the research question and the decision it supports. Read supplied project evidence first, then search primary sources for the missing facts within the assigned budget. Record source, access date, observation and limits, and separate documented facts, assumptions and proposals. Explore: a quick scan that unblocks options. Ship: sourced claims only. Documentary research is not participant evidence; interviews and usability studies need an explicit protocol. Send flow questions to jado-ux-architect and UI-pattern or style questions to jado-visual-researcher.",
+      "uses": [
+        {
+          "skill": "jado-evidence-contract",
+          "when": "The stage persists evidence or the findings feed a later decision."
+        },
+        {
+          "skill": "research",
+          "when": "The contract explicitly assigns the external research delegation protocol with its own budget."
+        }
+      ],
+      "writeScope": "Assigned research notes or dossier; product code and canvas stay read-only."
+    },
+    {
+      "id": "jado-ux-architect",
+      "name": "UX Architect",
+      "description": "Analyze tasks, flows, journeys and states; author requested UX artifacts and observable acceptance criteria.",
+      "procedure": ".agents/skills/jado-ux-architect/SKILL.md",
+      "instructions": "Read tasks, actors, permissions and constraints. Map the main path and the relevant errors, interruptions, recovery and empty states, and write observable acceptance criteria. Distinguish observations from inference; isolated screenshots support screen observations, not a complete flow. A focused analysis may finish in the handoff. Send composition and visual-language questions to jado-visual-researcher.",
+      "uses": [
+        {
+          "skill": "jado-ux-artifacts",
+          "when": "Project UX artifacts are assigned for reading or writing."
+        },
+        {
+          "skill": "jado-reference-analysis",
+          "when": "Real-product flow comparisons are needed: plan candidates before searching and compare them after."
+        },
+        {
+          "skill": "mobbin-search",
+          "when": "Observable real-product sequences answer an assigned flow question and Mobbin is available."
+        },
+        {
+          "skill": "jado-evidence-contract",
+          "when": "The stage persists evidence."
+        }
+      ],
+      "writeScope": "Assigned UX specifications and artifacts; implementation requires its own scope."
+    },
+    {
+      "id": "jado-visual-designer",
+      "name": "Visual Designer",
+      "description": "Design composition and hierarchy from a selected direction; build and verify assigned canvas work.",
+      "procedure": ".agents/skills/jado-visual-designer/SKILL.md",
+      "instructions": "Read the brief, the selected direction and inspected references; preserve settled decisions. Work at the stage's fidelity. Explore: build the resolved number of divergent options fast, each testing a distinct structure or direction with the same content, beyond a palette or font swap; type, color and spacing stay rough. Refine: develop the selected direction with project tokens, hierarchy, density and relevant states. Ship: production fidelity. Write each Paper document as its single writer and capture after each visual group.",
+      "uses": [
+        {
+          "skill": "jado-art-direction",
+          "when": "A new visual concept is assigned and still open."
+        },
+        {
+          "skill": "jado-canvas-layout",
+          "when": "Creating or changing Paper nodes."
+        },
+        {
+          "skill": "jado-canvas-verify",
+          "when": "Refine or ship stage, on the final revision of each changed artboard."
+        },
+        {
+          "skill": "jado-craft-core",
+          "when": "Refine or ship stage, or a visual specification is assigned."
+        },
+        {
+          "skill": "make-interfaces-feel-better",
+          "when": "Ship stage polish of an accepted design."
+        },
+        {
+          "skill": "jado-reference-analysis",
+          "when": "Inspected references need interpretation for this design."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "Interaction intent is assigned; use design-only mode."
+        }
+      ],
+      "writeScope": "Assigned visual specification, artboards and nodes; exclusive canvas writing during the phase."
+    },
+    {
+      "id": "jado-content-designer",
+      "name": "Content Designer",
+      "description": "Write UI microcopy, marketing copy or product documentation, or edit existing text, using the matching procedure.",
+      "procedure": ".agents/skills/jado-content-designer/SKILL.md",
+      "instructions": "Read audience, task, glossary, approved actions, brand voice and supporting claims. Choose better-writing for UI labels, instructions, errors and recovery; copywriting for new marketing copy; copy-editing for an assigned revision of existing marketing copy. Documentation (READMEs, guides, agent instructions) uses humanizer and avoid-ai-writing in the docs context. Process mixed work as separate outputs. Preserve approved meaning and voice and mark meaning changes as proposals. Prices, promises and features need approved sources. Explore may use realistic placeholder copy marked as draft. Hand the text to the canvas or code author for integration.",
+      "uses": [
+        {
+          "skill": "better-writing",
+          "when": "UI microcopy: labels, instructions, errors and recovery."
+        },
+        {
+          "skill": "copywriting",
+          "when": "New marketing copy."
+        },
+        {
+          "skill": "copy-editing",
+          "when": "Assigned revision of existing marketing copy."
+        },
+        {
+          "skill": "humanizer",
+          "when": "Documentation, or text that narrates changes, defends against objections nobody raised or describes itself instead of its subject."
+        },
+        {
+          "skill": "avoid-ai-writing",
+          "when": "Ship stage, documentation, or the user asks to remove AI patterns from the copy."
+        }
+      ],
+      "writeScope": "Assigned document or strings; layout and components remain with their author."
+    },
+    {
+      "id": "jado-design-systems",
+      "name": "Design Systems",
+      "description": "Map existing tokens and components to the target UI; apply layout guidance for the actual project stack.",
+      "procedure": ".agents/skills/jado-design-systems/SKILL.md",
+      "instructions": "Inspect the existing styling system, tokens, component APIs and target UI. Reuse local primitives before adding variants and keep other stacks in their established conventions. Map canvas decisions to components and tokens; change only assigned design-system files in an exclusive phase and document exceptions. A screen request alone does not authorize a design-system migration.",
+      "uses": [
+        {
+          "skill": "jado-craft-core",
+          "when": "Always: specification mode for a mapping, code mode for implementation changes."
+        },
+        {
+          "skill": "better-layout",
+          "when": "Grouping, spacing or responsive behavior needs design."
+        },
+        {
+          "skill": "shadcn",
+          "when": "The project uses shadcn."
+        },
+        {
+          "skill": "tailwind",
+          "when": "Tailwind styles change."
+        },
+        {
+          "skill": "oklch-skill",
+          "when": "Color tokens are created or converted."
+        }
+      ],
+      "writeScope": "Named design-system files, with exclusive writing during the assigned phase."
+    },
+    {
+      "id": "jado-ui-builder",
+      "name": "UI Builder",
+      "description": "Implement the selected UI and verify its assigned states, interactions and variants.",
+      "procedure": ".agents/skills/jado-ui-builder/SKILL.md",
+      "instructions": "Read the contract, the approved source, DESIGN.md and local components. Implement with project primitives and tokens and preserve approved design decisions. Code alternatives use the requested count, isolated implementations and distinct hypotheses; VariantHub only on explicit request. Check the affected states and interactions in the browser at the stage's rigor.",
+      "uses": [
+        {
+          "skill": "jado-craft-core",
+          "when": "Always, in code mode."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "Motion implementation is assigned with approved intent."
+        },
+        {
+          "skill": "make-interfaces-feel-better",
+          "when": "Ship stage polish."
+        }
+      ],
+      "writeScope": "Assigned feature code and assets; alternative exploration does not authorize promotion."
+    },
+    {
+      "id": "jado-ui-engineer",
+      "name": "UI Engineer",
+      "description": "Resolve assigned UI architecture, layout, interaction, animation or performance problems.",
+      "procedure": ".agents/skills/jado-ui-engineer/SKILL.md",
+      "instructions": "Read the assigned technical problem and the builder's changes; work after the builder on shared files. Fix the scoped architecture, layout, state or performance issue while preserving direction and content. Finish when the original defect and relevant regressions are checked with current evidence.",
+      "uses": [
+        {
+          "skill": "unit-test-engineer",
+          "when": "A supported-stack behavior needs a regression test; otherwise use project-native checks."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "Motion design, implementation or performance work is assigned."
+        }
+      ],
+      "writeScope": "Assigned technical changes in a phase after the UI builder."
+    },
+    {
+      "id": "jado-ux-reviewer",
+      "name": "UX Reviewer",
+      "description": "Review tasks, comprehension, states and accessibility in a context independent of the author.",
+      "procedure": ".agents/skills/jado-ux-reviewer/SKILL.md",
+      "instructions": "Inspect the requested path with available evidence: tasks, clarity, states, accessibility and error recovery. Report severity, element, criterion, evidence and suggested fix for each finding; report only issues that matter at the current stage. State code-only coverage when browser evidence is missing, and distinguish expert evaluation from participant testing. Keep product and canvas read-only; fixes belong to the author.",
+      "uses": [
+        {
+          "skill": "fixing-accessibility",
+          "when": "Accessibility criteria are in scope."
+        },
+        {
+          "skill": "jado-evidence-contract",
+          "when": "The stage persists evidence."
+        }
+      ],
+      "writeScope": "Read-only product and canvas; return findings to the coordinator."
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "name": "Visual Reviewer",
+      "description": "Review final captures against selected composition, art direction and any assigned motion criteria.",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "instructions": "Open the final captures and compare them with the expected result, viewport, state and revision. Check composition, fidelity, alignment, text, clipping and overflow, plus art-direction criteria when assigned and motion behavior when in scope (static captures cannot prove motion). Report only issues that affect the decision or the stage's acceptance criteria, each tied to an element and evidence. Missing or stale evidence yields blocked. Keep code and canvas read-only.",
+      "uses": [
+        {
+          "skill": "jado-canvas-verify",
+          "when": "Always, as the inspection checklist; never edit."
+        },
+        {
+          "skill": "better-interface",
+          "when": "Ship stage with a full UI quality audit in the contract."
+        },
+        {
+          "skill": "jado-evidence-contract",
+          "when": "The stage persists evidence."
+        }
+      ],
+      "writeScope": "Read-only product and canvas; verdict uses evidence from the latest revision."
+    },
+    {
+      "id": "jado-visual-researcher",
+      "name": "Visual Researcher",
+      "description": "Compare UI patterns or style references; curate a moodboard only when that deliverable is assigned.",
+      "procedure": ".agents/skills/jado-visual-researcher/SKILL.md",
+      "instructions": "Identify the output: UI-pattern comparison, visual-language research or moodboard. For UI patterns inspect real products; for visual language use accessible Pinterest, image search and relevant websites. Explore: a broad, quick sweep. Refine: fewer, deeper comparisons. Record selected and rejected reasons, sources, transferable ideas and limits; report inaccessible sources. Build a moodboard only when assigned. Flow decisions belong to jado-ux-architect and domain facts to jado-researcher.",
+      "uses": [
+        {
+          "skill": "jado-reference-analysis",
+          "when": "Always: plan candidate coverage before searching and compare inspected candidates."
+        },
+        {
+          "skill": "mobbin-search",
+          "when": "Real-product UI patterns are needed and Mobbin is available."
+        },
+        {
+          "skill": "jado-canvas-layout",
+          "when": "A Paper moodboard is assigned."
+        },
+        {
+          "skill": "jado-evidence-contract",
+          "when": "References or a moodboard are saved in the project."
+        }
+      ],
+      "writeScope": "Assigned reference analysis, collection or moodboard; one writer per shared artifact."
+    },
+    {
+      "id": "jado-ux",
+      "name": "UX Procedure",
+      "description": "Combine assigned documentary research, UX architecture and content work in one context.",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ],
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "instructions": "Apply only the assigned activities in the current context, in dependency order, and follow each activity's skill. Reuse decisions and evidence; record why unassigned activities are skipped.",
+      "uses": [
+        {
+          "skill": "jado-researcher",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-ux-architect",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-content-designer",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-visual-researcher",
+          "when": "A UI-pattern comparison supports the UX question."
+        }
+      ],
+      "writeScope": "Assigned research, UX artifacts and strings; product stays read-only during research."
+    },
+    {
+      "id": "jado-visual",
+      "name": "Visual Procedure",
+      "description": "Combine assigned visual research, art direction and canvas design in one context.",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ],
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "instructions": "Apply only the assigned activities in the current context, in dependency order, and follow each activity's skill. Reuse decisions and evidence; record why unassigned activities are skipped.",
+      "uses": [
+        {
+          "skill": "jado-visual-researcher",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-art-direction",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-visual-designer",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "Interaction intent is assigned (design-only)."
+        }
+      ],
+      "writeScope": "Assigned references, direction, moodboard and Paper nodes; one writer per document."
+    },
+    {
+      "id": "jado-frontend",
+      "name": "Frontend Procedure",
+      "description": "Combine assigned design-system, UI implementation, motion and technical work in one context.",
+      "roles": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ],
+      "procedure": ".agents/skills/jado-frontend/SKILL.md",
+      "instructions": "Apply only the assigned activities in the current context, in dependency order, and follow each activity's skill. Reuse decisions and evidence; record why unassigned activities are skipped.",
+      "uses": [
+        {
+          "skill": "jado-design-systems",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-ui-builder",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-ui-engineer",
+          "when": "The contract assigns this activity."
+        }
+      ],
+      "writeScope": "Assigned design-system and feature files, with exclusive phases per artifact."
+    },
+    {
+      "id": "jado-art-direction",
+      "name": "Art Direction",
+      "description": "Define a visual concept, typography, palette, imagery and composition criteria when a new direction is assigned.",
+      "procedure": ".agents/skills/jado-art-direction/SKILL.md",
+      "instructions": "Read the brief, audience, brand constraints and inspected references. Confirm which visual decisions are open. Define a concept with concrete rules for typography, palette, image language, composition and density, explaining how each serves the product. Explore: several contrasting directions, each in a few lines with a rough type and color pairing. Refine and ship: one selected direction with reviewable rules and tradeoffs. Asset generation needs assigned scope and available tools; otherwise write an asset brief.",
+      "uses": [
+        {
+          "skill": "jado-reference-analysis",
+          "when": "References or anti-references inform the direction."
+        },
+        {
+          "skill": "fontshare",
+          "when": "Typefaces or pairings are being chosen."
+        },
+        {
+          "skill": "better-typography",
+          "when": "A type scale, spacing or typographic detail is defined."
+        },
+        {
+          "skill": "better-colors",
+          "when": "A palette or semantic color roles are defined."
+        },
+        {
+          "skill": "oklch-skill",
+          "when": "Palette values are expressed or converted in OKLCH."
+        },
+        {
+          "skill": "jado-craft-core",
+          "when": "Refine or ship: write UI quality criteria in specification mode."
+        }
+      ],
+      "writeScope": "Assigned direction document or brief; implementation and generated assets only when explicitly included."
+    },
+    {
+      "id": "jado-motion",
+      "name": "Motion",
+      "description": "Define useful motion, implement an approved interaction or inspect animation behavior and performance within an assigned phase.",
+      "procedure": ".agents/skills/jado-motion/SKILL.md",
+      "instructions": "Record the assigned phase: design-only, implementation or review. First identify the user benefit and interaction frequency; keep a static response when motion adds no value. Specify trigger, states, duration, easing, interruption, focus continuity and reduced-motion fallback. Implementation uses the existing stack and is checked in the browser in normal, interrupted and reduced-motion states. Review stays read-only. review-animations runs only when the user invokes it.",
+      "uses": [
+        {
+          "skill": "emil-design-eng",
+          "when": "Motion decisions or implementation."
+        },
+        {
+          "skill": "find-animation-opportunities",
+          "when": "A scoped discovery proposal is assigned."
+        },
+        {
+          "skill": "animation-vocabulary",
+          "when": "An effect needs a precise name."
+        },
+        {
+          "skill": "improve-animations",
+          "when": "An audit of existing animations is assigned with its delegation budget."
+        },
+        {
+          "skill": "fixing-motion-performance",
+          "when": "Animation is implemented or performance is in scope."
+        }
+      ],
+      "writeScope": "Design-only: assigned motion specification. Implementation: assigned code. Review: read-only product and canvas."
+    }
+  ]
+}

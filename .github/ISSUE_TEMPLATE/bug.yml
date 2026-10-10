@@ -1,0 +1,39 @@
+name: Bug report
+description: The installer, the CLI, a skill or the playbook site does not behave as documented.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you ran or opened, what you expected and what you got. Paste the error message.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. git clone … && npm ci
+        2. npm run jado -- install --global --agents claude-code --dry-run
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: JADO revision
+      description: Output of `git rev-parse --short HEAD` in your checkout.
+    validations:
+      required: true
+  - type: dropdown
+    id: tool
+    attributes:
+      label: AI tool
+      multiple: true
+      options: [Claude Code, Codex, OpenCode, Other, Not relevant]
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and `node --version`.

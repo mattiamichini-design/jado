@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "setup-project",
+    "title": "Setup · Install or link JADO",
+    "summary": "Choose local, global or linked setup, prepare selected tools and migrate design instructions.",
+    "notes": "Follow jado-install for the plan, semantic migration and access verification. Local and global setup give selected JADO skills priority with backups; external packages come from upstream. Linking updates project entry points. Apply updates through the CLI for the selected destination.",
+    "kind": "governance",
+    "surface": "any",
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "JADO source and local or global destination",
+      "Existing instructions and configuration",
+      "Selected AI tools"
+    ],
+    "outputs": [
+      "Installed method or linked project",
+      "Migrated design instructions and setup verification"
+    ],
+    "budget": {
+      "newDelegations": 0,
+      "concurrent": 0,
+      "repairBatches": 0
+    },
+    "entry": "start",
+    "requiredNodes": [
+      "review",
+      "gate"
+    ],
+    "nodes": [
+      {
+        "id": "start",
+        "kind": "start",
+        "label": "Choose setup destination",
+        "detail": "Locate the JADO source and choose local, global or linked setup."
+      },
+      {
+        "id": "procedure",
+        "kind": "skill",
+        "label": "Read installation procedure",
+        "detail": "Follow jado-install. Setup is a separate assignment from product work.",
+        "ref": "jado-install"
+      },
+      {
+        "id": "read",
+        "kind": "action",
+        "label": "Read instructions and configuration",
+        "detail": "Inspect effective entries, overrides, linked Markdown, nested rules and Git state. For global setup inspect the tools' user-level instructions. Preserve product documents and existing UX artifact locations until migration is verified."
+      },
+      {
+        "id": "tools",
+        "kind": "action",
+        "label": "Choose mode and tools",
+        "detail": "Reuse received choices. Local is self-contained; global manages the user-level method and upstream dependencies; linked setup adds a project entry. Claude Code, Codex and OpenCode have native adapters; other skills CLI targets receive skills only in local setup."
+      },
+      {
+        "id": "existing",
+        "kind": "decision",
+        "label": "Does an entry already exist?",
+        "detail": "Inspect the effective instructions at the selected destination."
+      },
+      {
+        "id": "create",
+        "kind": "action",
+        "label": "Prepare a JADO entry",
+        "detail": "Prepare a concise method pointer while preserving project constraints."
+      },
+      {
+        "id": "migrate",
+        "kind": "action",
+        "label": "Prepare design migration",
+        "detail": "Update the effective entry and reached files. Replace incompatible routers while preserving domain, design system, verification, Git and release rules."
+      },
+      {
+        "id": "files",
+        "kind": "action",
+        "label": "Prepare the setup plan",
+        "detail": "Run install, link or update with --dry-run and retain the revision. The plan shows files, references and conflicts; router replacement also needs a semantic migration diff."
+      },
+      {
+        "id": "review",
+        "kind": "human",
+        "label": "Review the setup diff",
+        "detail": "Review proposed destination files and instruction changes before applying them. Honor authorization already supplied in the task."
+      },
+      {
+        "id": "apply",
+        "kind": "action",
+        "label": "Apply authorized changes",
+        "detail": "Apply the reviewed plan with --yes and --revision HASH. The CLI checks collisions and hashes and retains backups. Apply the reviewed instruction diff with verified backup; commit or push needs its own authorization."
+      },
+      {
+        "id": "verify",
+        "kind": "action",
+        "label": "Verify access and profiles",
+        "detail": "Check diff, links, catalog and instructions. For linked setup verify external reads in the AI session as well as the CLI. Use a local copy if external access is blocked. Verify route and available native profiles in a fresh session."
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "label": "Is setup verified?",
+        "detail": "Distinguish completed checks from prepared files still awaiting load verification or a missing requirement."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver verified setup",
+        "detail": "Return source, changed files and instructions with completed checks."
+      },
+      {
+        "id": "stop",
+        "kind": "end",
+        "label": "Report remaining setup checks",
+        "detail": "Return prepared setup and state missing requirements or verification; generated files alone do not prove native execution."
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "from": "start",
+        "to": "procedure",
+        "label": ""
+      },
+      {
+        "id": "e2",
+        "from": "procedure",
+        "to": "read",
+        "label": ""
+      },
+      {
+        "id": "e3",
+        "from": "read",
+        "to": "tools",
+        "label": ""
+      },
+      {
+        "id": "tools-existing",
+        "from": "tools",
+        "to": "existing",
+        "label": ""
+      },
+      {
+        "id": "e4",
+        "from": "existing",
+        "to": "create",
+        "label": "No"
+      },
+      {
+        "id": "e5",
+        "from": "existing",
+        "to": "migrate",
+        "label": "Yes"
+      },
+      {
+        "id": "e6",
+        "from": "create",
+        "to": "files",
+        "label": ""
+      },
+      {
+        "id": "e7",
+        "from": "migrate",
+        "to": "files",
+        "label": ""
+      },
+      {
+        "id": "e8",
+        "from": "files",
+        "to": "review",
+        "label": ""
+      },
+      {
+        "id": "e9",
+        "from": "review",
+        "to": "apply",
+        "label": "Approved diff"
+      },
+      {
+        "id": "e10",
+        "from": "apply",
+        "to": "verify",
+        "label": ""
+      },
+      {
+        "id": "e11",
+        "from": "verify",
+        "to": "gate",
+        "label": ""
+      },
+      {
+        "id": "e12",
+        "from": "gate",
+        "to": "done",
+        "label": "Yes, checks complete"
+      },
+      {
+        "id": "e13",
+        "from": "gate",
+        "to": "stop",
+        "label": "No, requirement or evidence missing"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "review",
+        "kind": "human"
+      },
+      {
+        "id": "gate",
+        "kind": "gate"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-install",
+      "path": ".agents/skills/jado-install/SKILL.md"
+    }
+  ],
+  "profiles": [],
+  "subflows": []
+}

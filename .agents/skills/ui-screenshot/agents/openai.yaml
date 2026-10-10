@@ -1,0 +1,6 @@
+interface:
+  display_name: "UI Screenshot"
+  short_description: "Create device-framed UI screenshot archives"
+  default_prompt: "Use $ui-screenshot to create Figma-ready digital polaroids of the requested pages and viewports."
+policy:
+  allow_implicit_invocation: false

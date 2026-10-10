@@ -1,0 +1,9124 @@
+{
+  "verified": "2026-10-01",
+  "source": "https://api.fontshare.com/v2/fonts?limit=100&offset=0",
+  "count": 100,
+  "fonts": [
+    {
+      "name": "Aktura",
+      "slug": "aktura",
+      "category": "Serif,  Blackletter, Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "salt",
+        "ss01",
+        "aalt",
+        "lnum",
+        "sups",
+        "case"
+      ],
+      "personalities": [
+        "Classic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Alpino",
+      "slug": "alpino",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 660.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "salt",
+        "sups",
+        "aalt",
+        "case",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "rvrn"
+      ],
+      "personalities": [
+        "Elegant",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Amulya",
+      "slug": "amulya",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 420.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "tnum",
+        "aalt",
+        "frac",
+        "pnum",
+        "ordn",
+        "locl",
+        "liga",
+        "salt",
+        "ss01"
+      ],
+      "personalities": [
+        "Elegant",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Anton",
+      "slug": "anton",
+      "category": "Sans, Display",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "ordn",
+        "dnom",
+        "numr",
+        "locl",
+        "frac",
+        "liga",
+        "zero",
+        "aalt",
+        "c2sc",
+        "case",
+        "ccmp",
+        "dlig",
+        "smcp",
+        "subs",
+        "sups",
+        "sinf"
+      ],
+      "personalities": [
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Archivo",
+      "slug": "archivo",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "pnum",
+        "subs",
+        "sups",
+        "tnum",
+        "zero",
+        "rvrn",
+        "aalt",
+        "case",
+        "ccmp",
+        "dnom",
+        "frac",
+        "liga",
+        "lnum",
+        "locl",
+        "numr",
+        "onum",
+        "ordn",
+        "sinf"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Array",
+      "slug": "array",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Wide",
+          "weight": 401,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Wide",
+          "weight": 601,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Wide",
+          "weight": 701,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "ordn",
+        "salt",
+        "sups",
+        "aalt",
+        "ccmp",
+        "frac",
+        "liga",
+        "locl"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Futuristic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Asap",
+      "slug": "asap",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 700.0,
+          "range_default": 580.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ccmp",
+        "salt",
+        "pnum",
+        "ordn",
+        "onum",
+        "numr",
+        "mgrk",
+        "locl",
+        "lnum",
+        "liga",
+        "frac",
+        "aalt",
+        "calt",
+        "case",
+        "dlig",
+        "zero",
+        "tnum",
+        "sups",
+        "subs",
+        "ss01",
+        "dnom",
+        "sinf"
+      ],
+      "personalities": [
+        "Elegant",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Author",
+      "slug": "author",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 300.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "onum",
+        "locl",
+        "lnum",
+        "ordn",
+        "liga",
+        "frac",
+        "aalt",
+        "case",
+        "sups",
+        "salt"
+      ],
+      "personalities": [
+        "Elegant",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Azeret Mono",
+      "slug": "azeret-mono",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 900.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss11",
+        "zero",
+        "tnum",
+        "sups",
+        "subs",
+        "ss16",
+        "ss15",
+        "ss14",
+        "ss13",
+        "ss12",
+        "ss10",
+        "ss09",
+        "ss08",
+        "ss07",
+        "ss06",
+        "ss05",
+        "ss04",
+        "ss03",
+        "ss02",
+        "ss01",
+        "sinf",
+        "ordn",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "dnom",
+        "dlig",
+        "ccmp",
+        "case",
+        "calt",
+        "aalt"
+      ],
+      "personalities": [
+        "Modern",
+        "Futuristic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Be Vietnam Pro",
+      "slug": "beVietnam-pro",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 340.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss01",
+        "sups",
+        "subs",
+        "frac",
+        "dnom",
+        "ccmp",
+        "case",
+        "sinf",
+        "locl",
+        "ordn",
+        "numr",
+        "aalt",
+        "liga"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Bebas Neue",
+      "slug": "bebas-neue",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "dnom",
+        "locl",
+        "numr",
+        "ordn",
+        "pnum",
+        "tnum",
+        "sups",
+        "subs",
+        "aalt",
+        "ccmp",
+        "frac"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Bespoke Sans",
+      "slug": "bespoke-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 800.0,
+          "range_default": 700.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ordn",
+        "salt",
+        "sups",
+        "aalt",
+        "frac",
+        "liga",
+        "locl"
+      ],
+      "personalities": [
+        "Elegant",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Bespoke Serif",
+      "slug": "bespoke-serif",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 800.0,
+          "range_default": 400.0
+        },
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 800.0,
+          "range_default": 800.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "liga",
+        "aalt",
+        "frac",
+        "salt",
+        "ordn",
+        "locl"
+      ],
+      "personalities": [
+        "Classic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Bespoke Slab",
+      "slug": "bespoke-slab",
+      "category": "Slab",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 800.0,
+          "range_default": 450.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "liga",
+        "frac",
+        "aalt",
+        "ordn",
+        "salt",
+        "sups"
+      ],
+      "personalities": [
+        "Serious"
+      ]
+    },
+    {
+      "name": "Bespoke Stencil",
+      "slug": "bespoke-stencil",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 800.0,
+          "range_default": 750.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "aalt",
+        "ordn",
+        "salt",
+        "sups",
+        "locl",
+        "liga",
+        "frac"
+      ],
+      "personalities": [
+        "Elegant",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Bevellier",
+      "slug": "bevellier",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 660.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "aalt",
+        "ordn",
+        "frac",
+        "liga",
+        "locl",
+        "sups",
+        "ss02",
+        "ss01",
+        "salt"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Bonny",
+      "slug": "bonny",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 700.0,
+          "range_default": 640.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "salt",
+        "aalt",
+        "calt",
+        "sups",
+        "frac",
+        "liga",
+        "locl",
+        "ordn"
+      ],
+      "personalities": [
+        "Informal",
+        "Dramatic"
+      ]
+    },
+    {
+      "name": "Boska",
+      "slug": "boska",
+      "category": "Serif, Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 900.0,
+          "range_default": 830.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "smcp",
+        "salt",
+        "pnum",
+        "ordn",
+        "lnum",
+        "aalt",
+        "onum",
+        "case",
+        "frac",
+        "liga",
+        "tnum",
+        "sups"
+      ],
+      "personalities": [
+        "Classic",
+        "Elegant",
+        "Luxurious",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Boxing",
+      "slug": "boxing",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "locl",
+        "ordn",
+        "frac",
+        "liga"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Serious",
+        "Dirty"
+      ]
+    },
+    {
+      "name": "Britney",
+      "slug": "britney",
+      "category": "Script",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 600.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Ultra",
+          "weight": 1000,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "locl",
+        "sups"
+      ],
+      "personalities": [
+        "Informal",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Cabinet Grotesk",
+      "slug": "cabinet-grotesk",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 260.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss04",
+        "frac",
+        "liga",
+        "case",
+        "ccmp",
+        "dlig",
+        "locl",
+        "sups",
+        "ss05",
+        "ss03",
+        "ss02",
+        "ss01",
+        "salt",
+        "ordn",
+        "aalt"
+      ],
+      "personalities": [
+        "Informal",
+        "Dirty",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Chillax",
+      "slug": "chillax",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 700.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss02",
+        "sups",
+        "ss01",
+        "salt",
+        "ordn",
+        "frac",
+        "aalt",
+        "locl",
+        "liga"
+      ],
+      "personalities": [
+        "Modern",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Chubbo",
+      "slug": "chubbo",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 550.0
+        },
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 550.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sinf",
+        "ss02",
+        "ss01",
+        "salt",
+        "ordn",
+        "locl",
+        "liga",
+        "frac",
+        "ccmp",
+        "case",
+        "aalt",
+        "ss03",
+        "ss02",
+        "sups",
+        "subs"
+      ],
+      "personalities": [
+        "Informal",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Clash Display",
+      "slug": "clash-display",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 350.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "aalt",
+        "dlig",
+        "case",
+        "sups",
+        "salt",
+        "ordn",
+        "locl",
+        "liga"
+      ],
+      "personalities": [
+        "Informal",
+        "Dirty",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Clash Grotesk",
+      "slug": "clash-grotesk",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 400.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "locl",
+        "ordn",
+        "salt",
+        "sups",
+        "aalt",
+        "case",
+        "ccmp",
+        "dlig",
+        "frac"
+      ],
+      "personalities": [
+        "Informal",
+        "Modern",
+        "Dirty",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Comico",
+      "slug": "comico",
+      "category": "Handwritten",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "ordn",
+        "zero",
+        "calt",
+        "ss01",
+        "sups",
+        "aalt",
+        "ccmp",
+        "dnom",
+        "frac",
+        "liga",
+        "locl",
+        "numr",
+        "salt"
+      ],
+      "personalities": [
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Crimson Pro",
+      "slug": "crimson-pro",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 900.0,
+          "range_default": 480.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "tnum",
+        "sinf",
+        "pnum",
+        "ordn",
+        "onum",
+        "numr",
+        "locl",
+        "lnum",
+        "liga",
+        "frac",
+        "dnom",
+        "dlig",
+        "ccmp",
+        "case",
+        "aalt",
+        "sups",
+        "rvrn",
+        "subs"
+      ],
+      "personalities": [
+        "Classic",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Dancing Script",
+      "slug": "dancing-script",
+      "category": "Script",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 700.0,
+          "range_default": 610.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ordn",
+        "locl",
+        "liga",
+        "case",
+        "frac",
+        "aalt",
+        "init",
+        "ccmp",
+        "dlig",
+        "fina",
+        "sups",
+        "salt"
+      ],
+      "personalities": [
+        "Informal",
+        "Elegant",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Epilogue",
+      "slug": "epilogue",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 900.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "dnom",
+        "zero",
+        "ss01",
+        "sinf",
+        "subs",
+        "sups",
+        "tnum",
+        "smcp",
+        "ccmp",
+        "case",
+        "c2sc",
+        "aalt",
+        "salt",
+        "pnum",
+        "ordn",
+        "numr",
+        "locl",
+        "liga"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Erode",
+      "slug": "erode",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 340.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "aalt",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "salt"
+      ],
+      "personalities": [
+        "Corporate",
+        "Classic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Excon",
+      "slug": "excon",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 340.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ordn",
+        "liga",
+        "frac",
+        "aalt",
+        "rvrn",
+        "sups",
+        "salt",
+        "locl"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Expose",
+      "slug": "expose",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 900.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss01",
+        "salt",
+        "case",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "aalt",
+        "sups"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate"
+      ]
+    },
+    {
+      "name": "Familjen Grotesk",
+      "slug": "familjen-grotesk",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 700.0,
+          "range_default": 580.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "subs",
+        "ss05",
+        "ss02",
+        "rvrn",
+        "zero",
+        "tnum",
+        "sups",
+        "case",
+        "ccmp",
+        "dnom",
+        "sinf",
+        "pnum",
+        "ordn",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "aalt",
+        "calt"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Fira Sans",
+      "slug": "fira-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 1.0,
+          "range_right": 950.0,
+          "range_default": 950.0
+        },
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 1.0,
+          "range_right": 925.0,
+          "range_default": 93.4
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "zero",
+        "ss03",
+        "dnom",
+        "case",
+        "calt",
+        "c2sc",
+        "aalt",
+        "dlig",
+        "tnum",
+        "sups",
+        "subs",
+        "smcp",
+        "pnum",
+        "ordn",
+        "onum",
+        "numr",
+        "locl",
+        "lnum",
+        "liga"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Gambarino",
+      "slug": "gambarino",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "liga",
+        "ordn",
+        "salt",
+        "sups",
+        "aalt",
+        "frac",
+        "case",
+        "locl"
+      ],
+      "personalities": [
+        "Classic",
+        "Elegant",
+        "Luxurious"
+      ]
+    },
+    {
+      "name": "Gambetta",
+      "slug": "gambetta",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 340.0
+        },
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 340.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "case",
+        "frac",
+        "liga",
+        "locl",
+        "sups",
+        "salt",
+        "ordn",
+        "aalt",
+        "ccmp"
+      ],
+      "personalities": [
+        "Classic"
+      ]
+    },
+    {
+      "name": "General Sans",
+      "slug": "general-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 650.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ccmp",
+        "ss02",
+        "ss03",
+        "frac",
+        "case",
+        "aalt",
+        "liga",
+        "locl",
+        "numr",
+        "ordn",
+        "salt",
+        "sinf",
+        "subs",
+        "sups",
+        "dnom",
+        "ss01"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Hind",
+      "slug": "hind",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 420.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ordn",
+        "sups",
+        "locl",
+        "liga",
+        "frac",
+        "aalt"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Hoover",
+      "slug": "hoover",
+      "category": "Slab",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 300.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "aalt",
+        "frac",
+        "locl",
+        "ordn",
+        "salt",
+        "sups"
+      ],
+      "personalities": [
+        "Informal",
+        "Dramatic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "JetBrains Mono",
+      "slug": "jet-brains-mono",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 800.0,
+          "range_default": 310.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "subs",
+        "ccmp",
+        "sinf",
+        "ordn",
+        "aalt",
+        "calt",
+        "case",
+        "locl",
+        "frac",
+        "zero",
+        "sups"
+      ],
+      "personalities": [
+        "Modern",
+        "Futuristic"
+      ]
+    },
+    {
+      "name": "Kalam",
+      "slug": "kalam",
+      "category": "Handwritten",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 540.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "frac",
+        "aalt",
+        "ordn",
+        "sups",
+        "liga"
+      ],
+      "personalities": [
+        "Informal",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Karma",
+      "slug": "karma",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "ordn",
+        "sups",
+        "aalt",
+        "frac",
+        "liga"
+      ],
+      "personalities": [
+        "Classic"
+      ]
+    },
+    {
+      "name": "Khand",
+      "slug": "khand",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 460.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "aalt",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "sups"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Kihim",
+      "slug": "kihim",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "aalt",
+        "calt",
+        "lnum",
+        "locl",
+        "ss01",
+        "sups",
+        "dlig",
+        "onum",
+        "frac",
+        "ordn",
+        "liga",
+        "salt"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Kohinoor Zerone",
+      "slug": "kohinoor-zerone",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "One",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Zero",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "salt",
+        "hist",
+        "aalt",
+        "case",
+        "sups",
+        "liga"
+      ],
+      "personalities": [
+        "Elegant",
+        "Dramatic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Kola",
+      "slug": "kola",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "sups",
+        "ordn",
+        "aalt",
+        "frac",
+        "liga",
+        "locl",
+        "salt"
+      ],
+      "personalities": [
+        "Modern",
+        "Futuristic",
+        "Friendly",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Literata",
+      "slug": "literata",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 900.0,
+          "range_default": 410.0
+        },
+        {
+          "name": "Optical Size",
+          "property": "opsz",
+          "range_left": 7.0,
+          "range_right": 72.0,
+          "range_default": 7.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "pnum",
+        "salt",
+        "sinf",
+        "smcp",
+        "ss01",
+        "frac",
+        "lnum",
+        "locl",
+        "numr",
+        "onum",
+        "ordn",
+        "sups",
+        "tnum",
+        "zero",
+        "rvrn",
+        "liga",
+        "dnom",
+        "dlig",
+        "ccmp",
+        "case",
+        "c2sc",
+        "aalt",
+        "ss02",
+        "subs"
+      ],
+      "personalities": [
+        "Classic",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Lora",
+      "slug": "lora",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 700.0,
+          "range_default": 460.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "rvrn",
+        "aalt",
+        "calt",
+        "case",
+        "ccmp",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "pnum",
+        "sups",
+        "tnum"
+      ],
+      "personalities": [
+        "Classic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Manrope",
+      "slug": "manrope",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 800.0,
+          "range_default": 440.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ordn",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "dnom",
+        "ccmp",
+        "case",
+        "calt",
+        "aalt",
+        "tnum",
+        "ss01",
+        "sinf",
+        "subs",
+        "sups",
+        "pnum"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Melodrama",
+      "slug": "melodrama",
+      "category": "Sans, Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 420.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ccmp",
+        "aalt",
+        "dlig",
+        "frac",
+        "liga",
+        "lnum",
+        "locl",
+        "onum",
+        "ordn",
+        "salt",
+        "sinf",
+        "ss01",
+        "subs",
+        "sups"
+      ],
+      "personalities": [
+        "Elegant",
+        "Luxurious"
+      ]
+    },
+    {
+      "name": "Merriweather Sans",
+      "slug": "merriweather-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 800.0,
+          "range_default": 400.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "tnum",
+        "pnum",
+        "sinf",
+        "smcp",
+        "subs",
+        "sups",
+        "aalt",
+        "c2sc",
+        "case",
+        "ccmp",
+        "dnom",
+        "frac",
+        "liga",
+        "lnum",
+        "locl",
+        "numr",
+        "onum",
+        "ordn",
+        "zero"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Montserrat",
+      "slug": "montserrat",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 260.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "aalt",
+        "c2sc",
+        "case",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "frac",
+        "liga",
+        "lnum",
+        "locl",
+        "numr",
+        "onum",
+        "ordn",
+        "pnum",
+        "salt",
+        "sinf",
+        "smcp",
+        "ss01",
+        "subs",
+        "sups",
+        "tnum",
+        "rclt"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Neco",
+      "slug": "neco",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 900.0,
+          "range_default": 600.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "aalt",
+        "case",
+        "frac",
+        "liga",
+        "lnum",
+        "locl",
+        "onum",
+        "ordn",
+        "pnum",
+        "smcp",
+        "tnum"
+      ],
+      "personalities": [
+        "Classic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "New Title",
+      "slug": "new-title",
+      "category": "Sans, Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "locl",
+        "ordn",
+        "salt",
+        "sups",
+        "aalt",
+        "frac"
+      ],
+      "personalities": [
+        "Informal"
+      ]
+    },
+    {
+      "name": "Nippo",
+      "slug": "nippo",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 250.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "aalt",
+        "case",
+        "ccmp",
+        "dlig",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "salt",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss05",
+        "ss06"
+      ],
+      "personalities": [
+        "Modern",
+        "Futuristic"
+      ]
+    },
+    {
+      "name": "Nunito",
+      "slug": "nunito",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 1000,
+          "range_default": 440.0
+        },
+        {
+          "name": "Italic",
+          "property": "ital",
+          "range_left": 0.0,
+          "range_right": 1.0,
+          "range_default": 0.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "subs",
+        "ss01",
+        "ss02",
+        "aalt",
+        "sups",
+        "sinf",
+        "salt",
+        "ordn",
+        "onum",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "dnom",
+        "ccmp",
+        "case",
+        "calt"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Oswald",
+      "slug": "oswald",
+      "category": "Sans, Display",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "case",
+        "ordn",
+        "locl",
+        "frac",
+        "liga",
+        "ccmp",
+        "dlig",
+        "aalt",
+        "sups"
+      ],
+      "personalities": [
+        "Corporate",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Outfit",
+      "slug": "outfit",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 740.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "frac",
+        "dlig",
+        "ccmp",
+        "ss01",
+        "salt",
+        "pnum",
+        "ordn",
+        "aalt",
+        "rvrn",
+        "tnum",
+        "sups"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Pally",
+      "slug": "pally",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 700.0,
+          "range_default": 610.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "frac",
+        "sups",
+        "salt",
+        "ordn",
+        "locl",
+        "aalt"
+      ],
+      "personalities": [
+        "Informal"
+      ]
+    },
+    {
+      "name": "Panchang",
+      "slug": "panchang",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 800.0,
+          "range_default": 740.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "locl",
+        "sups",
+        "liga",
+        "salt",
+        "ordn",
+        "aalt",
+        "case"
+      ],
+      "personalities": [
+        "Dramatic"
+      ]
+    },
+    {
+      "name": "Paquito",
+      "slug": "paquito",
+      "category": "Serif, Slab",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 380.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "case",
+        "aalt",
+        "sups",
+        "calt",
+        "ccmp",
+        "dlig"
+      ],
+      "personalities": [
+        "Informal",
+        "Dirty",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Pencerio",
+      "slug": "pencerio",
+      "category": "Script",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Hairline",
+          "weight": 50,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "locl",
+        "aalt",
+        "calt",
+        "liga",
+        "frac",
+        "sups",
+        "salt",
+        "ordn",
+        "case"
+      ],
+      "personalities": [
+        "Elegant",
+        "Luxurious"
+      ]
+    },
+    {
+      "name": "Pilcrow Rounded",
+      "slug": "pilcrow-rounded",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 900.0,
+          "range_default": 550.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Heavy",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "hist",
+        "aalt",
+        "case",
+        "sups",
+        "ss04",
+        "ss03",
+        "ss02",
+        "ss01",
+        "salt",
+        "ordn",
+        "locl",
+        "frac"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Plein",
+      "slug": "plein",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 600.0
+        },
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 780.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "sups",
+        "lnum",
+        "liga",
+        "frac",
+        "ccmp",
+        "case",
+        "aalt",
+        "ordn",
+        "onum"
+      ],
+      "personalities": [
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Plus Jakarta Sans",
+      "slug": "plus-jakarta-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 800.0,
+          "range_default": 260.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "case",
+        "tnum",
+        "sups",
+        "subs",
+        "ss03",
+        "ss02",
+        "ss01",
+        "sinf",
+        "salt",
+        "pnum",
+        "ordn",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "dnom",
+        "ccmp",
+        "calt",
+        "aalt"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Poppins",
+      "slug": "poppins",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 420.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "liga",
+        "locl",
+        "ordn",
+        "salt",
+        "ss01",
+        "ss02",
+        "sups",
+        "ss04",
+        "ss03",
+        "aalt",
+        "frac"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Pramukh Rounded",
+      "slug": "pramukh-rounded",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 900.0,
+          "range_default": 410.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semilight",
+          "weight": 350,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semilight Italic",
+          "weight": 351,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss02",
+        "ss01",
+        "dlig",
+        "ccmp",
+        "case",
+        "aalt",
+        "salt",
+        "ordn",
+        "locl",
+        "sups",
+        "liga",
+        "frac",
+        "ss03"
+      ],
+      "personalities": [
+        "Modern",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Public Sans",
+      "slug": "public-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 740.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sinf",
+        "salt",
+        "aalt",
+        "calt",
+        "pnum",
+        "ordn",
+        "onum",
+        "numr",
+        "liga",
+        "locl",
+        "lnum",
+        "sups",
+        "subs",
+        "ss01",
+        "ccmp",
+        "dnom",
+        "frac",
+        "tnum"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Quicksand",
+      "slug": "quicksand",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "dlig",
+        "ccmp",
+        "case",
+        "aalt",
+        "locl",
+        "numr",
+        "ordn",
+        "salt",
+        "sinf",
+        "ss01",
+        "subs",
+        "sups",
+        "zero",
+        "liga",
+        "dnom"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Quilon",
+      "slug": "quilon",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 400.0,
+          "range_right": 700.0,
+          "range_default": 640.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "salt",
+        "sups",
+        "aalt",
+        "frac",
+        "liga",
+        "ordn"
+      ],
+      "personalities": [
+        "Informal"
+      ]
+    },
+    {
+      "name": "Rajdhani",
+      "slug": "rajdhani",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 700.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "liga",
+        "aalt",
+        "frac",
+        "sups",
+        "ordn"
+      ],
+      "personalities": [
+        "Modern",
+        "Clean",
+        "Futuristic"
+      ]
+    },
+    {
+      "name": "Ranade",
+      "slug": "ranade",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 700.0,
+          "range_default": 700.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "aalt",
+        "salt",
+        "ordn",
+        "locl",
+        "liga",
+        "frac",
+        "ss02",
+        "ss01"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Recia",
+      "slug": "recia",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 460.0
+        },
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 460.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "sups",
+        "case",
+        "ordn",
+        "tnum",
+        "zero",
+        "onum",
+        "numr",
+        "lnum",
+        "liga",
+        "frac",
+        "dnom",
+        "pnum",
+        "sinf",
+        "subs"
+      ],
+      "personalities": [
+        "Classic",
+        "Elegant",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Red Hat Display",
+      "slug": "red-hat-display",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 840.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "subs",
+        "ss02",
+        "frac",
+        "pnum",
+        "salt",
+        "sinf",
+        "aalt",
+        "numr",
+        "ss01",
+        "case",
+        "dnom",
+        "ordn",
+        "liga",
+        "locl",
+        "tnum",
+        "sups"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Rosaline",
+      "slug": "rosaline",
+      "category": "Script",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "liga",
+        "sups",
+        "salt",
+        "ordn",
+        "locl",
+        "frac",
+        "aalt"
+      ],
+      "personalities": [
+        "Informal",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Roundo",
+      "slug": "roundo",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 400.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "case",
+        "frac",
+        "liga",
+        "sups",
+        "salt",
+        "ordn",
+        "aalt"
+      ],
+      "personalities": [
+        "Modern",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Rowan",
+      "slug": "rowan",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 500.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "lnum",
+        "sups",
+        "salt",
+        "ordn",
+        "onum",
+        "locl",
+        "liga",
+        "frac",
+        "case",
+        "calt",
+        "aalt"
+      ],
+      "personalities": [
+        "Classic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "RX100",
+      "slug": "rx-100",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 1.0,
+          "range_right": 1000,
+          "range_default": 800.2
+        }
+      ],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "ss07",
+        "aalt",
+        "case",
+        "ccmp",
+        "frac",
+        "locl",
+        "ordn",
+        "salt",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss05",
+        "ss06",
+        "sups",
+        "zero",
+        "ss01",
+        "ss08",
+        "ss09",
+        "ss10",
+        "ss11",
+        "ss12"
+      ],
+      "personalities": [
+        "Futuristic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Satoshi",
+      "slug": "satoshi",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 720.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "ss04",
+        "sinf",
+        "case",
+        "aalt",
+        "ccmp",
+        "dlig",
+        "dnom",
+        "frac",
+        "tnum",
+        "sups",
+        "subs",
+        "ss02",
+        "ss01",
+        "salt",
+        "pnum",
+        "ordn",
+        "numr",
+        "ss03",
+        "liga"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Segment",
+      "slug": "segment",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "aalt",
+        "ccmp",
+        "frac",
+        "hist",
+        "liga",
+        "locl",
+        "ordn",
+        "sups",
+        "salt",
+        "ss01",
+        "ss02"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Futuristic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Sentient",
+      "slug": "sentient",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 650.0
+        },
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 400.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ccmp",
+        "lnum",
+        "liga",
+        "case",
+        "frac",
+        "dlig",
+        "locl",
+        "onum",
+        "ordn",
+        "salt",
+        "ss01",
+        "ss02",
+        "aalt",
+        "sups"
+      ],
+      "personalities": [
+        "Classic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Sharpie",
+      "slug": "sharpie",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 840.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "liga",
+        "locl",
+        "aalt",
+        "ordn",
+        "salt",
+        "sups"
+      ],
+      "personalities": [
+        "Informal",
+        "Dirty"
+      ]
+    },
+    {
+      "name": "Sora",
+      "slug": "sora",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 800.0,
+          "range_default": 800.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "tnum",
+        "sups",
+        "salt",
+        "ordn",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "dnom",
+        "dlig",
+        "ccmp",
+        "case",
+        "aalt",
+        "ss01"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Space Grotesk",
+      "slug": "space-grotesk",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 460.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "zero",
+        "ss05",
+        "ss01",
+        "ss04",
+        "locl",
+        "numr",
+        "onum",
+        "ordn",
+        "pnum",
+        "salt",
+        "sinf",
+        "subs",
+        "sups",
+        "tnum",
+        "ss03",
+        "ss02",
+        "lnum",
+        "liga",
+        "frac",
+        "dnom",
+        "ccmp",
+        "case",
+        "aalt"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean",
+        "Futuristic"
+      ]
+    },
+    {
+      "name": "Spline Sans",
+      "slug": "spline-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 620.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "aalt",
+        "pnum",
+        "subs",
+        "ss03",
+        "ss02",
+        "ss01",
+        "sinf",
+        "salt",
+        "sups",
+        "ordn",
+        "numr",
+        "locl",
+        "liga",
+        "frac",
+        "dnom",
+        "ccmp",
+        "case",
+        "zero",
+        "tnum"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Stardom",
+      "slug": "stardom",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "salt",
+        "sups",
+        "ordn",
+        "locl",
+        "liga",
+        "frac",
+        "aalt"
+      ],
+      "personalities": [
+        "Elegant",
+        "Luxurious"
+      ]
+    },
+    {
+      "name": "Striper",
+      "slug": "striper",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "case",
+        "salt",
+        "locl",
+        "liga",
+        "ss03",
+        "ss02",
+        "ss01",
+        "frac"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Styro",
+      "slug": "styro",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 900.0,
+          "range_default": 550.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "dlig",
+        "liga"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Abstract"
+      ]
+    },
+    {
+      "name": "Supreme",
+      "slug": "supreme",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 800.0,
+          "range_default": 450.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "salt",
+        "ordn",
+        "locl",
+        "liga",
+        "frac",
+        "aalt"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean"
+      ]
+    },
+    {
+      "name": "Switzer",
+      "slug": "switzer",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 820.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extralight Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "sups",
+        "aalt",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "salt"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Synonym",
+      "slug": "synonym",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 700.0,
+          "range_default": 700.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "frac",
+        "locl",
+        "ordn",
+        "rvrn",
+        "sups",
+        "salt",
+        "aalt",
+        "liga"
+      ],
+      "personalities": [
+        "Clean",
+        "Friendly"
+      ]
+    },
+    {
+      "name": "Tabular",
+      "slug": "tabular",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 380.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "salt",
+        "frac",
+        "locl",
+        "ordn",
+        "dlig",
+        "sups",
+        "liga",
+        "aalt"
+      ],
+      "personalities": [
+        "Clean",
+        "Futuristic"
+      ]
+    },
+    {
+      "name": "Tanker",
+      "slug": "tanker",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "salt",
+        "sups",
+        "aalt",
+        "frac",
+        "locl",
+        "ordn"
+      ],
+      "personalities": [
+        "Modern",
+        "Corporate",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Technor",
+      "slug": "technor",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 200.0,
+          "range_right": 900.0,
+          "range_default": 340.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Extralight",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "salt",
+        "frac",
+        "aalt",
+        "sups",
+        "locl",
+        "ordn",
+        "liga"
+      ],
+      "personalities": [
+        "Modern",
+        "Futuristic"
+      ]
+    },
+    {
+      "name": "Teko",
+      "slug": "teko",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 340.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "locl",
+        "sups",
+        "ordn",
+        "aalt",
+        "frac",
+        "liga"
+      ],
+      "personalities": [
+        "Modern",
+        "Clean",
+        "Futuristic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Telma",
+      "slug": "telma",
+      "category": "Script",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 900.0,
+          "range_default": 780.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "calt",
+        "aalt",
+        "liga",
+        "frac",
+        "fina",
+        "sups",
+        "ordn",
+        "salt",
+        "locl",
+        "dlig"
+      ],
+      "personalities": [
+        "Informal",
+        "Dramatic"
+      ]
+    },
+    {
+      "name": "Trench Slab",
+      "slug": "trench-slab",
+      "category": "Slab",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 300.0,
+          "range_right": 700.0,
+          "range_default": 660.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semibold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ss02",
+        "sups",
+        "case",
+        "frac",
+        "liga",
+        "locl",
+        "ordn",
+        "salt",
+        "ss01",
+        "aalt",
+        "ss03"
+      ],
+      "personalities": [
+        "Dramatic",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Work Sans",
+      "slug": "work-sans",
+      "category": "Sans",
+      "script": "latin",
+      "license_type": "sil_ofl",
+      "axes": [
+        {
+          "name": "Weight",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 660.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Light",
+          "weight": 200,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Light Italic",
+          "weight": 201,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Medium",
+          "weight": 500,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Medium Italic",
+          "weight": 501,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold",
+          "weight": 600,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Semi Bold Italic",
+          "weight": 601,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extra Bold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "aalt",
+        "ss05",
+        "ss04",
+        "ss03",
+        "ss02",
+        "ss01",
+        "smcp",
+        "sinf",
+        "salt",
+        "pnum",
+        "ornm",
+        "ordn",
+        "onum",
+        "numr",
+        "nalt",
+        "locl",
+        "lnum",
+        "liga",
+        "hist",
+        "frac",
+        "dnom",
+        "dlig",
+        "cswh",
+        "ccmp",
+        "case",
+        "calt",
+        "c2sc",
+        "rvrn",
+        "zero",
+        "tnum",
+        "titl",
+        "swsh",
+        "sups",
+        "subs",
+        "ss06"
+      ],
+      "personalities": [
+        "Corporate",
+        "Clean",
+        "Serious"
+      ]
+    },
+    {
+      "name": "Zina",
+      "slug": "zina",
+      "category": "Display",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [],
+      "styles": [
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        }
+      ],
+      "features": [
+        "salt",
+        "sups",
+        "frac",
+        "aalt",
+        "ordn",
+        "locl",
+        "liga"
+      ],
+      "personalities": [
+        "Dramatic"
+      ]
+    },
+    {
+      "name": "Zodiak",
+      "slug": "zodiak",
+      "category": "Serif",
+      "script": "latin",
+      "license_type": "itf_ffl",
+      "axes": [
+        {
+          "name": "wght",
+          "property": "wght",
+          "range_left": 100.0,
+          "range_right": 900.0,
+          "range_default": 900.0
+        }
+      ],
+      "styles": [
+        {
+          "label": "Thin",
+          "weight": 100,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Thin Italic",
+          "weight": 101,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Light",
+          "weight": 300,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Light Italic",
+          "weight": 301,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Regular",
+          "weight": 400,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Italic",
+          "weight": 401,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Bold",
+          "weight": 700,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Bold Italic",
+          "weight": 701,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Extrabold         ",
+          "weight": 800,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Extrabold Italic",
+          "weight": 801,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Black",
+          "weight": 900,
+          "italic": false,
+          "variable": false
+        },
+        {
+          "label": "Black Italic",
+          "weight": 901,
+          "italic": true,
+          "variable": false
+        },
+        {
+          "label": "Variable",
+          "weight": 1,
+          "italic": false,
+          "variable": true
+        },
+        {
+          "label": "Variable Italic",
+          "weight": 2,
+          "italic": true,
+          "variable": true
+        }
+      ],
+      "features": [
+        "ordn",
+        "frac",
+        "aalt",
+        "locl",
+        "rvrn",
+        "sups",
+        "liga",
+        "salt"
+      ],
+      "personalities": [
+        "Classic",
+        "Elegant",
+        "Clean",
+        "Luxurious"
+      ]
+    }
+  ],
+  "personality_verified": "2026-10-02",
+  "personality_source": "https://api.fontshare.com/v2/fonts/personalities",
+  "personality_labels": [
+    "Informal",
+    "Modern",
+    "Corporate",
+    "Classic",
+    "Elegant",
+    "Dramatic",
+    "Clean",
+    "Futuristic",
+    "Serious",
+    "Dirty",
+    "Luxurious",
+    "Friendly",
+    "Abstract"
+  ]
+}

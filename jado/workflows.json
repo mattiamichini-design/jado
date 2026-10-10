@@ -1,0 +1,2891 @@
+{
+  "schemaVersion": 1,
+  "name": "JADO",
+  "version": "2026-10-06-v6",
+  "workflows": [
+    {
+      "id": "00-router",
+      "title": "Entry and route selection",
+      "summary": "Resolve the three dials, then pick the smallest route that delivers the requested outcome.",
+      "notes": "Stage, involvement and budget are the only run-level choices; execution mode follows the budget unless the user names one. Infer missing dials from the request and project defaults instead of asking, except in pair involvement. A review-only request authorizes findings, not product changes.",
+      "kind": "router",
+      "surface": "any",
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Request and project materials"
+      ],
+      "outputs": [
+        "Selected route and contract, or review-only findings"
+      ],
+      "budget": {
+        "newDelegations": 8,
+        "concurrent": 3,
+        "repairBatches": 2
+      },
+      "entry": "start",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "start",
+          "kind": "start",
+          "label": "Design request",
+          "detail": "Read the request and the supplied project materials.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "dials",
+          "kind": "action",
+          "label": "Resolve stage, involvement and budget",
+          "detail": "Use explicit choices, then a valid checkpoint, then the project's 'JADO defaults' line, then policy defaults. When the stage is unstated, infer it: ideas, options or moodboards mean explore; a selected direction means refine; production code or release means ship. Announce the resolved dials in one line; ask only in pair involvement or when two readings would produce different work.",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "intent",
+          "kind": "decision",
+          "label": "Is this a review-only request?",
+          "detail": "Keep product and canvas read-only when only review is assigned.",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "review_kind",
+          "kind": "decision",
+          "label": "Which review is required?",
+          "detail": "Choose task and behavior review or composition and fidelity review from the request.",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "review_ux",
+          "kind": "skill",
+          "label": "Review tasks and accessibility",
+          "detail": "Collect read-only findings, evidence and coverage limits in an independent context.",
+          "ref": "jado-ux-reviewer",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "review_visual",
+          "kind": "skill",
+          "label": "Review visual output",
+          "detail": "Collect read-only findings, evidence and coverage limits in an independent context.",
+          "ref": "jado-visual-reviewer",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "review_done",
+          "kind": "end",
+          "label": "Deliver findings and limits",
+          "detail": "Return findings and unverified criteria; a review alone does not authorize fixes.",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "route",
+          "kind": "decision",
+          "label": "Which route fits the outcome?",
+          "detail": "Pick the smallest route that produces the requested result. A defined fix goes straight to the patch route.",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "ask",
+          "kind": "skill",
+          "label": "Resolve a route-changing gap",
+          "detail": "Use ask-jado only when two routes remain plausible and the choice changes the work; return to route selection with the answer.",
+          "ref": "ask-jado",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        },
+        {
+          "id": "rpatch",
+          "kind": "subflow",
+          "label": "Patch",
+          "detail": "Select R01.",
+          "ref": "R01",
+          "position": {
+            "x": 0,
+            "y": 1800
+          }
+        },
+        {
+          "id": "rdecide",
+          "kind": "subflow",
+          "label": "Decide with the user",
+          "detail": "Select R03.",
+          "ref": "R03",
+          "position": {
+            "x": 0,
+            "y": 2000
+          }
+        },
+        {
+          "id": "rbuild",
+          "kind": "subflow",
+          "label": "Build",
+          "detail": "Select R04.",
+          "ref": "R04",
+          "position": {
+            "x": 0,
+            "y": 2200
+          }
+        },
+        {
+          "id": "rexplore",
+          "kind": "subflow",
+          "label": "Explore alternatives",
+          "detail": "Select R05.",
+          "ref": "R05",
+          "position": {
+            "x": 0,
+            "y": 2400
+          }
+        },
+        {
+          "id": "rstaged",
+          "kind": "subflow",
+          "label": "Staged delivery",
+          "detail": "Select R07.",
+          "ref": "R07",
+          "position": {
+            "x": 0,
+            "y": 2600
+          }
+        },
+        {
+          "id": "rcouncil",
+          "kind": "subflow",
+          "label": "Council",
+          "detail": "Select R08.",
+          "ref": "R08",
+          "position": {
+            "x": 0,
+            "y": 2800
+          }
+        },
+        {
+          "id": "rvh",
+          "kind": "subflow",
+          "label": "VariantHub",
+          "detail": "Select R09 only when the user names VariantHub.",
+          "ref": "R09",
+          "position": {
+            "x": 0,
+            "y": 3000
+          }
+        },
+        {
+          "id": "rresearch",
+          "kind": "subflow",
+          "label": "Visual research",
+          "detail": "Select visual-research for references or a moodboard.",
+          "ref": "visual-research",
+          "position": {
+            "x": 0,
+            "y": 3200
+          }
+        },
+        {
+          "id": "contract",
+          "kind": "action",
+          "label": "Record the contract",
+          "detail": "Record route and revision, the dials with their resolved limits (variant count, maxFixPasses, independent review, evidence level, model tier), goal, scope, owner, writable files or nodes, settled decisions, stopAfter and remaining budget. Resolve evidence storage with jado-evidence-contract when the stage persists evidence.",
+          "position": {
+            "x": 0,
+            "y": 3400
+          }
+        },
+        {
+          "id": "execute",
+          "kind": "action",
+          "label": "Coordinate the route with jado-flow",
+          "detail": "Execute the selected route; pass the contract to each assignment and apply the involvement dial at checkpoints.",
+          "position": {
+            "x": 0,
+            "y": 3600
+          }
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver result and run summary",
+          "detail": "Declare complete, partial or blocked from checks actually performed, with the run summary.",
+          "position": {
+            "x": 0,
+            "y": 3800
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "start-dials",
+          "from": "start",
+          "to": "dials",
+          "label": ""
+        },
+        {
+          "id": "dials-intent",
+          "from": "dials",
+          "to": "intent",
+          "label": ""
+        },
+        {
+          "id": "intent-review_kind",
+          "from": "intent",
+          "to": "review_kind",
+          "label": "Yes"
+        },
+        {
+          "id": "intent-route",
+          "from": "intent",
+          "to": "route",
+          "label": "No"
+        },
+        {
+          "id": "review_kind-review_ux",
+          "from": "review_kind",
+          "to": "review_ux",
+          "label": "Tasks and behavior"
+        },
+        {
+          "id": "review_kind-review_visual",
+          "from": "review_kind",
+          "to": "review_visual",
+          "label": "Composition and fidelity"
+        },
+        {
+          "id": "review_ux-review_done",
+          "from": "review_ux",
+          "to": "review_done",
+          "label": ""
+        },
+        {
+          "id": "review_visual-review_done",
+          "from": "review_visual",
+          "to": "review_done",
+          "label": ""
+        },
+        {
+          "id": "route-ask",
+          "from": "route",
+          "to": "ask",
+          "label": "Route-changing gap"
+        },
+        {
+          "id": "ask-route",
+          "from": "ask",
+          "to": "route",
+          "label": "Gap resolved"
+        },
+        {
+          "id": "route-rpatch",
+          "from": "route",
+          "to": "rpatch",
+          "label": "Precise fix"
+        },
+        {
+          "id": "route-rdecide",
+          "from": "route",
+          "to": "rdecide",
+          "label": "Open decision the user wants to make"
+        },
+        {
+          "id": "route-rbuild",
+          "from": "route",
+          "to": "rbuild",
+          "label": "Code from a direction or selected canvas"
+        },
+        {
+          "id": "route-rexplore",
+          "from": "route",
+          "to": "rexplore",
+          "label": "Paper alternatives"
+        },
+        {
+          "id": "route-rstaged",
+          "from": "route",
+          "to": "rstaged",
+          "label": "Several stages in one mandate"
+        },
+        {
+          "id": "route-rcouncil",
+          "from": "route",
+          "to": "rcouncil",
+          "label": "Competing perspectives on one decision"
+        },
+        {
+          "id": "route-rvh",
+          "from": "route",
+          "to": "rvh",
+          "label": "VariantHub named"
+        },
+        {
+          "id": "route-rresearch",
+          "from": "route",
+          "to": "rresearch",
+          "label": "References or moodboard"
+        },
+        {
+          "id": "rpatch-contract",
+          "from": "rpatch",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rdecide-contract",
+          "from": "rdecide",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rbuild-contract",
+          "from": "rbuild",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rexplore-contract",
+          "from": "rexplore",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rstaged-contract",
+          "from": "rstaged",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rcouncil-contract",
+          "from": "rcouncil",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rvh-contract",
+          "from": "rvh",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "rresearch-contract",
+          "from": "rresearch",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "contract-execute",
+          "from": "contract",
+          "to": "execute",
+          "label": ""
+        },
+        {
+          "id": "execute-done",
+          "from": "execute",
+          "to": "done",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "id": "R01",
+      "title": "R01 · Patch",
+      "summary": "Apply a precise, reversible fix to code or Paper nodes and check the result.",
+      "notes": "The change is already defined: no exploration, research or delegation. One targeted fix pass after the first check; report remaining issues instead of iterating.",
+      "kind": "workflow",
+      "surface": "any",
+      "stages": [
+        "explore",
+        "refine",
+        "ship"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Precise problem and affected files or nodes"
+      ],
+      "outputs": [
+        "Local fix with current evidence"
+      ],
+      "budget": {
+        "newDelegations": 0,
+        "concurrent": 0,
+        "repairBatches": 1
+      },
+      "entry": "in",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "in",
+          "kind": "start",
+          "label": "Precise fix",
+          "detail": "Read the expected result, the target files or nodes and the constraints.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "surface",
+          "kind": "decision",
+          "label": "Where is the change?",
+          "detail": "Distinguish code from Paper nodes.",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "code",
+          "kind": "skill",
+          "label": "Edit the code",
+          "detail": "Apply jado-craft-core in code mode; change only the assigned scope.",
+          "ref": "jado-craft-core",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "paper",
+          "kind": "skill",
+          "label": "Edit the Paper nodes",
+          "detail": "Read the affected nodes and an initial capture, then edit with jado-canvas-layout.",
+          "ref": "jado-canvas-layout",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "proof",
+          "kind": "action",
+          "label": "Capture and check",
+          "detail": "Code: check the affected viewport and state in the browser. Paper: apply jado-canvas-verify to the changed nodes.",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "gate",
+          "kind": "gate",
+          "label": "Is the problem resolved?",
+          "detail": "Compare the capture with the expected result.",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "fix",
+          "kind": "action",
+          "label": "One targeted fix pass",
+          "detail": "Fix only what the check found, then capture again.",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver the fix and evidence",
+          "detail": "Return changed files or nodes and the capture.",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "stop",
+          "kind": "end",
+          "label": "Report the remaining issue",
+          "detail": "State what is still wrong and why the cap or a blocker stopped the work.",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "in-surface",
+          "from": "in",
+          "to": "surface",
+          "label": ""
+        },
+        {
+          "id": "surface-code",
+          "from": "surface",
+          "to": "code",
+          "label": "Code"
+        },
+        {
+          "id": "surface-paper",
+          "from": "surface",
+          "to": "paper",
+          "label": "Paper"
+        },
+        {
+          "id": "code-proof",
+          "from": "code",
+          "to": "proof",
+          "label": ""
+        },
+        {
+          "id": "paper-proof",
+          "from": "paper",
+          "to": "proof",
+          "label": ""
+        },
+        {
+          "id": "proof-gate",
+          "from": "proof",
+          "to": "gate",
+          "label": ""
+        },
+        {
+          "id": "gate-done",
+          "from": "gate",
+          "to": "done",
+          "label": "Yes"
+        },
+        {
+          "id": "gate-fix",
+          "from": "gate",
+          "to": "fix",
+          "label": "No, fix pass left"
+        },
+        {
+          "id": "fix-proof",
+          "from": "fix",
+          "to": "proof",
+          "label": ""
+        },
+        {
+          "id": "gate-stop",
+          "from": "gate",
+          "to": "stop",
+          "label": "Cap reached or blocked"
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "R03 · Decide with the user",
+      "summary": "Resolve one open decision with the user through a few substantively different options.",
+      "notes": "Use this route when the user wants to make the call. In autopilot the coordinator decides and logs instead of selecting this route. Present 2–4 options with a recommendation through the native question tool; a planning request stops at the recorded decision.",
+      "kind": "workflow",
+      "surface": "any",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Open decision and existing choices"
+      ],
+      "outputs": [
+        "Recorded decision with criteria, or the assigned UX artifact"
+      ],
+      "budget": {
+        "newDelegations": 2,
+        "concurrent": 2,
+        "repairBatches": 1
+      },
+      "entry": "in",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "in",
+          "kind": "start",
+          "label": "Open decision",
+          "detail": "Reuse recorded choices; isolate the one decision still open.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "missing",
+          "kind": "decision",
+          "label": "What is missing to decide?",
+          "detail": "Identify missing evidence, flow understanding or visual direction; skip straight to the choice when options are already clear.",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "research",
+          "kind": "skill",
+          "label": "Collect missing evidence",
+          "detail": "Answer the bounded question that blocks the decision.",
+          "ref": "jado-researcher",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "ux",
+          "kind": "skill",
+          "label": "Clarify flow and states",
+          "detail": "Answer the flow or state question that blocks the decision.",
+          "ref": "jado-ux-architect",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "visual",
+          "kind": "skill",
+          "label": "Sketch visual directions",
+          "detail": "Use art direction for open concepts; keep sketches at explore fidelity.",
+          "ref": "jado-art-direction",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "choices",
+          "kind": "action",
+          "label": "Prepare the options",
+          "detail": "Prepare 2–4 substantively different options with explicit criteria, tradeoffs and a recommended option.",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "human",
+          "kind": "human",
+          "label": "Ask the user",
+          "detail": "Ask with the native question tool, recommended option first. Record the answer; it stays valid until its assumptions change.",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "contract",
+          "kind": "action",
+          "label": "Record choice and criteria",
+          "detail": "Record the selection, acceptance criteria and next scope.",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "next",
+          "kind": "end",
+          "label": "Deliver the decision",
+          "detail": "Deliver the decision or the assigned UX artifact; canvas and code need their own mandate.",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "in-missing",
+          "from": "in",
+          "to": "missing",
+          "label": ""
+        },
+        {
+          "id": "missing-research",
+          "from": "missing",
+          "to": "research",
+          "label": "Evidence"
+        },
+        {
+          "id": "missing-ux",
+          "from": "missing",
+          "to": "ux",
+          "label": "Flow"
+        },
+        {
+          "id": "missing-visual",
+          "from": "missing",
+          "to": "visual",
+          "label": "Direction"
+        },
+        {
+          "id": "missing-choices",
+          "from": "missing",
+          "to": "choices",
+          "label": "Nothing, options are clear"
+        },
+        {
+          "id": "research-choices",
+          "from": "research",
+          "to": "choices",
+          "label": ""
+        },
+        {
+          "id": "ux-choices",
+          "from": "ux",
+          "to": "choices",
+          "label": ""
+        },
+        {
+          "id": "visual-choices",
+          "from": "visual",
+          "to": "choices",
+          "label": ""
+        },
+        {
+          "id": "choices-human",
+          "from": "choices",
+          "to": "human",
+          "label": ""
+        },
+        {
+          "id": "human-contract",
+          "from": "human",
+          "to": "contract",
+          "label": ""
+        },
+        {
+          "id": "contract-next",
+          "from": "contract",
+          "to": "next",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "R04 · Build",
+      "summary": "Implement an approved direction or a selected canvas in code and verify it at the stage's rigor.",
+      "notes": "Refine verifies the affected states with a self-check and adds an independent review when the budget is normal or deep. Ship always requires the independent visual review, plus UX review when critical flows or states change. Engineering work only for a concrete technical problem. Repairs return to the same builder as one aggregated batch.",
+      "kind": "workflow",
+      "surface": "code",
+      "stages": [
+        "refine",
+        "ship"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Approved direction or selected canvas, and the authorization to implement"
+      ],
+      "outputs": [
+        "Implementation with current evidence and completed checks"
+      ],
+      "budget": {
+        "newDelegations": 4,
+        "concurrent": 2,
+        "repairBatches": 2
+      },
+      "entry": "p",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "p",
+          "kind": "start",
+          "label": "Read the approved source",
+          "detail": "Identify the approved direction or selected canvas revision and the decision that authorizes implementation.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "ready",
+          "kind": "decision",
+          "label": "Is the source complete and approved?",
+          "detail": "Check completeness and the authorization.",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "canvas",
+          "kind": "action",
+          "label": "Read the selected canvas",
+          "detail": "Read tree, tokens, text and captures of the selected revision.",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "map",
+          "kind": "skill",
+          "label": "Map tokens and components",
+          "detail": "Map canvas decisions to existing tokens and component APIs.",
+          "ref": "jado-design-systems",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "b",
+          "kind": "skill",
+          "label": "Implement components and states",
+          "detail": "Use project tokens and components within scope; explain responsive adaptations.",
+          "ref": "jado-ui-builder",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "proof",
+          "kind": "action",
+          "label": "Capture current browser evidence",
+          "detail": "Capture the current revision at target viewports and states; exercise keyboard and behavior that captures cannot prove.",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "risk",
+          "kind": "decision",
+          "label": "Is there a concrete technical problem?",
+          "detail": "A completed intervention does not reopen this branch.",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "eng",
+          "kind": "skill",
+          "label": "Resolve the technical problem",
+          "detail": "Fix only the assigned issue and recapture.",
+          "ref": "jado-ui-engineer",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "check",
+          "kind": "decision",
+          "label": "Does the stage need an independent review?",
+          "detail": "Ship: always. Refine: when the budget is normal or deep.",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        },
+        {
+          "id": "rev",
+          "kind": "skill",
+          "label": "Review visual output",
+          "detail": "Check rendering and fidelity read-only against the source.",
+          "ref": "jado-visual-reviewer",
+          "position": {
+            "x": 0,
+            "y": 1800
+          }
+        },
+        {
+          "id": "ux",
+          "kind": "skill",
+          "label": "Review critical flows and states",
+          "detail": "Check changed critical flows and states read-only.",
+          "ref": "jado-ux-reviewer",
+          "position": {
+            "x": 0,
+            "y": 2000
+          }
+        },
+        {
+          "id": "parent",
+          "kind": "action",
+          "label": "Aggregate findings",
+          "detail": "Deduplicate findings into one repair batch; drop findings outside scope or stage.",
+          "position": {
+            "x": 0,
+            "y": 2200
+          }
+        },
+        {
+          "id": "gate",
+          "kind": "gate",
+          "label": "Did the required checks pass?",
+          "detail": "Verify completed checks against current evidence.",
+          "position": {
+            "x": 0,
+            "y": 2400
+          }
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver verified implementation",
+          "detail": "Return implementation, passed checks and stated limits.",
+          "position": {
+            "x": 0,
+            "y": 2600
+          }
+        },
+        {
+          "id": "stop",
+          "kind": "end",
+          "label": "Report partial or blocked work",
+          "detail": "Identify unverified parts, the missing source or the budget block.",
+          "position": {
+            "x": 0,
+            "y": 2800
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "p-ready",
+          "from": "p",
+          "to": "ready",
+          "label": ""
+        },
+        {
+          "id": "ready-stop",
+          "from": "ready",
+          "to": "stop",
+          "label": "No"
+        },
+        {
+          "id": "ready-canvas",
+          "from": "ready",
+          "to": "canvas",
+          "label": "Selected canvas"
+        },
+        {
+          "id": "ready-b",
+          "from": "ready",
+          "to": "b",
+          "label": "Direction with known mapping"
+        },
+        {
+          "id": "canvas-map",
+          "from": "canvas",
+          "to": "map",
+          "label": ""
+        },
+        {
+          "id": "map-b",
+          "from": "map",
+          "to": "b",
+          "label": ""
+        },
+        {
+          "id": "b-proof",
+          "from": "b",
+          "to": "proof",
+          "label": ""
+        },
+        {
+          "id": "proof-risk",
+          "from": "proof",
+          "to": "risk",
+          "label": ""
+        },
+        {
+          "id": "risk-eng",
+          "from": "risk",
+          "to": "eng",
+          "label": "Yes"
+        },
+        {
+          "id": "eng-proof",
+          "from": "eng",
+          "to": "proof",
+          "label": "Recapture after the fix"
+        },
+        {
+          "id": "risk-check",
+          "from": "risk",
+          "to": "check",
+          "label": "No or resolved"
+        },
+        {
+          "id": "check-parent",
+          "from": "check",
+          "to": "parent",
+          "label": "Self-check only",
+          "stages": [
+            "refine"
+          ]
+        },
+        {
+          "id": "check-rev",
+          "from": "check",
+          "to": "rev",
+          "label": "Independent review"
+        },
+        {
+          "id": "rev-ux",
+          "from": "rev",
+          "to": "ux",
+          "label": "Critical flows or states changed"
+        },
+        {
+          "id": "rev-parent",
+          "from": "rev",
+          "to": "parent",
+          "label": "Flows unchanged"
+        },
+        {
+          "id": "ux-parent",
+          "from": "ux",
+          "to": "parent",
+          "label": ""
+        },
+        {
+          "id": "parent-gate",
+          "from": "parent",
+          "to": "gate",
+          "label": ""
+        },
+        {
+          "id": "gate-done",
+          "from": "gate",
+          "to": "done",
+          "label": "Yes"
+        },
+        {
+          "id": "gate-b",
+          "from": "gate",
+          "to": "b",
+          "label": "Repair batch left"
+        },
+        {
+          "id": "gate-stop",
+          "from": "gate",
+          "to": "stop",
+          "label": "Cap reached or blocked"
+        }
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "R05 · Explore alternatives",
+      "summary": "Produce comparable Paper alternatives fast, let the user pick or iterate, then record the selection.",
+      "notes": "Variant count: the user's number, otherwise the stage default (explore 4, refine 2). Each option tests a distinct structural or directional hypothesis with the same content; a palette or font swap alone is not an option. Explore has no independent review and at most one fix pass per artboard: speed and range matter more than polish. Refine adds jado-canvas-verify and, with a normal or deep budget, one independent review. Selection belongs to the user; in autopilot the coordinator records a provisional selection.",
+      "kind": "workflow",
+      "surface": "paper",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Brief and comparison question"
+      ],
+      "outputs": [
+        "Comparable alternatives and a recorded selection"
+      ],
+      "budget": {
+        "newDelegations": 4,
+        "concurrent": 3,
+        "repairBatches": 2
+      },
+      "entry": "p",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "p",
+          "kind": "start",
+          "label": "Frame the comparison",
+          "detail": "Record the question, shared content and state, and the resolved variant count; report a budget shortfall instead of silently changing the count.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "evidence",
+          "kind": "decision",
+          "label": "Does missing evidence block the options?",
+          "detail": "Search only when a missing fact would change every option.",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "r",
+          "kind": "skill",
+          "label": "Collect blocking evidence",
+          "detail": "Answer only the blocking question.",
+          "ref": "jado-researcher",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "d",
+          "kind": "skill",
+          "label": "Design the alternatives",
+          "detail": "Explore: divergent hypotheses at low fidelity, built quickly. Refine: develop the selected direction with project tokens and states.",
+          "ref": "jado-visual-designer",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "self",
+          "kind": "action",
+          "label": "Self-check within the stage cap",
+          "detail": "Explore: fix only broken text, clipping, overlaps or missing content, at most one pass. Refine: jado-canvas-verify, at most two passes. List remaining issues instead of polishing.",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "check",
+          "kind": "decision",
+          "label": "Does the stage need an independent review?",
+          "detail": "Refine: when the budget is normal or deep. Explore: the self-check is enough.",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "review",
+          "kind": "skill",
+          "label": "Review the alternatives",
+          "detail": "Compare captures with the criteria read-only; report only issues that affect the choice.",
+          "ref": "jado-visual-reviewer",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "fix",
+          "kind": "action",
+          "label": "Repair blocking findings",
+          "detail": "The same designer spends one fix pass and recaptures; the flow continues with the fresh capture.",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "present",
+          "kind": "action",
+          "label": "Present the options",
+          "detail": "Show each option with its hypothesis, capture and known issues; recommend one with reasons.",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        },
+        {
+          "id": "choose",
+          "kind": "human",
+          "label": "Select or iterate",
+          "detail": "Checkpoints and pair: ask with the native question tool (each option, combine, iterate, more options). Autopilot: record the recommended option as a provisional selection in the decision log.",
+          "position": {
+            "x": 0,
+            "y": 1800
+          }
+        },
+        {
+          "id": "next",
+          "kind": "decision",
+          "label": "What did the user decide?",
+          "detail": "Iteration rounds consume the same budget.",
+          "position": {
+            "x": 0,
+            "y": 2000
+          }
+        },
+        {
+          "id": "snap",
+          "kind": "action",
+          "label": "Record the selection",
+          "detail": "Preserve selected nodes, revision, content and the reasons behind the choice.",
+          "position": {
+            "x": 0,
+            "y": 2200
+          }
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver the selection",
+          "detail": "Return the comparison and selection; implementation starts in R04 on request.",
+          "position": {
+            "x": 0,
+            "y": 2400
+          }
+        },
+        {
+          "id": "code",
+          "kind": "end",
+          "label": "Hand off to build",
+          "detail": "Continue to R04 only when code is in the mandate; in checkpoints involvement confirm first.",
+          "position": {
+            "x": 0,
+            "y": 2600
+          }
+        },
+        {
+          "id": "stop",
+          "kind": "end",
+          "label": "Deliver the unselected draft",
+          "detail": "Return the options and state the missing selection or reached budget.",
+          "position": {
+            "x": 0,
+            "y": 2800
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "p-evidence",
+          "from": "p",
+          "to": "evidence",
+          "label": ""
+        },
+        {
+          "id": "evidence-r",
+          "from": "evidence",
+          "to": "r",
+          "label": "Yes"
+        },
+        {
+          "id": "evidence-d",
+          "from": "evidence",
+          "to": "d",
+          "label": "No"
+        },
+        {
+          "id": "r-d",
+          "from": "r",
+          "to": "d",
+          "label": ""
+        },
+        {
+          "id": "d-self",
+          "from": "d",
+          "to": "self",
+          "label": ""
+        },
+        {
+          "id": "self-check",
+          "from": "self",
+          "to": "check",
+          "label": ""
+        },
+        {
+          "id": "check-present",
+          "from": "check",
+          "to": "present",
+          "label": "No review",
+          "stages": [
+            "explore",
+            "refine"
+          ]
+        },
+        {
+          "id": "check-review",
+          "from": "check",
+          "to": "review",
+          "label": "Independent review",
+          "stages": [
+            "refine"
+          ]
+        },
+        {
+          "id": "review-present",
+          "from": "review",
+          "to": "present",
+          "label": "No blocking findings"
+        },
+        {
+          "id": "review-fix",
+          "from": "review",
+          "to": "fix",
+          "label": "Blocking findings"
+        },
+        {
+          "id": "fix-present",
+          "from": "fix",
+          "to": "present",
+          "label": ""
+        },
+        {
+          "id": "present-choose",
+          "from": "present",
+          "to": "choose",
+          "label": ""
+        },
+        {
+          "id": "choose-next",
+          "from": "choose",
+          "to": "next",
+          "label": ""
+        },
+        {
+          "id": "next-d",
+          "from": "next",
+          "to": "d",
+          "label": "Iterate with feedback"
+        },
+        {
+          "id": "next-snap",
+          "from": "next",
+          "to": "snap",
+          "label": "Selection made"
+        },
+        {
+          "id": "next-stop",
+          "from": "next",
+          "to": "stop",
+          "label": "Budget reached or no selection"
+        },
+        {
+          "id": "snap-done",
+          "from": "snap",
+          "to": "done",
+          "label": "Stop here"
+        },
+        {
+          "id": "snap-code",
+          "from": "snap",
+          "to": "code",
+          "label": "Code in the mandate"
+        }
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "R07 · Staged delivery",
+      "summary": "Carry one mandate through UX, canvas and code up to the recorded stopAfter, with shared budget and stage-appropriate checks.",
+      "notes": "Record stopAfter before starting: ux, canvas or code. Activate only needed roles; the coordinator may author. Ship requires independent canvas and code reviews; explore and refine use self-checks unless the budget adds a review. A UX deliverable does not authorize canvas, and a canvas deliverable does not authorize code. Canvas and code share the repair batches.",
+      "kind": "workflow",
+      "surface": "any",
+      "stages": [
+        "explore",
+        "refine",
+        "ship"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Brief, delegated authority, stopAfter and budget"
+      ],
+      "outputs": [
+        "Verified result, limits and run summary"
+      ],
+      "budget": {
+        "newDelegations": 8,
+        "concurrent": 3,
+        "repairBatches": 2
+      },
+      "entry": "p",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "p",
+          "kind": "start",
+          "label": "Verify mandate and stopAfter",
+          "detail": "Check access, scope, delegated authority, stopAfter, dials and budget.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "brief",
+          "kind": "skill",
+          "label": "Define tasks, states and criteria",
+          "detail": "Prepare brief, flow and acceptance criteria from available sources.",
+          "ref": "jado-ux-architect",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "research",
+          "kind": "skill",
+          "label": "Collect required evidence",
+          "detail": "Close only the source gap that blocks dependent decisions.",
+          "ref": "jado-researcher",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "decide",
+          "kind": "action",
+          "label": "Resolve choices",
+          "detail": "Apply the involvement dial: decide and log, or batch the open questions at this checkpoint. Decisions outside delegated authority stop the dependent work.",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "result",
+          "kind": "decision",
+          "label": "What is the stopAfter output?",
+          "detail": "UX stops after artifact verification; canvas or code needs visual design.",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "ux_verify",
+          "kind": "skill",
+          "label": "Verify the UX artifact",
+          "detail": "Check only the requested artifact, sources, IDs, links and states.",
+          "ref": "jado-evidence-contract",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "ux_gate",
+          "kind": "gate",
+          "label": "Does the UX artifact satisfy the contract?",
+          "detail": "Return defects to the same author within the fix cap.",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "ux_done",
+          "kind": "end",
+          "label": "Deliver UX and checkpoint",
+          "detail": "Return the artifact with evidence; record next step, decisions and remaining budget.",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "copy_needed",
+          "kind": "decision",
+          "label": "Does the content need work?",
+          "detail": "Reuse approved, unchanged copy as-is and record its source; new, changed or unapproved text needs content work.",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        },
+        {
+          "id": "copy",
+          "kind": "skill",
+          "label": "Prepare the content",
+          "detail": "Prepare only new, changed or unapproved copy.",
+          "ref": "jado-content-designer",
+          "position": {
+            "x": 0,
+            "y": 1800
+          }
+        },
+        {
+          "id": "design",
+          "kind": "skill",
+          "label": "Design the canvas",
+          "detail": "Integrate the copy as the single canvas writer; follow the stage's variant count, fidelity and fix cap.",
+          "ref": "jado-visual-designer",
+          "position": {
+            "x": 0,
+            "y": 2000
+          }
+        },
+        {
+          "id": "canvas_check",
+          "kind": "decision",
+          "label": "Does the stage need an independent canvas review?",
+          "detail": "Ship: always. Refine: when the budget is normal or deep. Explore: the self-check is enough.",
+          "position": {
+            "x": 0,
+            "y": 2200
+          }
+        },
+        {
+          "id": "canvas_review",
+          "kind": "skill",
+          "label": "Review the canvas",
+          "detail": "Review captures and structure read-only before any implementation.",
+          "ref": "jado-visual-reviewer",
+          "position": {
+            "x": 0,
+            "y": 2400
+          }
+        },
+        {
+          "id": "canvas_gate",
+          "kind": "gate",
+          "label": "Is the canvas accepted?",
+          "detail": "Check the criteria and the selection authority; in checkpoints involvement, confirm the canvas with the user before code.",
+          "position": {
+            "x": 0,
+            "y": 2600
+          }
+        },
+        {
+          "id": "canvas_fix",
+          "kind": "action",
+          "label": "Repair the canvas",
+          "detail": "The same designer repairs one batch, recaptures and verifies the findings.",
+          "position": {
+            "x": 0,
+            "y": 2800
+          }
+        },
+        {
+          "id": "code_scope",
+          "kind": "decision",
+          "label": "Is code in the mandate?",
+          "detail": "Continue only when stopAfter is code.",
+          "position": {
+            "x": 0,
+            "y": 3000
+          }
+        },
+        {
+          "id": "canvas_done",
+          "kind": "end",
+          "label": "Deliver the verified canvas",
+          "detail": "Return canvas, revision, evidence and remaining budget.",
+          "position": {
+            "x": 0,
+            "y": 3200
+          }
+        },
+        {
+          "id": "b",
+          "kind": "skill",
+          "label": "Implement the accepted canvas",
+          "detail": "Implement the accepted direction with project components.",
+          "ref": "jado-ui-builder",
+          "position": {
+            "x": 0,
+            "y": 3400
+          }
+        },
+        {
+          "id": "code_check",
+          "kind": "decision",
+          "label": "Does the stage need an independent code review?",
+          "detail": "Ship: always, plus UX review for changed critical flows. Refine: when the budget is normal or deep.",
+          "position": {
+            "x": 0,
+            "y": 3600
+          }
+        },
+        {
+          "id": "review",
+          "kind": "skill",
+          "label": "Review the browser result",
+          "detail": "Inspect current browser evidence read-only.",
+          "ref": "jado-visual-reviewer",
+          "position": {
+            "x": 0,
+            "y": 3800
+          }
+        },
+        {
+          "id": "gate",
+          "kind": "gate",
+          "label": "Did the final checks pass?",
+          "detail": "Compare checks and evidence with the contract.",
+          "position": {
+            "x": 0,
+            "y": 4000
+          }
+        },
+        {
+          "id": "fix",
+          "kind": "action",
+          "label": "Return repairs to the builder",
+          "detail": "One aggregated batch to the same author, who verifies the findings.",
+          "position": {
+            "x": 0,
+            "y": 4200
+          }
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver result and run summary",
+          "detail": "Return outputs, evidence, decision log, gaps and consumption.",
+          "position": {
+            "x": 0,
+            "y": 4400
+          }
+        },
+        {
+          "id": "stop",
+          "kind": "end",
+          "label": "Report the block and completed work",
+          "detail": "Record the block and verified parts; continue only independent work.",
+          "position": {
+            "x": 0,
+            "y": 4600
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "p-brief",
+          "from": "p",
+          "to": "brief",
+          "label": ""
+        },
+        {
+          "id": "brief-research",
+          "from": "brief",
+          "to": "research",
+          "label": "Evidence missing"
+        },
+        {
+          "id": "brief-decide",
+          "from": "brief",
+          "to": "decide",
+          "label": "Evidence sufficient"
+        },
+        {
+          "id": "research-decide",
+          "from": "research",
+          "to": "decide",
+          "label": ""
+        },
+        {
+          "id": "decide-result",
+          "from": "decide",
+          "to": "result",
+          "label": ""
+        },
+        {
+          "id": "result-ux_verify",
+          "from": "result",
+          "to": "ux_verify",
+          "label": "UX artifact only"
+        },
+        {
+          "id": "result-copy_needed",
+          "from": "result",
+          "to": "copy_needed",
+          "label": "Canvas or code"
+        },
+        {
+          "id": "result-stop",
+          "from": "result",
+          "to": "stop",
+          "label": "Blocked by a decision outside authority"
+        },
+        {
+          "id": "ux_verify-ux_gate",
+          "from": "ux_verify",
+          "to": "ux_gate",
+          "label": ""
+        },
+        {
+          "id": "ux_gate-ux_done",
+          "from": "ux_gate",
+          "to": "ux_done",
+          "label": "Yes"
+        },
+        {
+          "id": "ux_gate-brief",
+          "from": "ux_gate",
+          "to": "brief",
+          "label": "No, fix pass left"
+        },
+        {
+          "id": "ux_gate-stop",
+          "from": "ux_gate",
+          "to": "stop",
+          "label": "Cap reached or blocked"
+        },
+        {
+          "id": "copy_needed-copy",
+          "from": "copy_needed",
+          "to": "copy",
+          "label": "New, changed or unapproved"
+        },
+        {
+          "id": "copy_needed-design",
+          "from": "copy_needed",
+          "to": "design",
+          "label": "Approved and unchanged: reuse"
+        },
+        {
+          "id": "copy-design",
+          "from": "copy",
+          "to": "design",
+          "label": ""
+        },
+        {
+          "id": "design-canvas_check",
+          "from": "design",
+          "to": "canvas_check",
+          "label": ""
+        },
+        {
+          "id": "canvas_check-canvas_gate",
+          "from": "canvas_check",
+          "to": "canvas_gate",
+          "label": "Self-check only",
+          "stages": [
+            "explore",
+            "refine"
+          ]
+        },
+        {
+          "id": "canvas_check-canvas_review",
+          "from": "canvas_check",
+          "to": "canvas_review",
+          "label": "Independent review"
+        },
+        {
+          "id": "canvas_review-canvas_gate",
+          "from": "canvas_review",
+          "to": "canvas_gate",
+          "label": ""
+        },
+        {
+          "id": "canvas_gate-code_scope",
+          "from": "canvas_gate",
+          "to": "code_scope",
+          "label": "Yes"
+        },
+        {
+          "id": "canvas_gate-canvas_fix",
+          "from": "canvas_gate",
+          "to": "canvas_fix",
+          "label": "No, repair batch left"
+        },
+        {
+          "id": "canvas_gate-stop",
+          "from": "canvas_gate",
+          "to": "stop",
+          "label": "Decision or budget missing"
+        },
+        {
+          "id": "canvas_fix-canvas_gate",
+          "from": "canvas_fix",
+          "to": "canvas_gate",
+          "label": ""
+        },
+        {
+          "id": "code_scope-b",
+          "from": "code_scope",
+          "to": "b",
+          "label": "Yes"
+        },
+        {
+          "id": "code_scope-canvas_done",
+          "from": "code_scope",
+          "to": "canvas_done",
+          "label": "No, design only"
+        },
+        {
+          "id": "b-code_check",
+          "from": "b",
+          "to": "code_check",
+          "label": ""
+        },
+        {
+          "id": "code_check-gate",
+          "from": "code_check",
+          "to": "gate",
+          "label": "Self-check only",
+          "stages": [
+            "explore",
+            "refine"
+          ]
+        },
+        {
+          "id": "code_check-review",
+          "from": "code_check",
+          "to": "review",
+          "label": "Independent review"
+        },
+        {
+          "id": "review-gate",
+          "from": "review",
+          "to": "gate",
+          "label": ""
+        },
+        {
+          "id": "gate-done",
+          "from": "gate",
+          "to": "done",
+          "label": "Yes"
+        },
+        {
+          "id": "gate-fix",
+          "from": "gate",
+          "to": "fix",
+          "label": "No, repair batch left"
+        },
+        {
+          "id": "fix-gate",
+          "from": "fix",
+          "to": "gate",
+          "label": ""
+        },
+        {
+          "id": "gate-stop",
+          "from": "gate",
+          "to": "stop",
+          "label": "Cap reached or blocked"
+        }
+      ]
+    },
+    {
+      "id": "R08",
+      "title": "R08 · Council",
+      "summary": "Collect independent research, UX and visual proposals on one consequential decision, then decide or ask.",
+      "notes": "Use only for a consequential choice with competing hypotheses, normally with a deep budget. Collect proposals before sharing them; allow one targeted reply on a substantive conflict. A majority cannot override evidence or user constraints. Record conclusions, rationale and dissent.",
+      "kind": "workflow",
+      "surface": "any",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Decision question, criteria and constraints"
+      ],
+      "outputs": [
+        "Reasoned decision or a focused question for the user"
+      ],
+      "budget": {
+        "newDelegations": 6,
+        "concurrent": 3,
+        "repairBatches": 1
+      },
+      "entry": "p",
+      "requiredNodes": [],
+      "nodes": [
+        {
+          "id": "p",
+          "kind": "start",
+          "label": "Define the decision",
+          "detail": "Give three specialists the same question, criteria and constraints.",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "r",
+          "kind": "skill",
+          "label": "Evidence and uncertainty",
+          "detail": "Collect documented evidence and state uncertainty.",
+          "ref": "jado-researcher",
+          "position": {
+            "x": 0,
+            "y": 200
+          }
+        },
+        {
+          "id": "u",
+          "kind": "skill",
+          "label": "UX proposal",
+          "detail": "Propose the flow and its tradeoffs.",
+          "ref": "jado-ux-architect",
+          "position": {
+            "x": 0,
+            "y": 400
+          }
+        },
+        {
+          "id": "v",
+          "kind": "skill",
+          "label": "Visual proposal",
+          "detail": "Propose hierarchy and composition consistent with the brief, at explore fidelity.",
+          "ref": "jado-visual-designer",
+          "position": {
+            "x": 0,
+            "y": 600
+          }
+        },
+        {
+          "id": "collect",
+          "kind": "action",
+          "label": "Compare independent proposals",
+          "detail": "Collect every proposal before sharing any of them.",
+          "position": {
+            "x": 0,
+            "y": 800
+          }
+        },
+        {
+          "id": "conflict",
+          "kind": "decision",
+          "label": "Is there a substantive conflict?",
+          "detail": "A conflict is substantive when it changes a criterion, constraint or decision.",
+          "position": {
+            "x": 0,
+            "y": 1000
+          }
+        },
+        {
+          "id": "reply",
+          "kind": "action",
+          "label": "One targeted reply",
+          "detail": "Ask only the involved specialists for one reply on the conflict.",
+          "position": {
+            "x": 0,
+            "y": 1200
+          }
+        },
+        {
+          "id": "decision",
+          "kind": "action",
+          "label": "Record the decision",
+          "detail": "Record selection and rationale, preserving assumptions and dissent.",
+          "position": {
+            "x": 0,
+            "y": 1400
+          }
+        },
+        {
+          "id": "authority",
+          "kind": "decision",
+          "label": "Who selects?",
+          "detail": "Compare the choice with delegated authority and the involvement dial.",
+          "position": {
+            "x": 0,
+            "y": 1600
+          }
+        },
+        {
+          "id": "wait",
+          "kind": "end",
+          "label": "Ask the user",
+          "detail": "Present the options and recommendation with the native question tool and wait.",
+          "position": {
+            "x": 0,
+            "y": 1800
+          }
+        },
+        {
+          "id": "execute",
+          "kind": "end",
+          "label": "Deliver decision or handoff",
+          "detail": "Deliver the decision; continue to R04 or R05 only when assigned, without resetting the budget.",
+          "position": {
+            "x": 0,
+            "y": 2000
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "p-r",
+          "from": "p",
+          "to": "r",
+          "label": ""
+        },
+        {
+          "id": "p-u",
+          "from": "p",
+          "to": "u",
+          "label": ""
+        },
+        {
+          "id": "p-v",
+          "from": "p",
+          "to": "v",
+          "label": ""
+        },
+        {
+          "id": "r-collect",
+          "from": "r",
+          "to": "collect",
+          "label": ""
+        },
+        {
+          "id": "u-collect",
+          "from": "u",
+          "to": "collect",
+          "label": ""
+        },
+        {
+          "id": "v-collect",
+          "from": "v",
+          "to": "collect",
+          "label": ""
+        },
+        {
+          "id": "collect-conflict",
+          "from": "collect",
+          "to": "conflict",
+          "label": ""
+        },
+        {
+          "id": "conflict-reply",
+          "from": "conflict",
+          "to": "reply",
+          "label": "Yes"
+        },
+        {
+          "id": "conflict-decision",
+          "from": "conflict",
+          "to": "decision",
+          "label": "No"
+        },
+        {
+          "id": "reply-decision",
+          "from": "reply",
+          "to": "decision",
+          "label": ""
+        },
+        {
+          "id": "decision-authority",
+          "from": "decision",
+          "to": "authority",
+          "label": ""
+        },
+        {
+          "id": "authority-wait",
+          "from": "authority",
+          "to": "wait",
+          "label": "The user, or outside authority"
+        },
+        {
+          "id": "authority-execute",
+          "from": "authority",
+          "to": "execute",
+          "label": "Coordinator, within authority"
+        }
+      ]
+    },
+    {
+      "id": "R09",
+      "title": "R09 · VariantHub on explicit request",
+      "summary": "Use VariantHub for code alternatives only when the user explicitly selects it.",
+      "notes": "A request for variants alone does not select VariantHub. Use the requested count, distinct structural hypotheses and comparable content and states. Selecting a variant and promoting it into shared code are separate decisions. Missing infrastructure requires a separate setup mandate.",
+      "kind": "workflow",
+      "surface": "varianthub",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "Explicit VariantHub request and ready infrastructure"
+      ],
+      "outputs": [
+        "Comparable alternatives and any authorized promotion"
+      ],
+      "budget": {
+        "newDelegations": 4,
+        "concurrent": 2,
+        "repairBatches": 1
+      },
+      "entry": "p",
+      "requiredNodes": [
+        "gate",
+        "human"
+      ],
+      "nodes": [
+        {
+          "id": "p",
+          "kind": "start",
+          "label": "Explicit VariantHub request",
+          "position": {
+            "x": 340,
+            "y": 0
+          },
+          "detail": "Record the request to use VariantHub and the requested number of alternatives."
+        },
+        {
+          "id": "ready",
+          "kind": "decision",
+          "label": "Is infrastructure ready?",
+          "position": {
+            "x": 340,
+            "y": 280
+          },
+          "detail": "Check the project infrastructure before building alternatives."
+        },
+        {
+          "id": "blocked",
+          "kind": "end",
+          "label": "Request separate setup",
+          "position": {
+            "x": 170,
+            "y": 560
+          },
+          "detail": "varianthub-builder needs a separately authorized setup assignment."
+        },
+        {
+          "id": "b",
+          "kind": "skill",
+          "label": "Build code alternatives",
+          "ref": "jado-ui-builder",
+          "position": {
+            "x": 510,
+            "y": 560
+          },
+          "detail": "Use varianthub Explore with the requested count and one distinct structural hypothesis per alternative."
+        },
+        {
+          "id": "variants",
+          "kind": "action",
+          "label": "Keep alternatives isolated",
+          "position": {
+            "x": 340,
+            "y": 840
+          },
+          "detail": "Keep comparable content and states. Production code imports only a promoted alternative."
+        },
+        {
+          "id": "smoke",
+          "kind": "action",
+          "label": "Check opening and comparison",
+          "position": {
+            "x": 340,
+            "y": 1120
+          },
+          "detail": "Open catalog and direct routes; check comparison, visibility and reload for every option."
+        },
+        {
+          "id": "human",
+          "kind": "human",
+          "label": "Ask the user to select",
+          "position": {
+            "x": 0,
+            "y": 1680
+          },
+          "detail": "Present the verified comparison with the native question tool; in autopilot record a provisional selection and leave promotion to the user."
+        },
+        {
+          "id": "promote",
+          "kind": "decision",
+          "label": "Is promotion authorized?",
+          "position": {
+            "x": 340,
+            "y": 1960
+          },
+          "detail": "Check that integration into shared production code is explicitly authorized."
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver the alternatives",
+          "position": {
+            "x": 170,
+            "y": 2240
+          },
+          "detail": "Return alternatives and comparison checks."
+        },
+        {
+          "id": "production",
+          "kind": "end",
+          "label": "Hand off to verified integration",
+          "position": {
+            "x": 510,
+            "y": 2240
+          },
+          "detail": "Use varianthub Promote and R04 integration checks."
+        },
+        {
+          "id": "gate",
+          "kind": "gate",
+          "label": "Is comparison working and verified?",
+          "position": {
+            "x": 340,
+            "y": 1400
+          },
+          "detail": "Check visual comparison and targeted behavior for required functions."
+        },
+        {
+          "id": "fix",
+          "kind": "action",
+          "label": "Repair the comparison",
+          "position": {
+            "x": 340,
+            "y": 1680
+          },
+          "detail": "Use one repair batch and rerun the affected checks."
+        },
+        {
+          "id": "stop",
+          "kind": "end",
+          "label": "Report unverified comparison",
+          "position": {
+            "x": 680,
+            "y": 1680
+          },
+          "detail": "Deliver a partial result identifying what remains unverified."
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1",
+          "from": "p",
+          "to": "ready",
+          "label": ""
+        },
+        {
+          "id": "e2",
+          "from": "ready",
+          "to": "blocked",
+          "label": "No"
+        },
+        {
+          "id": "e3",
+          "from": "ready",
+          "to": "b",
+          "label": "Yes"
+        },
+        {
+          "id": "e4",
+          "from": "b",
+          "to": "variants",
+          "label": ""
+        },
+        {
+          "id": "e5",
+          "from": "variants",
+          "to": "smoke",
+          "label": ""
+        },
+        {
+          "id": "e6",
+          "from": "human",
+          "to": "promote",
+          "label": ""
+        },
+        {
+          "id": "e7",
+          "from": "promote",
+          "to": "done",
+          "label": "No"
+        },
+        {
+          "id": "e8",
+          "from": "promote",
+          "to": "production",
+          "label": "Yes, authorized"
+        },
+        {
+          "id": "e9",
+          "from": "smoke",
+          "to": "gate",
+          "label": ""
+        },
+        {
+          "id": "e10",
+          "from": "gate",
+          "to": "human",
+          "label": "Yes"
+        },
+        {
+          "id": "e11",
+          "from": "gate",
+          "to": "fix",
+          "label": "No, within budget"
+        },
+        {
+          "id": "e12",
+          "from": "fix",
+          "to": "smoke",
+          "label": "Recheck"
+        },
+        {
+          "id": "e13",
+          "from": "gate",
+          "to": "stop",
+          "label": "Budget exhausted or blocked"
+        }
+      ]
+    },
+    {
+      "id": "visual-research",
+      "title": "Visual research · patterns and style",
+      "summary": "Select comparable UI or style references and deliver the assigned comparison or moodboard.",
+      "notes": "The question determines sources: UI patterns use real products; visual language may use Pinterest, images and websites. Apply jado-reference-analysis before search and again when comparing inspected candidates. A moodboard is a conditional output.",
+      "kind": "workflow",
+      "surface": "any",
+      "stages": [
+        "explore",
+        "refine"
+      ],
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "discovery",
+      "inputs": [
+        "Research question, brief and available references"
+      ],
+      "outputs": [
+        "Reasoned reference selection or assigned moodboard with limits"
+      ],
+      "budget": {
+        "newDelegations": 2,
+        "concurrent": 1,
+        "repairBatches": 1
+      },
+      "entry": "start",
+      "requiredNodes": [
+        "curate",
+        "evidence"
+      ],
+      "nodes": [
+        {
+          "id": "start",
+          "kind": "start",
+          "label": "Read the research question",
+          "position": {
+            "x": 170,
+            "y": 0
+          },
+          "detail": "Read the brief, sources and evidence gaps."
+        },
+        {
+          "id": "need",
+          "kind": "decision",
+          "label": "Is visual research needed?",
+          "position": {
+            "x": 170,
+            "y": 280
+          },
+          "detail": "Search when a missing UI pattern or style reference is necessary for a decision."
+        },
+        {
+          "id": "researcher",
+          "kind": "skill",
+          "label": "Define question and search coverage",
+          "ref": "jado-visual-researcher",
+          "position": {
+            "x": 0,
+            "y": 560
+          },
+          "detail": "Frame the assignment with jado-visual-researcher; record audience, platform, domain, constraints and candidate rationale before search."
+        },
+        {
+          "id": "mode",
+          "kind": "decision",
+          "label": "UI patterns or visual language?",
+          "position": {
+            "x": 170,
+            "y": 1120
+          },
+          "detail": "Separate component and composition comparisons from style research. Use jado-ux-architect for sequences, decisions and recovery."
+        },
+        {
+          "id": "mobbin",
+          "kind": "skill",
+          "label": "Find real-product UI examples",
+          "ref": "mobbin-search",
+          "position": {
+            "x": 0,
+            "y": 1400
+          },
+          "detail": "Use mobbin-search for relevant inspected screens. Screen search alone does not prove a complete flow."
+        },
+        {
+          "id": "web",
+          "kind": "tool",
+          "label": "Find style references",
+          "ref": "browser",
+          "position": {
+            "x": 340,
+            "y": 1400
+          },
+          "detail": "Use available browser tools for accessible Pinterest, image search and relevant product or editorial websites."
+        },
+        {
+          "id": "curate",
+          "kind": "skill",
+          "label": "Compare and select references",
+          "ref": "jado-reference-analysis",
+          "position": {
+            "x": 170,
+            "y": 1680
+          },
+          "detail": "Apply jado-reference-analysis to inspected candidates. Record selected and rejected reasons, transferable ideas and limits; search order and brand fame are not quality evidence."
+        },
+        {
+          "id": "surface",
+          "kind": "decision",
+          "label": "Which collection output is assigned?",
+          "position": {
+            "x": 170,
+            "y": 1960
+          },
+          "detail": "A pattern comparison may end with findings. Build a moodboard only when assigned, in Paper or project-owned files."
+        },
+        {
+          "id": "paper",
+          "kind": "tool",
+          "label": "Build the Paper moodboard",
+          "ref": "paper",
+          "position": {
+            "x": 0,
+            "y": 2240
+          },
+          "detail": "Organize inspected references in the assigned document as its single writer, using jado-canvas-layout."
+        },
+        {
+          "id": "pack",
+          "kind": "action",
+          "label": "Prepare the reference collection",
+          "position": {
+            "x": 340,
+            "y": 2240
+          },
+          "detail": "Write references.json and moodboard.md at the project-owned location resolved by jado-evidence-contract. Include images only through available authorized tools."
+        },
+        {
+          "id": "evidence",
+          "kind": "skill",
+          "label": "Verify sources and coverage",
+          "ref": "jado-evidence-contract",
+          "position": {
+            "x": 170,
+            "y": 2520
+          },
+          "detail": "Record inspected sources, selection coverage, actual evidence paths and missing observations."
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Hand off to UX or visual design",
+          "position": {
+            "x": 170,
+            "y": 2800
+          },
+          "detail": "Transfer sequence findings to UX and style or composition references to visual work, with selection criteria and limits."
+        },
+        {
+          "id": "skip",
+          "kind": "end",
+          "label": "Continue with sufficient references",
+          "position": {
+            "x": 340,
+            "y": 560
+          },
+          "detail": "Reuse available sources and record why new research is unnecessary."
+        },
+        {
+          "id": "reference-plan",
+          "kind": "skill",
+          "label": "Plan candidate coverage before searching",
+          "detail": "Define comparable candidates, source relevance and a search budget with jado-reference-analysis. Explore: a broad, quick sweep of 6–10 candidates. Refine: fewer, deeper comparisons.",
+          "position": {
+            "x": 170,
+            "y": 840
+          },
+          "ref": "jado-reference-analysis"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1",
+          "from": "start",
+          "to": "need",
+          "label": ""
+        },
+        {
+          "id": "e2",
+          "from": "need",
+          "to": "researcher",
+          "label": "Yes"
+        },
+        {
+          "id": "e3",
+          "from": "need",
+          "to": "skip",
+          "label": "No"
+        },
+        {
+          "id": "e4",
+          "from": "researcher",
+          "to": "reference-plan",
+          "label": ""
+        },
+        {
+          "id": "e5",
+          "from": "mode",
+          "to": "mobbin",
+          "label": "Pattern"
+        },
+        {
+          "id": "e6",
+          "from": "mode",
+          "to": "web",
+          "label": "Mood/style"
+        },
+        {
+          "id": "e7",
+          "from": "mobbin",
+          "to": "curate",
+          "label": ""
+        },
+        {
+          "id": "e8",
+          "from": "web",
+          "to": "curate",
+          "label": ""
+        },
+        {
+          "id": "e9",
+          "from": "curate",
+          "to": "surface",
+          "label": ""
+        },
+        {
+          "id": "e10",
+          "from": "surface",
+          "to": "paper",
+          "label": "Paper"
+        },
+        {
+          "id": "e11",
+          "from": "surface",
+          "to": "pack",
+          "label": "Code"
+        },
+        {
+          "id": "e12",
+          "from": "paper",
+          "to": "evidence",
+          "label": ""
+        },
+        {
+          "id": "e13",
+          "from": "pack",
+          "to": "evidence",
+          "label": ""
+        },
+        {
+          "id": "e14",
+          "from": "evidence",
+          "to": "done",
+          "label": ""
+        },
+        {
+          "id": "surface-analysis",
+          "from": "surface",
+          "to": "evidence",
+          "label": "Comparison only, no moodboard"
+        },
+        {
+          "id": "reference-plan-mode",
+          "from": "reference-plan",
+          "to": "mode",
+          "label": ""
+        }
+      ]
+    },
+    {
+      "id": "setup-project",
+      "title": "Setup · Install or link JADO",
+      "summary": "Choose local, global or linked setup, prepare selected tools and migrate design instructions.",
+      "notes": "Follow jado-install for the plan, semantic migration and access verification. Local and global setup give selected JADO skills priority with backups; external packages come from upstream. Linking updates project entry points. Apply updates through the CLI for the selected destination.",
+      "kind": "governance",
+      "surface": "any",
+      "status": "proposed",
+      "lastReviewed": "2026-10-06",
+      "stage": "operations",
+      "inputs": [
+        "JADO source and local or global destination",
+        "Existing instructions and configuration",
+        "Selected AI tools"
+      ],
+      "outputs": [
+        "Installed method or linked project",
+        "Migrated design instructions and setup verification"
+      ],
+      "budget": {
+        "newDelegations": 0,
+        "concurrent": 0,
+        "repairBatches": 0
+      },
+      "entry": "start",
+      "requiredNodes": [
+        "review",
+        "gate"
+      ],
+      "nodes": [
+        {
+          "id": "start",
+          "kind": "start",
+          "label": "Choose setup destination",
+          "position": {
+            "x": 340,
+            "y": 0
+          },
+          "detail": "Locate the JADO source and choose local, global or linked setup."
+        },
+        {
+          "id": "procedure",
+          "kind": "skill",
+          "label": "Read installation procedure",
+          "position": {
+            "x": 340,
+            "y": 280
+          },
+          "detail": "Follow jado-install. Setup is a separate assignment from product work.",
+          "ref": "jado-install"
+        },
+        {
+          "id": "read",
+          "kind": "action",
+          "label": "Read instructions and configuration",
+          "position": {
+            "x": 340,
+            "y": 560
+          },
+          "detail": "Inspect effective entries, overrides, linked Markdown, nested rules and Git state. For global setup inspect the tools' user-level instructions. Preserve product documents and existing UX artifact locations until migration is verified."
+        },
+        {
+          "id": "tools",
+          "kind": "action",
+          "label": "Choose mode and tools",
+          "position": {
+            "x": 340,
+            "y": 840
+          },
+          "detail": "Reuse received choices. Local is self-contained; global manages the user-level method and upstream dependencies; linked setup adds a project entry. Claude Code, Codex and OpenCode have native adapters; other skills CLI targets receive skills only in local setup."
+        },
+        {
+          "id": "existing",
+          "kind": "decision",
+          "label": "Does an entry already exist?",
+          "position": {
+            "x": 340,
+            "y": 1120
+          },
+          "detail": "Inspect the effective instructions at the selected destination."
+        },
+        {
+          "id": "create",
+          "kind": "action",
+          "label": "Prepare a JADO entry",
+          "position": {
+            "x": 0,
+            "y": 1400
+          },
+          "detail": "Prepare a concise method pointer while preserving project constraints."
+        },
+        {
+          "id": "migrate",
+          "kind": "action",
+          "label": "Prepare design migration",
+          "position": {
+            "x": 680,
+            "y": 1400
+          },
+          "detail": "Update the effective entry and reached files. Replace incompatible routers while preserving domain, design system, verification, Git and release rules."
+        },
+        {
+          "id": "files",
+          "kind": "action",
+          "label": "Prepare the setup plan",
+          "position": {
+            "x": 340,
+            "y": 1680
+          },
+          "detail": "Run install, link or update with --dry-run and retain the revision. The plan shows files, references and conflicts; router replacement also needs a semantic migration diff."
+        },
+        {
+          "id": "review",
+          "kind": "human",
+          "label": "Review the setup diff",
+          "position": {
+            "x": 340,
+            "y": 1960
+          },
+          "detail": "Review proposed destination files and instruction changes before applying them. Honor authorization already supplied in the task."
+        },
+        {
+          "id": "apply",
+          "kind": "action",
+          "label": "Apply authorized changes",
+          "position": {
+            "x": 340,
+            "y": 2240
+          },
+          "detail": "Apply the reviewed plan with --yes and --revision HASH. The CLI checks collisions and hashes and retains backups. Apply the reviewed instruction diff with verified backup; commit or push needs its own authorization."
+        },
+        {
+          "id": "verify",
+          "kind": "action",
+          "label": "Verify access and profiles",
+          "position": {
+            "x": 340,
+            "y": 2520
+          },
+          "detail": "Check diff, links, catalog and instructions. For linked setup verify external reads in the AI session as well as the CLI. Use a local copy if external access is blocked. Verify route and available native profiles in a fresh session."
+        },
+        {
+          "id": "gate",
+          "kind": "gate",
+          "label": "Is setup verified?",
+          "position": {
+            "x": 340,
+            "y": 2800
+          },
+          "detail": "Distinguish completed checks from prepared files still awaiting load verification or a missing requirement."
+        },
+        {
+          "id": "done",
+          "kind": "end",
+          "label": "Deliver verified setup",
+          "position": {
+            "x": 0,
+            "y": 3080
+          },
+          "detail": "Return source, changed files and instructions with completed checks."
+        },
+        {
+          "id": "stop",
+          "kind": "end",
+          "label": "Report remaining setup checks",
+          "position": {
+            "x": 680,
+            "y": 3080
+          },
+          "detail": "Return prepared setup and state missing requirements or verification; generated files alone do not prove native execution."
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1",
+          "from": "start",
+          "to": "procedure",
+          "label": ""
+        },
+        {
+          "id": "e2",
+          "from": "procedure",
+          "to": "read",
+          "label": ""
+        },
+        {
+          "id": "e3",
+          "from": "read",
+          "to": "tools",
+          "label": ""
+        },
+        {
+          "id": "tools-existing",
+          "from": "tools",
+          "to": "existing",
+          "label": ""
+        },
+        {
+          "id": "e4",
+          "from": "existing",
+          "to": "create",
+          "label": "No"
+        },
+        {
+          "id": "e5",
+          "from": "existing",
+          "to": "migrate",
+          "label": "Yes"
+        },
+        {
+          "id": "e6",
+          "from": "create",
+          "to": "files",
+          "label": ""
+        },
+        {
+          "id": "e7",
+          "from": "migrate",
+          "to": "files",
+          "label": ""
+        },
+        {
+          "id": "e8",
+          "from": "files",
+          "to": "review",
+          "label": ""
+        },
+        {
+          "id": "e9",
+          "from": "review",
+          "to": "apply",
+          "label": "Approved diff"
+        },
+        {
+          "id": "e10",
+          "from": "apply",
+          "to": "verify",
+          "label": ""
+        },
+        {
+          "id": "e11",
+          "from": "verify",
+          "to": "gate",
+          "label": ""
+        },
+        {
+          "id": "e12",
+          "from": "gate",
+          "to": "done",
+          "label": "Yes, checks complete"
+        },
+        {
+          "id": "e13",
+          "from": "gate",
+          "to": "stop",
+          "label": "No, requirement or evidence missing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R08",
+    "title": "R08 · Council",
+    "summary": "Collect independent research, UX and visual proposals on one consequential decision, then decide or ask.",
+    "notes": "Use only for a consequential choice with competing hypotheses, normally with a deep budget. Collect proposals before sharing them; allow one targeted reply on a substantive conflict. A majority cannot override evidence or user constraints. Record conclusions, rationale and dissent.",
+    "kind": "workflow",
+    "surface": "any",
+    "stages": [
+      "explore",
+      "refine"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Decision question, criteria and constraints"
+    ],
+    "outputs": [
+      "Reasoned decision or a focused question for the user"
+    ],
+    "budget": {
+      "newDelegations": 6,
+      "concurrent": 3,
+      "repairBatches": 1
+    },
+    "entry": "p",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "p",
+        "kind": "start",
+        "label": "Define the decision",
+        "detail": "Give three specialists the same question, criteria and constraints."
+      },
+      {
+        "id": "r",
+        "kind": "skill",
+        "label": "Evidence and uncertainty",
+        "detail": "Collect documented evidence and state uncertainty.",
+        "ref": "jado-researcher"
+      },
+      {
+        "id": "u",
+        "kind": "skill",
+        "label": "UX proposal",
+        "detail": "Propose the flow and its tradeoffs.",
+        "ref": "jado-ux-architect"
+      },
+      {
+        "id": "v",
+        "kind": "skill",
+        "label": "Visual proposal",
+        "detail": "Propose hierarchy and composition consistent with the brief, at explore fidelity.",
+        "ref": "jado-visual-designer"
+      },
+      {
+        "id": "collect",
+        "kind": "action",
+        "label": "Compare independent proposals",
+        "detail": "Collect every proposal before sharing any of them."
+      },
+      {
+        "id": "conflict",
+        "kind": "decision",
+        "label": "Is there a substantive conflict?",
+        "detail": "A conflict is substantive when it changes a criterion, constraint or decision."
+      },
+      {
+        "id": "reply",
+        "kind": "action",
+        "label": "One targeted reply",
+        "detail": "Ask only the involved specialists for one reply on the conflict."
+      },
+      {
+        "id": "decision",
+        "kind": "action",
+        "label": "Record the decision",
+        "detail": "Record selection and rationale, preserving assumptions and dissent."
+      },
+      {
+        "id": "authority",
+        "kind": "decision",
+        "label": "Who selects?",
+        "detail": "Compare the choice with delegated authority and the involvement dial."
+      },
+      {
+        "id": "wait",
+        "kind": "end",
+        "label": "Ask the user",
+        "detail": "Present the options and recommendation with the native question tool and wait."
+      },
+      {
+        "id": "execute",
+        "kind": "end",
+        "label": "Deliver decision or handoff",
+        "detail": "Deliver the decision; continue to R04 or R05 only when assigned, without resetting the budget."
+      }
+    ],
+    "edges": [
+      {
+        "id": "p-r",
+        "from": "p",
+        "to": "r",
+        "label": ""
+      },
+      {
+        "id": "p-u",
+        "from": "p",
+        "to": "u",
+        "label": ""
+      },
+      {
+        "id": "p-v",
+        "from": "p",
+        "to": "v",
+        "label": ""
+      },
+      {
+        "id": "r-collect",
+        "from": "r",
+        "to": "collect",
+        "label": ""
+      },
+      {
+        "id": "u-collect",
+        "from": "u",
+        "to": "collect",
+        "label": ""
+      },
+      {
+        "id": "v-collect",
+        "from": "v",
+        "to": "collect",
+        "label": ""
+      },
+      {
+        "id": "collect-conflict",
+        "from": "collect",
+        "to": "conflict",
+        "label": ""
+      },
+      {
+        "id": "conflict-reply",
+        "from": "conflict",
+        "to": "reply",
+        "label": "Yes"
+      },
+      {
+        "id": "conflict-decision",
+        "from": "conflict",
+        "to": "decision",
+        "label": "No"
+      },
+      {
+        "id": "reply-decision",
+        "from": "reply",
+        "to": "decision",
+        "label": ""
+      },
+      {
+        "id": "decision-authority",
+        "from": "decision",
+        "to": "authority",
+        "label": ""
+      },
+      {
+        "id": "authority-wait",
+        "from": "authority",
+        "to": "wait",
+        "label": "The user, or outside authority"
+      },
+      {
+        "id": "authority-execute",
+        "from": "authority",
+        "to": "execute",
+        "label": "Coordinator, within authority"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "collect",
+        "kind": "action"
+      }
+    ],
+    "completionNodes": [
+      "execute"
+    ],
+    "checkpointNodes": [
+      "wait"
+    ],
+    "independentNodes": [
+      "r",
+      "u",
+      "v"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-researcher",
+      "path": ".agents/skills/jado-researcher/SKILL.md"
+    },
+    {
+      "id": "jado-ux-architect",
+      "path": ".agents/skills/jado-ux-architect/SKILL.md"
+    },
+    {
+      "id": "jado-visual-designer",
+      "path": ".agents/skills/jado-visual-designer/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-ux",
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual",
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ]
+    }
+  ],
+  "subflows": []
+}

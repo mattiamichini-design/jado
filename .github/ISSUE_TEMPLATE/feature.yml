@@ -1,0 +1,30 @@
+name: Feature or content proposal
+description: Propose a change to a route, a skill, a profile, the installer or a playbook page.
+labels: [enhancement]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Routes and dials, Skills and profiles, Installer and CLI, Playbook content, Landing page, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: The design situation or task that JADO handles badly today, with an example.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change. For method changes, name the source to edit (jado/workflows.json, jado/agents.json, .agents/skills/…).
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Runs, transcripts or references that support the change. Leave empty if you have none yet.

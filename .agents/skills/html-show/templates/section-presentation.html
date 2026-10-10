@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: oklch(1 0 0);
+        --surface: oklch(0.985 0 0);
+        --surface-strong: oklch(0.94 0 0);
+        --ink: oklch(0.16 0 0);
+        --muted: oklch(0.42 0 0);
+        --quiet: oklch(0.64 0 0);
+        --line: oklch(0.9 0 0);
+        --line-strong: oklch(0.74 0 0);
+        --primary: var(--ink);
+        --primary-dark: var(--ink);
+        --primary-soft: var(--surface-strong);
+        --success: var(--ink);
+        --warning: var(--ink);
+        --danger: var(--ink);
+        --radius: 14px;
+        --radius-sm: 10px;
+        --shadow-sm: 0 6px 12px oklch(0 0 0 / 0.06);
+        --shadow-lg: 0 26px 80px oklch(0 0 0 / 0.14);
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-emphatic: cubic-bezier(0.19, 1, 0.22, 1);
+        --z-sticky: 20;
+        --z-modal-backdrop: 70;
+        --z-modal: 80;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        background: var(--surface);
+      }
+
+      a { color: inherit; }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .page,
+      .topbar-inner {
+        width: min(1500px, calc(100vw - 32px));
+        margin-inline: auto;
+      }
+
+      .page {
+        padding: 28px 0 80px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: var(--z-sticky);
+        width: 100%;
+        border-bottom: 1px solid var(--line);
+        background: oklch(1 0 0 / 0.9);
+        backdrop-filter: blur(18px);
+      }
+
+      .topbar-inner {
+        display: grid;
+        grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.8fr) auto;
+        gap: 16px;
+        align-items: center;
+        min-height: 60px;
+        padding: 8px 0;
+        overflow: hidden;
+      }
+
+      .brand {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: 10px;
+        padding-inline: 8px;
+        font-weight: 720;
+      }
+
+      .mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--ink);
+        box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.36);
+      }
+
+      .nav {
+        display: flex;
+        min-width: 0;
+        gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .nav::-webkit-scrollbar { display: none; }
+
+      .nav a {
+        flex: 0 0 auto;
+        padding: 8px 10px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 14px;
+        text-decoration: none;
+        transition:
+          background-color 220ms var(--ease),
+          color 220ms var(--ease),
+          transform 220ms var(--ease);
+      }
+
+      .nav a:hover {
+        color: var(--ink);
+        transform: translateY(-1px);
+      }
+
+      .nav a[aria-current="true"] {
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+      }
+
+      .progress {
+        position: relative;
+        overflow: hidden;
+        width: 112px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--surface-strong);
+      }
+
+      .progress span {
+        display: block;
+        width: calc(var(--progress, 0) * 1%);
+        height: 100%;
+        border-radius: inherit;
+        background: var(--ink);
+        transition: width 180ms linear;
+      }
+
+      [data-sticky-controls] {
+        position: sticky;
+        top: var(--topbar-height, 60px);
+        z-index: calc(var(--z-sticky) - 1);
+        transition: padding 180ms var(--ease), gap 180ms var(--ease), border-radius 180ms var(--ease);
+      }
+
+      [data-sticky-controls][data-stuck="true"] {
+        gap: 8px !important;
+        padding-block: 4px !important;
+        border-radius: 0 !important;
+      }
+
+      [data-sticky-controls][data-stuck="true"] :is(input, button, select) {
+        height: 34px !important;
+        min-height: 34px !important;
+      }
+
+      main {
+        display: grid;
+        gap: clamp(64px, 9vw, 128px);
+        padding-top: clamp(64px, 10vw, 140px);
+      }
+
+      .hero,
+      .section {
+        display: grid;
+        gap: clamp(22px, 3vw, 38px);
+      }
+
+      .hero {
+        min-height: 72vh;
+        align-content: center;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+        gap: clamp(28px, 5vw, 72px);
+        align-items: center;
+        min-width: 0;
+      }
+
+      .kicker,
+      .section-label,
+      .meta {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 680;
+      }
+
+      .kicker {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: oklch(1 0 0 / 0.68);
+      }
+
+      .kicker::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--primary);
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        letter-spacing: 0;
+        text-wrap: balance;
+      }
+
+      h1 {
+        max-width: min(12ch, 100%);
+        font-size: clamp(46px, 8vw, 94px);
+        line-height: 0.96;
+      }
+
+      h2 {
+        max-width: min(15ch, 100%);
+        font-size: clamp(34px, 5vw, 68px);
+        line-height: 1;
+      }
+
+      h3 {
+        font-size: clamp(19px, 2vw, 26px);
+        line-height: 1.12;
+      }
+
+      p {
+        max-width: 70ch;
+        margin: 0;
+        color: var(--muted);
+        text-wrap: pretty;
+      }
+
+      .lede {
+        max-width: 64ch;
+        color: oklch(0.32 0 0);
+        font-size: clamp(18px, 2vw, 24px);
+        line-height: 1.48;
+      }
+
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .cluster {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill,
+      .control {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--bg);
+        color: var(--muted);
+      }
+
+      .pill {
+        padding: 8px 11px;
+        font-size: 13px;
+      }
+
+      .control {
+        cursor: pointer;
+        padding: 9px 13px;
+        transition:
+          border-color 180ms var(--ease),
+          background-color 180ms var(--ease),
+          color 180ms var(--ease),
+          transform 180ms var(--ease);
+      }
+
+      .control:hover {
+        border-color: var(--line-strong);
+        color: var(--ink);
+        transform: translateY(-1px);
+      }
+
+      .control[aria-pressed="true"],
+      .control[aria-selected="true"] {
+        border-color: var(--primary);
+        background: var(--primary);
+        color: var(--bg);
+      }
+
+      .surface,
+      .image-card,
+      .finding,
+      .note {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: oklch(1 0 0 / 0.82);
+      }
+
+      .surface,
+      .finding,
+      .note {
+        padding: clamp(18px, 2.4vw, 28px);
+      }
+
+      .surface {
+        display: grid;
+        gap: 14px;
+      }
+
+      .hero-preview {
+        position: relative;
+        isolation: isolate;
+        min-height: 470px;
+      }
+
+      .device {
+        position: absolute;
+        overflow: visible;
+        border: 3px solid #111;
+        border-radius: 10px;
+        background: #111;
+        box-shadow: var(--shadow-lg);
+        transform: translateZ(0);
+      }
+
+      .device img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 8px;
+      }
+
+      .device-desktop {
+        inset: 30px 0 auto 0;
+        height: 300px;
+      }
+
+      .device-mobile {
+        right: 10%;
+        bottom: 0;
+        width: min(210px, 38%);
+        aspect-ratio: 9 / 18.5;
+        border: 5px solid #1c1917;
+        border-radius: 25px;
+        background: #1c1917;
+        padding: 4px;
+      }
+
+      .device::after {
+        content: none;
+      }
+
+      .device::before {
+        content: none;
+      }
+
+      .device-mobile::before {
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        z-index: 2;
+        width: 42px;
+        height: 6px;
+        border-radius: 999px;
+        background: #050505;
+        content: "";
+        transform: translateX(-50%);
+      }
+
+      .device-mobile img {
+        border-radius: 18px;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        min-width: 0;
+      }
+
+      .section-head > p,
+      .section-head > .stack {
+        max-width: 70ch;
+      }
+
+      .section-label {
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      .insight-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      .insight {
+        position: relative;
+        overflow: hidden;
+        min-height: 190px;
+      }
+
+      .insight::before {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+        content: "";
+      }
+
+      .tabs {
+        display: grid;
+        gap: 18px;
+      }
+
+      .tab-panel[hidden],
+      .media-item[hidden],
+      .finding[hidden] {
+        display: none;
+      }
+
+      .tab-panel {
+        animation: panel-in 440ms var(--ease) both;
+      }
+
+      .compare-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+        gap: 20px;
+        align-items: start;
+        min-width: 0;
+      }
+
+      .compare {
+        display: grid;
+        gap: 12px;
+      }
+
+      .compare-frame {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        aspect-ratio: 16 / 10;
+        box-shadow: var(--shadow-sm);
+        cursor: ew-resize;
+        touch-action: none;
+      }
+
+      .compare-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .compare-after {
+        position: absolute;
+        inset: 0;
+        width: calc(var(--compare, 50) * 1%);
+        overflow: hidden;
+      }
+
+      .compare-after img {
+        width: calc(10000% / var(--compare, 50));
+        max-width: none;
+      }
+
+      .compare-handle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(var(--compare, 50) * 1%);
+        width: 2px;
+        background: var(--bg);
+        box-shadow: 0 0 0 1px oklch(0 0 0 / 0.16), 0 0 28px oklch(0 0 0 / 0.18);
+        pointer-events: none;
+        transform: translateX(-1px);
+      }
+
+      .compare-handle::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: var(--bg);
+        box-shadow: var(--shadow-sm);
+        color: var(--primary-dark);
+        content: "↔";
+        display: grid;
+        place-items: center;
+        font-weight: 760;
+        transform: translate(-50%, -50%);
+      }
+
+      .compare input[type="range"] {
+        width: 100%;
+        accent-color: var(--primary);
+      }
+
+      .media-board {
+        display: grid;
+        gap: 16px;
+      }
+
+      .media-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+
+      .image-card {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        cursor: zoom-in;
+        transition:
+          border-color 220ms var(--ease),
+          box-shadow 220ms var(--ease),
+          transform 220ms var(--ease);
+      }
+
+      .image-card:hover {
+        border-color: var(--line-strong);
+        box-shadow: var(--shadow-sm);
+        transform: translateY(-3px);
+      }
+
+      .image-card figure {
+        display: grid;
+        gap: 0;
+        margin: 0;
+      }
+
+      .image-frame {
+        position: relative;
+        display: grid;
+        min-height: 180px;
+        background: var(--surface);
+        place-items: center;
+      }
+
+      .image-frame img {
+        width: 100%;
+        height: 100%;
+        max-height: 430px;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .image-card[data-device="mobile"] .image-frame img {
+        width: min(62%, 240px);
+        height: auto;
+        max-height: 430px;
+        border: 5px solid #1c1917;
+        border-radius: 25px;
+        padding: 4px;
+        background: #1c1917;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .image-card[data-device="desktop"] .image-frame img,
+      .image-card[data-category="competitor"] .image-frame img {
+        border: 3px solid #111;
+        border-radius: 10px;
+        background: #111;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .image-card figcaption {
+        display: grid;
+        gap: 4px;
+        padding: 13px 14px 14px;
+      }
+
+      .caption-title {
+        color: var(--ink);
+        font-weight: 720;
+      }
+
+      .caption-meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .findings {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 14px;
+      }
+
+      .finding {
+        display: grid;
+        gap: 10px;
+      }
+
+      .severity {
+        width: fit-content;
+        padding: 5px 8px;
+        border-radius: 999px;
+        color: var(--bg);
+        font-size: 12px;
+        font-weight: 720;
+      }
+
+      .severity.high { background: var(--danger); }
+      .severity.medium { background: var(--warning); color: var(--ink); }
+      .severity.low { background: var(--success); }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--bg);
+        transition:
+          border-color 220ms var(--ease),
+          background-color 220ms var(--ease);
+      }
+
+      details[open] {
+        border-color: var(--line-strong);
+        background: var(--surface);
+      }
+
+      summary {
+        cursor: pointer;
+        padding: 16px 18px;
+        color: var(--ink);
+        font-weight: 720;
+      }
+
+      details p {
+        padding: 0 18px 18px;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: var(--z-modal-backdrop);
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        margin: 0;
+        padding: 22px;
+        border: 0;
+        background: oklch(0.12 0 0 / 0.74);
+        opacity: 0;
+        pointer-events: none;
+        place-items: center;
+        transition: opacity 220ms var(--ease);
+      }
+
+      .lightbox[open] {
+        display: grid;
+      }
+
+      .lightbox.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .lightbox::backdrop {
+        background: transparent;
+      }
+
+      .lightbox-panel {
+        position: relative;
+        z-index: var(--z-modal);
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        gap: 12px;
+        width: min(1180px, 100%);
+        max-height: calc(100vh - 44px);
+        padding: 14px;
+        border: 1px solid oklch(1 0 0 / 0.26);
+        border-radius: var(--radius);
+        background: var(--bg);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(10px) scale(0.985);
+        transition: transform 260ms var(--ease-emphatic);
+      }
+
+      .lightbox.is-open .lightbox-panel {
+        transform: translateY(0) scale(1);
+      }
+
+      .lightbox-top,
+      .lightbox-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .icon-button {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: var(--bg);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 20px;
+        place-items: center;
+        transition:
+          transform 180ms var(--ease),
+          border-color 180ms var(--ease);
+      }
+
+      .icon-button:hover {
+        border-color: var(--line-strong);
+        transform: translateY(-1px);
+      }
+
+      .lightbox-media {
+        display: grid;
+        min-height: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+        place-items: center;
+      }
+
+      .lightbox-media img {
+        width: auto;
+        max-width: 100%;
+        max-height: min(74vh, 760px);
+        object-fit: contain;
+      }
+
+      .lightbox-media img.device-desktop-frame {
+        border: 3px solid #111;
+        border-radius: 10px;
+        background: #111;
+      }
+
+      .lightbox-media img.device-mobile-frame {
+        padding: 4px;
+        border: 5px solid #1c1917;
+        border-radius: 25px;
+        background: #1c1917;
+      }
+
+      .lightbox-title {
+        color: var(--ink);
+        font-weight: 760;
+      }
+
+      .lightbox-meta {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .reveal {
+        min-width: 0;
+      }
+
+      @keyframes panel-in {
+        from {
+          opacity: 0.001;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .topbar-inner,
+        .hero-grid,
+        .compare-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .progress {
+          display: none;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero-preview {
+          min-height: 390px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .page,
+        .topbar-inner {
+          width: min(100% - 20px, 1500px);
+        }
+
+        .page {
+          padding-top: 10px;
+        }
+
+        .topbar-inner {
+          gap: 10px;
+          padding-block: 8px;
+        }
+
+        .brand {
+          font-size: 14px;
+        }
+
+        h1 {
+          font-size: clamp(40px, 16vw, 58px);
+        }
+
+        h2 {
+          font-size: clamp(32px, 12vw, 48px);
+        }
+
+        .device-desktop {
+          height: 220px;
+        }
+
+        .device-mobile {
+          right: 4%;
+          width: 42%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 1ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand"><span class="mark" aria-hidden="true"></span>{{short_title}}</div>
+        <nav class="nav" aria-label="Presentation sections">
+          <a href="#overview">Overview</a>
+          <a href="#story">Story</a>
+          <a href="#compare">Before / after</a>
+          <a href="#board">Mood board</a>
+          <a href="#findings">Findings</a>
+          <a href="#next">Next</a>
+        </nav>
+        <div class="progress" aria-hidden="true"><span></span></div>
+      </div>
+    </header>
+
+    <div class="page">
+      <main>
+        <section class="hero reveal" id="overview">
+          <div class="hero-grid">
+            <div class="stack">
+              <span class="kicker">{{artifact_type}}</span>
+              <h1>{{title}}</h1>
+              <p class="lede">{{lede}}</p>
+              <div class="cluster">
+                <span class="pill">{{status}}</span>
+                <span class="pill">{{date}}</span>
+                <span class="pill">{{scope}}</span>
+              </div>
+            </div>
+            <div class="hero-preview" aria-label="Desktop and mobile preview">
+              <figure class="device device-desktop">
+                <img src="{{hero_desktop_image}}" alt="{{hero_desktop_alt}}" />
+              </figure>
+              <figure class="device device-mobile">
+                <img src="{{hero_mobile_image}}" alt="{{hero_mobile_alt}}" />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="story">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Narrative</span>
+              <h2>What changed, why it matters.</h2>
+            </div>
+            <p>{{story_summary}}</p>
+          </div>
+          <div class="insight-grid">
+            <article class="surface insight">
+              <h3>{{context_title}}</h3>
+              <p>{{context_copy}}</p>
+            </article>
+            <article class="surface insight">
+              <h3>{{solution_title}}</h3>
+              <p>{{solution_copy}}</p>
+            </article>
+            <article class="surface insight">
+              <h3>{{result_title}}</h3>
+              <p>{{result_copy}}</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="compare">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Visual comparison</span>
+              <h2>Drag through the difference.</h2>
+            </div>
+            <p>{{comparison_summary}}</p>
+          </div>
+          <div class="compare-shell">
+            <div class="compare" data-compare style="--compare: 50">
+              <div class="compare-frame">
+                <img src="{{before_image}}" alt="{{before_image_alt}}" />
+                <div class="compare-after">
+                  <img src="{{after_image}}" alt="{{after_image_alt}}" />
+                </div>
+                <span class="compare-handle" aria-hidden="true"></span>
+              </div>
+              <label>
+                <span class="meta">Before / after position</span>
+                <input type="range" min="1" max="99" value="50" data-compare-range />
+              </label>
+            </div>
+            <div class="tabs" data-tabs>
+              <div class="cluster" role="tablist" aria-label="Comparison notes">
+                <button class="control" type="button" role="tab" aria-selected="true" data-tab="structure">Structure</button>
+                <button class="control" type="button" role="tab" aria-selected="false" data-tab="interaction">Interaction</button>
+                <button class="control" type="button" role="tab" aria-selected="false" data-tab="signal">Signal</button>
+              </div>
+              <article class="surface tab-panel" data-panel="structure">{{structure_note}}</article>
+              <article class="surface tab-panel" data-panel="interaction" hidden>{{interaction_note}}</article>
+              <article class="surface tab-panel" data-panel="signal" hidden>{{signal_note}}</article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="board">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Image board</span>
+              <h2>All evidence in one place.</h2>
+            </div>
+            <p>{{board_summary}}</p>
+          </div>
+          <div class="media-board">
+            <div class="media-toolbar">
+              <div class="cluster" data-media-filters>
+                <button class="control" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="control" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+                <button class="control" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+                <button class="control" type="button" data-filter="competitor" aria-pressed="false">Competitor</button>
+              </div>
+              <span class="meta">Click any image to inspect</span>
+            </div>
+            <div class="media-grid" data-lightbox-gallery>
+              <article class="image-card media-item" data-device="desktop" data-category="desktop" data-title="{{desktop_1_title}}" data-meta="{{desktop_1_meta}}">
+                <figure>
+                  <div class="image-frame"><img src="{{desktop_1_image}}" alt="{{desktop_1_alt}}" /></div>
+                  <figcaption><span class="caption-title">{{desktop_1_title}}</span><span class="caption-meta">{{desktop_1_meta}}</span></figcaption>
+                </figure>
+              </article>
+              <article class="image-card media-item" data-device="mobile" data-category="mobile" data-title="{{mobile_1_title}}" data-meta="{{mobile_1_meta}}">
+                <figure>
+                  <div class="image-frame"><img src="{{mobile_1_image}}" alt="{{mobile_1_alt}}" /></div>
+                  <figcaption><span class="caption-title">{{mobile_1_title}}</span><span class="caption-meta">{{mobile_1_meta}}</span></figcaption>
+                </figure>
+              </article>
+              <article class="image-card media-item" data-device="desktop" data-category="competitor" data-title="{{competitor_1_title}}" data-meta="{{competitor_1_meta}}">
+                <figure>
+                  <div class="image-frame"><img src="{{competitor_1_image}}" alt="{{competitor_1_alt}}" /></div>
+                  <figcaption><span class="caption-title">{{competitor_1_title}}</span><span class="caption-meta">{{competitor_1_meta}}</span></figcaption>
+                </figure>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="findings">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Findings</span>
+              <h2>Decisions, risks, and next bets.</h2>
+            </div>
+            <p>{{findings_summary}}</p>
+          </div>
+          <div class="cluster" data-finding-filters>
+            <button class="control" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="control" type="button" data-filter="high" aria-pressed="false">High</button>
+            <button class="control" type="button" data-filter="medium" aria-pressed="false">Medium</button>
+            <button class="control" type="button" data-filter="low" aria-pressed="false">Low</button>
+          </div>
+          <div class="findings" data-findings>
+            <article class="finding" data-severity="high">
+              <span class="severity high">High</span>
+              <h3>{{finding_high_title}}</h3>
+              <p>{{finding_high_copy}}</p>
+            </article>
+            <article class="finding" data-severity="medium">
+              <span class="severity medium">Medium</span>
+              <h3>{{finding_medium_title}}</h3>
+              <p>{{finding_medium_copy}}</p>
+            </article>
+            <article class="finding" data-severity="low">
+              <span class="severity low">Low</span>
+              <h3>{{finding_low_title}}</h3>
+              <p>{{finding_low_copy}}</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="next">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Closeout</span>
+              <h2>What happens after this.</h2>
+            </div>
+            <p>{{next_summary}}</p>
+          </div>
+          <details>
+            <summary>{{technical_detail_title}}</summary>
+            <p>{{technical_detail_copy}}</p>
+          </details>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="lightbox" data-lightbox aria-label="Image preview">
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+        <div class="lightbox-top">
+          <div>
+            <div class="lightbox-title" data-lightbox-title></div>
+            <div class="lightbox-meta" data-lightbox-meta></div>
+          </div>
+          <button class="icon-button" type="button" data-lightbox-close aria-label="Close preview">×</button>
+        </div>
+        <div class="lightbox-media">
+          <img src="" alt="" data-lightbox-image />
+        </div>
+        <div class="lightbox-bottom">
+          <button class="icon-button" type="button" data-lightbox-prev aria-label="Previous image">‹</button>
+          <span class="lightbox-meta" data-lightbox-count></span>
+          <button class="icon-button" type="button" data-lightbox-next aria-label="Next image">›</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script>
+      const navLinks = [...document.querySelectorAll('.nav a')];
+      const sections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+      const progress = document.querySelector('.progress span');
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        navLinks.forEach((link) => {
+          link.setAttribute('aria-current', String(link.getAttribute('href') === `#${visible.target.id}`));
+        });
+      }, { rootMargin: '-24% 0px -58% 0px', threshold: [0.12, 0.35, 0.65] });
+
+      sections.forEach((section) => sectionObserver.observe(section));
+
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const value = max > 0 ? Math.round((window.scrollY / max) * 100) : 0;
+        document.documentElement.style.setProperty('--progress', value);
+        if (progress) progress.style.width = `${value}%`;
+      };
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      document.querySelectorAll('[data-tabs]').forEach((tabs) => {
+        const buttons = [...tabs.querySelectorAll('[data-tab]')];
+        const panels = [...tabs.querySelectorAll('[data-panel]')];
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const target = button.dataset.tab;
+            buttons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
+            panels.forEach((panel) => {
+              panel.hidden = panel.dataset.panel !== target;
+            });
+          });
+        });
+      });
+
+      document.querySelectorAll('[data-compare]').forEach((compare) => {
+        const range = compare.querySelector('[data-compare-range]');
+        const frame = compare.querySelector('.compare-frame');
+        const update = () => compare.style.setProperty('--compare', range.value);
+        range.addEventListener('input', update);
+        if (frame) {
+          let activePointer = null;
+          const setFromPointer = (event) => {
+            const rect = frame.getBoundingClientRect();
+            const pct = Math.min(99, Math.max(1, ((event.clientX - rect.left) / rect.width) * 100));
+            range.value = pct;
+            compare.style.setProperty('--compare', pct);
+          };
+          frame.addEventListener('pointerdown', (event) => {
+            activePointer = event.pointerId;
+            frame.setPointerCapture(event.pointerId);
+            setFromPointer(event);
+          });
+          frame.addEventListener('pointermove', (event) => {
+            if (event.pointerId !== activePointer) return;
+            setFromPointer(event);
+          });
+          frame.addEventListener('pointerup', () => {
+            activePointer = null;
+          });
+          frame.addEventListener('pointercancel', () => {
+            activePointer = null;
+          });
+        }
+        update();
+      });
+
+      const wireFilters = (groupSelector, itemSelector, attrName) => {
+        const group = document.querySelector(groupSelector);
+        if (!group) return;
+        const buttons = [...group.querySelectorAll('[data-filter]')];
+        const items = [...document.querySelectorAll(itemSelector)];
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+            items.forEach((item) => {
+              item.hidden = filter !== 'all' && item.dataset[attrName] !== filter;
+            });
+          });
+        });
+      };
+
+      wireFilters('[data-media-filters]', '.media-item', 'category');
+      wireFilters('[data-finding-filters]', '.finding', 'severity');
+
+      const lightbox = document.querySelector('[data-lightbox]');
+      const lightboxImage = document.querySelector('[data-lightbox-image]');
+      const lightboxTitle = document.querySelector('[data-lightbox-title]');
+      const lightboxMeta = document.querySelector('[data-lightbox-meta]');
+      const lightboxCount = document.querySelector('[data-lightbox-count]');
+      const cards = [...document.querySelectorAll('[data-lightbox-gallery] .image-card')];
+      let activeIndex = 0;
+
+      const setLightbox = (index) => {
+        activeIndex = (index + cards.length) % cards.length;
+        const card = cards[activeIndex];
+        const img = card.querySelector('img');
+        const isMobile = card.dataset.device === 'mobile' || card.dataset.category === 'mobile';
+        lightboxImage.classList.toggle('device-mobile-frame', isMobile);
+        lightboxImage.classList.toggle('device-desktop-frame', !isMobile);
+        lightboxImage.src = img.currentSrc || img.src;
+        lightboxImage.alt = img.alt;
+        lightboxTitle.textContent = card.dataset.title || '';
+        lightboxMeta.textContent = card.dataset.meta || '';
+        lightboxCount.textContent = `${activeIndex + 1} / ${cards.length}`;
+      };
+
+      const openLightbox = (index) => {
+        setLightbox(index);
+        if (!lightbox.open) lightbox.showModal();
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.close();
+        document.body.style.overflow = '';
+      };
+
+      cards.forEach((card, index) => {
+        card.tabIndex = 0;
+        card.addEventListener('click', () => openLightbox(index));
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      document.querySelector('[data-lightbox-close]').addEventListener('click', closeLightbox);
+      document.querySelector('[data-lightbox-prev]').addEventListener('click', () => setLightbox(activeIndex - 1));
+      document.querySelector('[data-lightbox-next]').addEventListener('click', () => setLightbox(activeIndex + 1));
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      lightbox.addEventListener('close', () => {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') setLightbox(activeIndex - 1);
+        if (event.key === 'ArrowRight') setLightbox(activeIndex + 1);
+      });
+
+      const primaryTopbar = document.querySelector('.topbar');
+      const stickyControlBars = [...document.querySelectorAll('[data-sticky-controls]')];
+      const syncStickyControlBars = () => {
+        document.documentElement.style.setProperty('--topbar-height', `${primaryTopbar.offsetHeight}px`);
+        stickyControlBars.forEach((bar) => {
+          const top = Number.parseFloat(getComputedStyle(bar).top) || 0;
+          bar.dataset.stuck = String(window.scrollY > 0 && bar.getBoundingClientRect().top <= top + 1);
+        });
+      };
+      window.addEventListener('scroll', syncStickyControlBars, { passive: true });
+      window.addEventListener('resize', syncStickyControlBars);
+      syncStickyControlBars();
+    </script>
+  </body>
+</html>

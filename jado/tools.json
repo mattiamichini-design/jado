@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "id": "paper",
+      "name": "Paper MCP"
+    },
+    {
+      "id": "browser",
+      "name": "Browser and image search"
+    },
+    {
+      "id": "imagegen",
+      "name": "Image generation when relevant"
+    },
+    {
+      "id": "coding-agent",
+      "name": "AI coding tool (Claude Code, Codex or OpenCode)"
+    },
+    {
+      "id": "varianthub",
+      "name": "VariantHub on explicit request"
+    }
+  ]
+}

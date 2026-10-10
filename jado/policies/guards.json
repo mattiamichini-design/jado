@@ -1,0 +1,219 @@
+{
+  "00-router": {
+    "required": [],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [],
+    "independentNodes": [
+      "review_ux",
+      "review_visual"
+    ]
+  },
+  "R01": {
+    "required": [
+      {
+        "id": "gate",
+        "kind": "gate"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ]
+  },
+  "R03": {
+    "required": [
+      {
+        "id": "human",
+        "kind": "human"
+      }
+    ],
+    "completionNodes": [
+      "next"
+    ],
+    "checkpointNodes": []
+  },
+  "R04": {
+    "required": [
+      {
+        "id": "rev",
+        "kind": "skill",
+        "readOnly": true,
+        "requiredAt": [
+          "ship"
+        ]
+      },
+      {
+        "id": "gate",
+        "kind": "gate"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ],
+    "independentNodes": [
+      "rev",
+      "ux"
+    ]
+  },
+  "R05": {
+    "required": [
+      {
+        "id": "choose",
+        "kind": "human"
+      }
+    ],
+    "completionNodes": [
+      "done",
+      "code"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ],
+    "independentNodes": [
+      "review"
+    ]
+  },
+  "R07": {
+    "required": [
+      {
+        "id": "canvas_review",
+        "kind": "skill",
+        "readOnly": true,
+        "requiredAt": [
+          "ship"
+        ],
+        "before": [
+          "canvas_done",
+          "done"
+        ]
+      },
+      {
+        "id": "canvas_gate",
+        "kind": "gate",
+        "before": [
+          "canvas_done",
+          "done"
+        ]
+      },
+      {
+        "id": "review",
+        "kind": "skill",
+        "readOnly": true,
+        "requiredAt": [
+          "ship"
+        ],
+        "before": [
+          "done"
+        ]
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "before": [
+          "done"
+        ]
+      },
+      {
+        "id": "ux_gate",
+        "kind": "gate",
+        "before": [
+          "ux_done"
+        ]
+      }
+    ],
+    "completionNodes": [
+      "ux_done",
+      "canvas_done",
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ],
+    "independentNodes": [
+      "review",
+      "canvas_review"
+    ]
+  },
+  "R08": {
+    "required": [
+      {
+        "id": "collect",
+        "kind": "action"
+      }
+    ],
+    "completionNodes": [
+      "execute"
+    ],
+    "checkpointNodes": [
+      "wait"
+    ],
+    "independentNodes": [
+      "r",
+      "u",
+      "v"
+    ]
+  },
+  "R09": {
+    "required": [
+      {
+        "id": "gate",
+        "kind": "gate"
+      },
+      {
+        "id": "human",
+        "kind": "human"
+      }
+    ],
+    "completionNodes": [
+      "done",
+      "production"
+    ],
+    "checkpointNodes": [
+      "blocked",
+      "stop"
+    ]
+  },
+  "visual-research": {
+    "required": [
+      {
+        "id": "curate",
+        "kind": "skill"
+      },
+      {
+        "id": "evidence",
+        "kind": "skill"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "skip"
+    ]
+  },
+  "setup-project": {
+    "required": [
+      {
+        "id": "review",
+        "kind": "human"
+      },
+      {
+        "id": "gate",
+        "kind": "gate"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ]
+  }
+}

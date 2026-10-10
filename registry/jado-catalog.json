@@ -1,0 +1,779 @@
+{
+  "agents": [
+    {
+      "id": "jado-agent-ux",
+      "name": "JADO Agent UX",
+      "description": "Combine assigned documentary research, UX architecture and content work in one context.",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ],
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "instructions": "Apply only the assigned activities in the current context, in dependency order, and follow each activity's skill. Reuse decisions and evidence; record why unassigned activities are skipped.",
+      "uses": [
+        {
+          "skill": "jado-researcher",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-ux-architect",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-content-designer",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-visual-researcher",
+          "when": "A UI-pattern comparison supports the UX question."
+        }
+      ],
+      "writeScope": "Assigned research, UX artifacts and strings; product stays read-only during research.",
+      "skills": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer",
+        "jado-visual-researcher"
+      ],
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "workspace-write",
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "jado-agent-visual",
+      "name": "JADO Agent Visual",
+      "description": "Combine assigned visual research, art direction and canvas design in one context.",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ],
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "instructions": "Apply only the assigned activities in the current context, in dependency order, and follow each activity's skill. Reuse decisions and evidence; record why unassigned activities are skipped.",
+      "uses": [
+        {
+          "skill": "jado-visual-researcher",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-art-direction",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-visual-designer",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "Interaction intent is assigned (design-only)."
+        }
+      ],
+      "writeScope": "Assigned references, direction, moodboard and Paper nodes; one writer per document.",
+      "skills": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer",
+        "jado-motion"
+      ],
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "workspace-write",
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "jado-agent-frontend",
+      "name": "JADO Agent Frontend",
+      "description": "Combine assigned design-system, UI implementation, motion and technical work in one context.",
+      "roles": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ],
+      "procedure": ".agents/skills/jado-frontend/SKILL.md",
+      "instructions": "Apply only the assigned activities in the current context, in dependency order, and follow each activity's skill. Reuse decisions and evidence; record why unassigned activities are skipped.",
+      "uses": [
+        {
+          "skill": "jado-design-systems",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-ui-builder",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-motion",
+          "when": "The contract assigns this activity."
+        },
+        {
+          "skill": "jado-ui-engineer",
+          "when": "The contract assigns this activity."
+        }
+      ],
+      "writeScope": "Assigned design-system and feature files, with exclusive phases per artifact.",
+      "skills": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ],
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "sandbox": "workspace-write",
+      "claude": {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    },
+    {
+      "id": "jado-agent-ux-reviewer",
+      "name": "JADO Agent UX Reviewer",
+      "description": "Review tasks, comprehension, states and accessibility in a context independent of the author.",
+      "procedure": ".agents/skills/jado-ux-reviewer/SKILL.md",
+      "instructions": "Inspect the requested path with available evidence: tasks, clarity, states, accessibility and error recovery. Report severity, element, criterion, evidence and suggested fix for each finding; report only issues that matter at the current stage. State code-only coverage when browser evidence is missing, and distinguish expert evaluation from participant testing. Keep product and canvas read-only; fixes belong to the author.",
+      "uses": [
+        {
+          "skill": "fixing-accessibility",
+          "when": "Accessibility criteria are in scope."
+        },
+        {
+          "skill": "jado-evidence-contract",
+          "when": "The stage persists evidence."
+        }
+      ],
+      "writeScope": "Read-only product and canvas; return findings to the coordinator.",
+      "skills": [
+        "fixing-accessibility",
+        "jado-evidence-contract"
+      ],
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-ux-reviewer"
+      ],
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "name": "JADO Agent Visual Reviewer",
+      "description": "Review final captures against selected composition, art direction and any assigned motion criteria.",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "instructions": "Open the final captures and compare them with the expected result, viewport, state and revision. Check composition, fidelity, alignment, text, clipping and overflow, plus art-direction criteria when assigned and motion behavior when in scope (static captures cannot prove motion). Report only issues that affect the decision or the stage's acceptance criteria, each tied to an element and evidence. Missing or stale evidence yields blocked. Keep code and canvas read-only.",
+      "uses": [
+        {
+          "skill": "jado-canvas-verify",
+          "when": "Always, as the inspection checklist; never edit."
+        },
+        {
+          "skill": "better-interface",
+          "when": "Ship stage with a full UI quality audit in the contract."
+        },
+        {
+          "skill": "jado-evidence-contract",
+          "when": "The stage persists evidence."
+        }
+      ],
+      "writeScope": "Read-only product and canvas; verdict uses evidence from the latest revision.",
+      "skills": [
+        "jado-canvas-verify",
+        "better-interface",
+        "jado-evidence-contract"
+      ],
+      "model": "gpt-6.1-sol",
+      "reasoning": "high",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-visual-reviewer"
+      ],
+      "claude": {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "animation-vocabulary",
+      "name": "animation-vocabulary",
+      "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" → Pop in; \"the iOS rubber-band scroll\" → Rubber-banding). Use when the user asks \"what's it called when…\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
+      "path": "skills/animation-vocabulary/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/animation-vocabulary/SKILL.md",
+      "hash": "6ac7c5c1cc9a674dc7c3555634bb0090b6b1610ed45047eaf9b5be13220ef339",
+      "design": true
+    },
+    {
+      "id": "avoid-ai-writing",
+      "name": "avoid-ai-writing",
+      "description": "Audit and rewrite content to remove AI writing patterns (\"AI-isms\"). Use this skill when asked to \"remove AI-isms,\" \"clean up AI writing,\" \"edit writing for AI patterns,\" \"audit writing for AI tells,\" or \"make this sound less like AI.\" Supports a detect-only mode, an edit-in-place mode for files, an optional voice profile (casual / professional / technical / warm / blunt), and an iterate-to-convergence pass.",
+      "path": "skills/avoid-ai-writing/SKILL.md",
+      "source": "https://github.com/conorbronsdon/avoid-ai-writing/blob/HEAD/SKILL.md",
+      "hash": "252dc680d54bfd06a043e3aeacca3a632832007d95451309454b52e0cb8969b6",
+      "design": true
+    },
+    {
+      "id": "better-accessibility",
+      "name": "better-accessibility",
+      "description": "Helps your project comply with accessibility standards and best practices.",
+      "path": "skills/better-accessibility/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-accessibility/SKILL.md",
+      "hash": "d951feb2eee2222eb1fd885d04341f9ee4b331ae8102ce80bfcd0eec405f61b5",
+      "design": true
+    },
+    {
+      "id": "better-colors",
+      "name": "better-colors",
+      "description": "Helps you build a color system and answer anything about color in your project. You can generate palettes, use semantic tokens, convert between formats, check contrast and more.",
+      "path": "skills/better-colors/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-colors/SKILL.md",
+      "hash": "e5c80868406f7dbd5a93a5122b8b64357b64fc23bea7c53bc093803ddc5d3515",
+      "design": true
+    },
+    {
+      "id": "better-interface",
+      "name": "better-interface",
+      "description": "Combines all of the `better-*` skills into a single review across accessibility, layout, writing, typography, color and UI polish.",
+      "path": "skills/better-interface/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-interface/SKILL.md",
+      "hash": "15340ab034066bccfe2fd3a1b3f918e20e6909bba0791f1d2875a2dc47f5f99b",
+      "design": true
+    },
+    {
+      "id": "better-layout",
+      "name": "better-layout",
+      "description": "Helps with grouping, alignment, reading order, progressive disclosure and other details that make a good layout.",
+      "path": "skills/better-layout/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-layout/SKILL.md",
+      "hash": "8b08b3b75522f7b781d94c1ec6884731aa430f044619885eb4eee4613e78c0ad",
+      "design": true
+    },
+    {
+      "id": "better-typography",
+      "name": "better-typography",
+      "description": "Focuses on type scale, spacing, sizing, variable fonts, OpenType features, wrapping, truncation and other details that make typography feel great across your product.",
+      "path": "skills/better-typography/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-typography/SKILL.md",
+      "hash": "37dcfec6df593dc1d8f87bfd44dac6a34893d324e797e4a2bf874ef03fdfcb80",
+      "design": true
+    },
+    {
+      "id": "better-ui",
+      "name": "better-ui",
+      "description": "Polishes and improves the UI in your project. Covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas and more.",
+      "path": "skills/better-ui/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-ui/SKILL.md",
+      "hash": "400fef927262d83f19c5a09e366802b7523ea2232fb18be0d0bf90b63583b907",
+      "design": true
+    },
+    {
+      "id": "better-writing",
+      "name": "better-writing",
+      "description": "Focuses on improving product copy in your project.",
+      "path": "skills/better-writing/SKILL.md",
+      "source": "https://github.com/jakubkrehel/skills/blob/HEAD/skills/better-writing/SKILL.md",
+      "hash": "b749f51d853306b11e10e8fb7b1d6269cb76ba298a5473c95b8329b5d67bc5f6",
+      "design": true
+    },
+    {
+      "id": "copy-editing",
+      "name": "copy-editing",
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' or 'sharpen the messaging.' Use this when the user already has copy and wants it improved rather than rewritten from scratch. For writing new copy, see copywriting.",
+      "path": "skills/copy-editing/SKILL.md",
+      "source": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copy-editing/SKILL.md",
+      "hash": "3a2385a757c43884106055a9ddd6c10f5f9d1a18263ea421546aa32afc66f8f2",
+      "design": true
+    },
+    {
+      "id": "copywriting",
+      "name": "copywriting",
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" \"CTA copy,\" \"value proposition,\" \"tagline,\" \"subheadline,\" \"hero section copy,\" \"above the fold,\" \"this copy is weak,\" \"make this more compelling,\" or \"help me describe my product.\" Use this whenever someone is working on website text that needs to persuade or convert. For email copy, see emails. For popup copy, see popups. For editing existing copy, see copy-editing. For the offer underneath the copy (bonuses, guarantees, value framing), see offers.",
+      "path": "skills/copywriting/SKILL.md",
+      "source": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/copywriting/SKILL.md",
+      "hash": "055d926496ac87595be82a4e0bc18e080fc67d6a5ff852f9e7b266a120f1dfd4",
+      "design": true
+    },
+    {
+      "id": "emil-design-eng",
+      "name": "emil-design-eng",
+      "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
+      "path": "skills/emil-design-eng/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/emil-design-eng/SKILL.md",
+      "hash": "a993a1e593a9ac53e0c72b319ff4ef273dcfe17569a2da510fab68deb070e273",
+      "design": true
+    },
+    {
+      "id": "find-animation-opportunities",
+      "name": "find-animation-opportunities",
+      "description": "Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead.",
+      "path": "skills/find-animation-opportunities/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/find-animation-opportunities/SKILL.md",
+      "hash": "423427212a66d9d1ea2648399c9bd9d7fc7003c196e8c250f9578a8409abd184",
+      "design": true
+    },
+    {
+      "id": "fixing-accessibility",
+      "name": "fixing-accessibility",
+      "description": "Fix accessibility issues.",
+      "path": "skills/fixing-accessibility/SKILL.md",
+      "source": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-accessibility/SKILL.md",
+      "hash": "de5339a29426a88d1ae0a34b83c1a0cd7157e59518490d0cb6b15ebfbfc7f789",
+      "design": true
+    },
+    {
+      "id": "fixing-metadata",
+      "name": "fixing-metadata",
+      "description": "Ship correct, complete metadata.",
+      "path": "skills/fixing-metadata/SKILL.md",
+      "source": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-metadata/SKILL.md",
+      "hash": "a9fcb77ed0e5bb66d508184185065e005a1c97e626c38f6eda38bc711581e3df",
+      "design": true
+    },
+    {
+      "id": "fixing-motion-performance",
+      "name": "fixing-motion-performance",
+      "description": "Fix animation performance issues.",
+      "path": "skills/fixing-motion-performance/SKILL.md",
+      "source": "https://github.com/ibelick/ui-skills/blob/HEAD/skills/fixing-motion-performance/SKILL.md",
+      "hash": "e16e77536d75b6fcfe520a564464c4b22dcc6d2d6bf24d971cccec8eb7600028",
+      "design": true
+    },
+    {
+      "id": "humanizer",
+      "name": "humanizer",
+      "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says.\nUse when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line\nclosers, staged openers, forced triads, dashes everywhere, inflated claims, sales\nlanguage, stock AI words, bold labels, or filler. Based on Wikipedia's \"Signs of AI writing.\"\n",
+      "path": "skills/humanizer/SKILL.md",
+      "source": "https://github.com/blader/humanizer/blob/HEAD/SKILL.md",
+      "hash": "167b854a9c0882497f53068cf42a11cd5940d9af2288eeead34da29b18cee253",
+      "design": true
+    },
+    {
+      "id": "impeccable",
+      "name": "impeccable",
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
+      "path": "skills/impeccable/SKILL.md",
+      "source": "https://github.com/pbakaus/impeccable/blob/HEAD/.agents/skills/impeccable/SKILL.md",
+      "hash": "ea398b4c314c9d890a2427b64f41cd74c635bb09ca3ee7b700449d0981a9fed9",
+      "design": true
+    },
+    {
+      "id": "improve-animations",
+      "name": "improve-animations",
+      "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code — it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
+      "path": "skills/improve-animations/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/improve-animations/SKILL.md",
+      "hash": "a2195202b98259e09cd87dce0bdf7a2bee2c156aa03ed66d2d52e7b9d056be74",
+      "design": true
+    },
+    {
+      "id": "make-interfaces-feel-better",
+      "name": "make-interfaces-feel-better",
+      "description": "Design engineering principles for making interfaces feel polished. Use when building UI components, reviewing frontend code, implementing animations, hover states, shadows, borders, typography, icons, micro-interactions, enter/exit animations, or any visual detail work. Supports quick and full review modes. Triggers on UI polish, design details, \"make it feel better\", \"feels off\", stagger animations, border radius, optical alignment, font smoothing, tabular numbers, image outlines, box shadows, icons, icon stroke weight, icon states, motion restraint.",
+      "path": "skills/make-interfaces-feel-better/SKILL.md",
+      "source": "https://github.com/jakubkrehel/make-interfaces-feel-better/blob/HEAD/skills/make-interfaces-feel-better/SKILL.md",
+      "hash": "2dee747c20c6638690488e727bcc0e27af91b9f35385a0ed71c135f0940b2615",
+      "design": true
+    },
+    {
+      "id": "mobbin-search",
+      "name": "search",
+      "description": "Search Mobbin for real app UI screenshots and visually analyze them. Required before calling the `search_screens` MCP tool — this skill defines how to plan searches, respond, and build HTML evidence boards when the screens are the answer. Use whenever the user asks about UI/UX design patterns, wants to see how other apps handle a screen or flow, needs design inspiration or references, asks to compare UI approaches across apps, mentions Mobbin, or whenever `search_screens` would be relevant. Trigger aggressively for any design-related question — even if screenshots aren't explicitly requested.",
+      "path": "skills/mobbin-search/SKILL.md",
+      "source": "https://github.com/mobbin/skills/blob/HEAD/skills/search/SKILL.md",
+      "hash": "3c91c4da4a818f7162f566dd0b08d46d7057eeeea150bdd5eb3a2b8fc7d551f0",
+      "design": true
+    },
+    {
+      "id": "oklch-skill",
+      "name": "oklch-skill",
+      "description": "OKLCH color space for web projects. Convert hex/rgb/hsl to oklch, generate palettes, check contrast, handle gamut boundaries, and theme with Tailwind v4. Triggers on oklch, color conversion, palette generation, contrast ratio, gamut, display p3, design tokens, hue drift, chroma, dark mode colors.",
+      "path": "skills/oklch-skill/SKILL.md",
+      "source": "https://github.com/jakubkrehel/oklch-skill/blob/HEAD/skills/oklch-skill/SKILL.md",
+      "hash": "4b9046110f27d2214ca5930cbbb5ab17d53303229211453009c9218e68fdb6ca",
+      "design": true
+    },
+    {
+      "id": "product-marketing",
+      "name": "product-marketing",
+      "description": "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills — it creates `.agents/product-marketing.md` that all other skills reference for product, audience, and positioning context.",
+      "path": "skills/product-marketing/SKILL.md",
+      "source": "https://github.com/coreyhaines31/marketingskills/blob/HEAD/skills/product-marketing/SKILL.md",
+      "hash": "f40efe0027fc987f07a6b8ae6c31e62b9f698ec6fa2f31ad00d352992dd1e33a",
+      "design": true
+    },
+    {
+      "id": "research",
+      "name": "research",
+      "description": "Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.",
+      "path": "skills/research/SKILL.md",
+      "source": "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/research/SKILL.md",
+      "hash": "75b7f9bbd7ccff6755a006f8b25d319a46ecbf6bd4b4c3323965ed9cb65e78ff",
+      "design": true
+    },
+    {
+      "id": "review-animations",
+      "name": "review-animations",
+      "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
+      "path": "skills/review-animations/SKILL.md",
+      "source": "https://github.com/emilkowalski/skills/blob/HEAD/skills/review-animations/SKILL.md",
+      "hash": "50ba5cd273ab0def08d140fd1329319b23b42bd0165c8f67644c590d3b57bbc6",
+      "design": true
+    },
+    {
+      "id": "shadcn",
+      "name": "shadcn",
+      "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI, including chat interfaces. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
+      "path": "skills/shadcn/SKILL.md",
+      "source": "https://github.com/shadcn/ui/blob/HEAD/skills/shadcn/SKILL.md",
+      "hash": "72daebc2486fbfe58651dcf28bade9c6ae13ddd88e66789564cea7901ef2f0c6",
+      "design": true
+    },
+    {
+      "id": "web-design-guidelines",
+      "name": "web-design-guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+      "path": "skills/web-design-guidelines/SKILL.md",
+      "source": "https://github.com/vercel-labs/agent-skills/blob/HEAD/skills/web-design-guidelines/SKILL.md",
+      "hash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474",
+      "design": true
+    },
+    {
+      "id": "writing-for-agents",
+      "name": "writing-for-agents",
+      "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.",
+      "path": "skills/writing-for-agents/SKILL.md",
+      "source": "https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/writing-for-agents/SKILL.md",
+      "hash": "0071124a923559493bc8924a90fb87bceb048d31ad2ce785fa4281d7c506bfa7",
+      "design": true
+    },
+    {
+      "id": "ask-jado",
+      "name": "ask-jado",
+      "description": "Advise which JADO route, skill or agent fits a design situation and what comes next; resolve a decision gap inside an assigned JADO task.",
+      "path": ".agents/skills/ask-jado/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "9a17c1e26a7a487ee820f535196412a3535ef7500fcaa837f589ac6b137c15f7",
+      "design": true
+    },
+    {
+      "id": "fontshare",
+      "name": "fontshare",
+      "description": "Select Fontshare families or pairs for logos, landing pages, portals, branding, or style guides; rank alternatives and produce typography proofs in the requested document.",
+      "path": ".agents/skills/fontshare/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "c36c62c79b39e77b1822b8a577b34255422cf6270d873b81bf605740e50fc20c",
+      "design": true
+    },
+    {
+      "id": "html-show",
+      "name": "html-show",
+      "description": "Create standalone HTML section-presentations. Use for feature recaps, current-state audits, competitive research, and concept explainers when the user asks for a navigable HTML page or internal presentation.",
+      "path": ".agents/skills/html-show/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "18c68d3c707f7e6bfc10cdf811aec6f0a8e0f35dd23ff05e5a72d9b474b2e754",
+      "design": true
+    },
+    {
+      "id": "jado-art-direction",
+      "name": "jado-art-direction",
+      "description": "Define a visual concept, typography, palette, imagery and composition criteria when a new direction is assigned.",
+      "path": ".agents/skills/jado-art-direction/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "fed9e1be8e0e92c52a68595760f7192933931b72e63a45bcab46db018653ba31",
+      "design": true
+    },
+    {
+      "id": "jado-canvas-layout",
+      "name": "jado-canvas-layout",
+      "description": "Structure nodes and groups when creating or changing a Paper layout.",
+      "path": ".agents/skills/jado-canvas-layout/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "b5f6c37b3bcba0e189928be9f353660ce277e6fd202a4bc398ff80c12d51a313",
+      "design": true
+    },
+    {
+      "id": "jado-canvas-verify",
+      "name": "jado-canvas-verify",
+      "description": "Verify a changed canvas through its structure and inspected captures from the final revision.",
+      "path": ".agents/skills/jado-canvas-verify/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "c5ee02e1bce406fbfc3242dfcf96311d4742ecc24fe860cda2bdba6080493117",
+      "design": true
+    },
+    {
+      "id": "jado-content-designer",
+      "name": "jado-content-designer",
+      "description": "Write UI microcopy, marketing copy or product documentation, or edit existing text, using the matching procedure.",
+      "path": ".agents/skills/jado-content-designer/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "093281e43bf7d639154617d69fef034d8cedc79879f917a827a6ffb34888af0b",
+      "design": true
+    },
+    {
+      "id": "jado-craft-core",
+      "name": "jado-craft-core",
+      "description": "Apply stack-neutral UI craft checks when creating or changing layouts, components, or interaction states.",
+      "path": ".agents/skills/jado-craft-core/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "12a67a30843a3f123d6942f705992190522cee676daa3622ea63cf20db8b54af",
+      "design": true
+    },
+    {
+      "id": "jado-design-systems",
+      "name": "jado-design-systems",
+      "description": "Map existing tokens and components to the target UI; apply layout guidance for the actual project stack.",
+      "path": ".agents/skills/jado-design-systems/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "e9d765aee9c4c228bb04c58f239b09057c89c809dee35e55d904aca58b305218",
+      "design": true
+    },
+    {
+      "id": "jado-evidence-contract",
+      "name": "jado-evidence-contract",
+      "description": "Record verification evidence, coverage, and limits before reporting an artifact as verified.",
+      "path": ".agents/skills/jado-evidence-contract/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "fcb7610be382ade6bffc0876e88e7403619e9b8fda6de3946d97fae3819f68cf",
+      "design": true
+    },
+    {
+      "id": "jado-flow",
+      "name": "jado-flow",
+      "description": "Coordinate a JADO run started by jado-run — resolve dials and route, assign executors, cap loops, ask at checkpoints and deliver with evidence.",
+      "path": ".agents/skills/jado-flow/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "9e3e58b6e2db63da74ca12da046b76d7c20fbc6ee667a1730f5d2d2349643144",
+      "design": true
+    },
+    {
+      "id": "jado-frontend",
+      "name": "jado-frontend",
+      "description": "Combine assigned design-system, UI implementation, motion and technical work in one context.",
+      "path": ".agents/skills/jado-frontend/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "99bb3de8ce144ea1e0a43d3d0e45ae96dac44f1d402ac028ffd53bc71472827e",
+      "design": true
+    },
+    {
+      "id": "jado-install",
+      "name": "jado-install",
+      "description": "Install, link, update or uninstall JADO, refresh upstream skills, and migrate design instructions for the selected AI tools.",
+      "path": ".agents/skills/jado-install/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "8061ff3567d0b7418e094be6c206c352f16baeceef2f3d5537d828884579264e",
+      "design": true
+    },
+    {
+      "id": "jado-motion",
+      "name": "jado-motion",
+      "description": "Define useful motion, implement an approved interaction or inspect animation behavior and performance within an assigned phase.",
+      "path": ".agents/skills/jado-motion/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "8150646506664b5d460624d38d985819e3567f3a4c1c7ff1447df47ed005c4fd",
+      "design": true
+    },
+    {
+      "id": "jado-reference-analysis",
+      "name": "jado-reference-analysis",
+      "description": "Select and compare product or style references for flow analysis, interface patterns, art direction, or a requested moodboard.",
+      "path": ".agents/skills/jado-reference-analysis/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "7f1263727b122c5d476bf742bb33d9033bfe248acc8c04e77cb923f0f22ca4c8",
+      "design": true
+    },
+    {
+      "id": "jado-researcher",
+      "name": "jado-researcher",
+      "description": "Research user needs, product questions and domain facts from documented sources; report evidence and uncertainty.",
+      "path": ".agents/skills/jado-researcher/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "9e45753951c2f476baa681093545bdcfdb7180815dbab009eaa5a427f8e7deec",
+      "design": true
+    },
+    {
+      "id": "jado-run",
+      "name": "jado-run",
+      "description": "Start JADO design work — research, UX, visuals, content, design systems, UI implementation or review — tuned by stage, involvement and budget dials.",
+      "path": ".agents/skills/jado-run/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "eb6ac109f9d9552bf9a77f7b2b69b20b4df320ed369daa55c01a0037519c5c40",
+      "design": true
+    },
+    {
+      "id": "jado-ui-builder",
+      "name": "jado-ui-builder",
+      "description": "Implement the selected UI and verify its assigned states, interactions and variants.",
+      "path": ".agents/skills/jado-ui-builder/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "e5b9a9137109eaab4447082f1f9a24f909229802e15bc2ce6e7c71719606003d",
+      "design": true
+    },
+    {
+      "id": "jado-ui-engineer",
+      "name": "jado-ui-engineer",
+      "description": "Resolve assigned UI architecture, layout, interaction, animation or performance problems.",
+      "path": ".agents/skills/jado-ui-engineer/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "e942486db447c8c052ab6220f2e5ff252420ce43ce96aef0434ea9ae2b69a7ff",
+      "design": true
+    },
+    {
+      "id": "jado-ux",
+      "name": "jado-ux",
+      "description": "Combine assigned documentary research, UX architecture and content work in one context.",
+      "path": ".agents/skills/jado-ux/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "204288b8a18685dd445f5c71fba4f4a67c02617e28ebd5272d5f3c704043dd24",
+      "design": true
+    },
+    {
+      "id": "jado-ux-architect",
+      "name": "jado-ux-architect",
+      "description": "Analyze tasks, flows, journeys and states; author requested UX artifacts and observable acceptance criteria.",
+      "path": ".agents/skills/jado-ux-architect/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "5184f8f2154c06f9e355a90c4eece19c61b4d0866d37047c3c07739ef8dd5710",
+      "design": true
+    },
+    {
+      "id": "jado-ux-artifacts",
+      "name": "jado-ux-artifacts",
+      "description": "Create or update assigned UX flows, journeys, personas, or stories in the product repository without a mandatory dossier.",
+      "path": ".agents/skills/jado-ux-artifacts/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "cdc095f96267857982a2fb7d5dca06d6b5a8c3ef659045286fe9073e4ba64b2a",
+      "design": true
+    },
+    {
+      "id": "jado-ux-reviewer",
+      "name": "jado-ux-reviewer",
+      "description": "Review tasks, comprehension, states and accessibility in a context independent of the author.",
+      "path": ".agents/skills/jado-ux-reviewer/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "f0ac3a9cf163dc8fea5eee33a0ea5419b459680f744d66ba1473d54f6e67da3c",
+      "design": true
+    },
+    {
+      "id": "jado-ux-traceability",
+      "name": "jado-ux-traceability",
+      "description": "Build an assigned cross-team UX baseline or traceability audit linking sources, artifacts, and scenarios.",
+      "path": ".agents/skills/jado-ux-traceability/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "1497456d36da0ef331e00b14167e156b541e9c8d00cce66926cea5af2038c4f7",
+      "design": true
+    },
+    {
+      "id": "jado-visual",
+      "name": "jado-visual",
+      "description": "Combine assigned visual research, art direction and canvas design in one context.",
+      "path": ".agents/skills/jado-visual/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "36e266e7c0b03a2548d2d660ecbdf86729ba91d9cba60e383630cb703c08da2a",
+      "design": true
+    },
+    {
+      "id": "jado-visual-designer",
+      "name": "jado-visual-designer",
+      "description": "Design composition and hierarchy from a selected direction; build and verify assigned canvas work.",
+      "path": ".agents/skills/jado-visual-designer/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "7e6763f9c26e3803835e5f7af0c5e6bc81703de7d88e44c611bb111e3baa74a7",
+      "design": true
+    },
+    {
+      "id": "jado-visual-researcher",
+      "name": "jado-visual-researcher",
+      "description": "Compare UI patterns or style references; curate a moodboard only when that deliverable is assigned.",
+      "path": ".agents/skills/jado-visual-researcher/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "a9f7b5eda3e8370cc6736f0aab6d1d37402d8df2f63ea660587ea642a9edf62f",
+      "design": true
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "name": "jado-visual-reviewer",
+      "description": "Review final captures against selected composition, art direction and any assigned motion criteria.",
+      "path": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "81d510647d219d9879cc748e0a512922ff8df2b3ef5f42ed3e52a6e38e44a86e",
+      "design": true
+    },
+    {
+      "id": "tailwind",
+      "name": "tailwind",
+      "description": "Apply Tailwind rules with semantic tokens, parent-owned spacing, responsive layout discipline, and no inline styles.",
+      "path": ".agents/skills/tailwind/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "cce26ed2f361be6e2b444474737485ef1ff26cda785ffef45f06f478a7a5128f",
+      "design": true
+    },
+    {
+      "id": "ui-screenshot",
+      "name": "ui-screenshot",
+      "description": "Capture realistic UI screenshots as minimal device-framed digital polaroids for visual history and Figma.",
+      "path": ".agents/skills/ui-screenshot/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "63f5d85330e3e33e908ff4b61e1680dbe9e3ebe7a007fc142ca77547c60c9678",
+      "design": true
+    },
+    {
+      "id": "unit-test-engineer",
+      "name": "unit-test-engineer",
+      "description": "Unit-test pass for Next.js and React. Use when changed behavior needs executable coverage, a unit test fails, or another skill needs fresh test evidence.",
+      "path": ".agents/skills/unit-test-engineer/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "08ea7309db5c78865ff8098337edc295f4f6d44684c772be08bf3bcfff692605",
+      "design": true
+    },
+    {
+      "id": "varianthub",
+      "name": "varianthub",
+      "description": "Explore and promote component or full-page variants in a repository whose VariantHub infrastructure is already current. Use for day-to-day VariantHub work; use varianthub-builder to bootstrap or upgrade the infrastructure.",
+      "path": ".agents/skills/varianthub/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "0edce8d52367461c8e2e4e56c19827b008c7ab770bb7de10b1b6eb054313f46c",
+      "design": true
+    },
+    {
+      "id": "varianthub-builder",
+      "name": "varianthub-builder",
+      "description": "Install, upgrade or verify VariantHub in a consumer project, from the runner for HTML and URL sources or the reusable core viewer for React hosts. Use when initializing VariantHub, updating a project to a newer VariantHub checkout, migrating host integration or verifying the runtime actually served. For creating, comparing or promoting variants in a project that is already set up, use varianthub.",
+      "path": ".agents/skills/varianthub-builder/SKILL.md",
+      "source": "local snapshot; upstream provenance not established in the lock",
+      "hash": "14a2d2866e7833737e3db4e8e5d065d6cb4004abf4d3ddb3089bd7e9a798b6a6",
+      "design": true
+    }
+  ],
+  "tools": [
+    {
+      "id": "paper",
+      "name": "Paper MCP"
+    },
+    {
+      "id": "browser",
+      "name": "Browser and image search"
+    },
+    {
+      "id": "imagegen",
+      "name": "Image generation when relevant"
+    },
+    {
+      "id": "coding-agent",
+      "name": "AI coding tool (Claude Code, Codex or OpenCode)"
+    },
+    {
+      "id": "varianthub",
+      "name": "VariantHub on explicit request"
+    }
+  ]
+}

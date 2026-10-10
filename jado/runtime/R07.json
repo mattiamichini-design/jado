@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R07",
+    "title": "R07 · Staged delivery",
+    "summary": "Carry one mandate through UX, canvas and code up to the recorded stopAfter, with shared budget and stage-appropriate checks.",
+    "notes": "Record stopAfter before starting: ux, canvas or code. Activate only needed roles; the coordinator may author. Ship requires independent canvas and code reviews; explore and refine use self-checks unless the budget adds a review. A UX deliverable does not authorize canvas, and a canvas deliverable does not authorize code. Canvas and code share the repair batches.",
+    "kind": "workflow",
+    "surface": "any",
+    "stages": [
+      "explore",
+      "refine",
+      "ship"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Brief, delegated authority, stopAfter and budget"
+    ],
+    "outputs": [
+      "Verified result, limits and run summary"
+    ],
+    "budget": {
+      "newDelegations": 8,
+      "concurrent": 3,
+      "repairBatches": 2
+    },
+    "entry": "p",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "p",
+        "kind": "start",
+        "label": "Verify mandate and stopAfter",
+        "detail": "Check access, scope, delegated authority, stopAfter, dials and budget."
+      },
+      {
+        "id": "brief",
+        "kind": "skill",
+        "label": "Define tasks, states and criteria",
+        "detail": "Prepare brief, flow and acceptance criteria from available sources.",
+        "ref": "jado-ux-architect"
+      },
+      {
+        "id": "research",
+        "kind": "skill",
+        "label": "Collect required evidence",
+        "detail": "Close only the source gap that blocks dependent decisions.",
+        "ref": "jado-researcher"
+      },
+      {
+        "id": "decide",
+        "kind": "action",
+        "label": "Resolve choices",
+        "detail": "Apply the involvement dial: decide and log, or batch the open questions at this checkpoint. Decisions outside delegated authority stop the dependent work."
+      },
+      {
+        "id": "result",
+        "kind": "decision",
+        "label": "What is the stopAfter output?",
+        "detail": "UX stops after artifact verification; canvas or code needs visual design."
+      },
+      {
+        "id": "ux_verify",
+        "kind": "skill",
+        "label": "Verify the UX artifact",
+        "detail": "Check only the requested artifact, sources, IDs, links and states.",
+        "ref": "jado-evidence-contract"
+      },
+      {
+        "id": "ux_gate",
+        "kind": "gate",
+        "label": "Does the UX artifact satisfy the contract?",
+        "detail": "Return defects to the same author within the fix cap."
+      },
+      {
+        "id": "ux_done",
+        "kind": "end",
+        "label": "Deliver UX and checkpoint",
+        "detail": "Return the artifact with evidence; record next step, decisions and remaining budget."
+      },
+      {
+        "id": "copy_needed",
+        "kind": "decision",
+        "label": "Does the content need work?",
+        "detail": "Reuse approved, unchanged copy as-is and record its source; new, changed or unapproved text needs content work."
+      },
+      {
+        "id": "copy",
+        "kind": "skill",
+        "label": "Prepare the content",
+        "detail": "Prepare only new, changed or unapproved copy.",
+        "ref": "jado-content-designer"
+      },
+      {
+        "id": "design",
+        "kind": "skill",
+        "label": "Design the canvas",
+        "detail": "Integrate the copy as the single canvas writer; follow the stage's variant count, fidelity and fix cap.",
+        "ref": "jado-visual-designer"
+      },
+      {
+        "id": "canvas_check",
+        "kind": "decision",
+        "label": "Does the stage need an independent canvas review?",
+        "detail": "Ship: always. Refine: when the budget is normal or deep. Explore: the self-check is enough."
+      },
+      {
+        "id": "canvas_review",
+        "kind": "skill",
+        "label": "Review the canvas",
+        "detail": "Review captures and structure read-only before any implementation.",
+        "ref": "jado-visual-reviewer"
+      },
+      {
+        "id": "canvas_gate",
+        "kind": "gate",
+        "label": "Is the canvas accepted?",
+        "detail": "Check the criteria and the selection authority; in checkpoints involvement, confirm the canvas with the user before code."
+      },
+      {
+        "id": "canvas_fix",
+        "kind": "action",
+        "label": "Repair the canvas",
+        "detail": "The same designer repairs one batch, recaptures and verifies the findings."
+      },
+      {
+        "id": "code_scope",
+        "kind": "decision",
+        "label": "Is code in the mandate?",
+        "detail": "Continue only when stopAfter is code."
+      },
+      {
+        "id": "canvas_done",
+        "kind": "end",
+        "label": "Deliver the verified canvas",
+        "detail": "Return canvas, revision, evidence and remaining budget."
+      },
+      {
+        "id": "b",
+        "kind": "skill",
+        "label": "Implement the accepted canvas",
+        "detail": "Implement the accepted direction with project components.",
+        "ref": "jado-ui-builder"
+      },
+      {
+        "id": "code_check",
+        "kind": "decision",
+        "label": "Does the stage need an independent code review?",
+        "detail": "Ship: always, plus UX review for changed critical flows. Refine: when the budget is normal or deep."
+      },
+      {
+        "id": "review",
+        "kind": "skill",
+        "label": "Review the browser result",
+        "detail": "Inspect current browser evidence read-only.",
+        "ref": "jado-visual-reviewer"
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "label": "Did the final checks pass?",
+        "detail": "Compare checks and evidence with the contract."
+      },
+      {
+        "id": "fix",
+        "kind": "action",
+        "label": "Return repairs to the builder",
+        "detail": "One aggregated batch to the same author, who verifies the findings."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver result and run summary",
+        "detail": "Return outputs, evidence, decision log, gaps and consumption."
+      },
+      {
+        "id": "stop",
+        "kind": "end",
+        "label": "Report the block and completed work",
+        "detail": "Record the block and verified parts; continue only independent work."
+      }
+    ],
+    "edges": [
+      {
+        "id": "p-brief",
+        "from": "p",
+        "to": "brief",
+        "label": ""
+      },
+      {
+        "id": "brief-research",
+        "from": "brief",
+        "to": "research",
+        "label": "Evidence missing"
+      },
+      {
+        "id": "brief-decide",
+        "from": "brief",
+        "to": "decide",
+        "label": "Evidence sufficient"
+      },
+      {
+        "id": "research-decide",
+        "from": "research",
+        "to": "decide",
+        "label": ""
+      },
+      {
+        "id": "decide-result",
+        "from": "decide",
+        "to": "result",
+        "label": ""
+      },
+      {
+        "id": "result-ux_verify",
+        "from": "result",
+        "to": "ux_verify",
+        "label": "UX artifact only"
+      },
+      {
+        "id": "result-copy_needed",
+        "from": "result",
+        "to": "copy_needed",
+        "label": "Canvas or code"
+      },
+      {
+        "id": "result-stop",
+        "from": "result",
+        "to": "stop",
+        "label": "Blocked by a decision outside authority"
+      },
+      {
+        "id": "ux_verify-ux_gate",
+        "from": "ux_verify",
+        "to": "ux_gate",
+        "label": ""
+      },
+      {
+        "id": "ux_gate-ux_done",
+        "from": "ux_gate",
+        "to": "ux_done",
+        "label": "Yes"
+      },
+      {
+        "id": "ux_gate-brief",
+        "from": "ux_gate",
+        "to": "brief",
+        "label": "No, fix pass left"
+      },
+      {
+        "id": "ux_gate-stop",
+        "from": "ux_gate",
+        "to": "stop",
+        "label": "Cap reached or blocked"
+      },
+      {
+        "id": "copy_needed-copy",
+        "from": "copy_needed",
+        "to": "copy",
+        "label": "New, changed or unapproved"
+      },
+      {
+        "id": "copy_needed-design",
+        "from": "copy_needed",
+        "to": "design",
+        "label": "Approved and unchanged: reuse"
+      },
+      {
+        "id": "copy-design",
+        "from": "copy",
+        "to": "design",
+        "label": ""
+      },
+      {
+        "id": "design-canvas_check",
+        "from": "design",
+        "to": "canvas_check",
+        "label": ""
+      },
+      {
+        "id": "canvas_check-canvas_gate",
+        "from": "canvas_check",
+        "to": "canvas_gate",
+        "label": "Self-check only",
+        "stages": [
+          "explore",
+          "refine"
+        ]
+      },
+      {
+        "id": "canvas_check-canvas_review",
+        "from": "canvas_check",
+        "to": "canvas_review",
+        "label": "Independent review"
+      },
+      {
+        "id": "canvas_review-canvas_gate",
+        "from": "canvas_review",
+        "to": "canvas_gate",
+        "label": ""
+      },
+      {
+        "id": "canvas_gate-code_scope",
+        "from": "canvas_gate",
+        "to": "code_scope",
+        "label": "Yes"
+      },
+      {
+        "id": "canvas_gate-canvas_fix",
+        "from": "canvas_gate",
+        "to": "canvas_fix",
+        "label": "No, repair batch left"
+      },
+      {
+        "id": "canvas_gate-stop",
+        "from": "canvas_gate",
+        "to": "stop",
+        "label": "Decision or budget missing"
+      },
+      {
+        "id": "canvas_fix-canvas_gate",
+        "from": "canvas_fix",
+        "to": "canvas_gate",
+        "label": ""
+      },
+      {
+        "id": "code_scope-b",
+        "from": "code_scope",
+        "to": "b",
+        "label": "Yes"
+      },
+      {
+        "id": "code_scope-canvas_done",
+        "from": "code_scope",
+        "to": "canvas_done",
+        "label": "No, design only"
+      },
+      {
+        "id": "b-code_check",
+        "from": "b",
+        "to": "code_check",
+        "label": ""
+      },
+      {
+        "id": "code_check-gate",
+        "from": "code_check",
+        "to": "gate",
+        "label": "Self-check only",
+        "stages": [
+          "explore",
+          "refine"
+        ]
+      },
+      {
+        "id": "code_check-review",
+        "from": "code_check",
+        "to": "review",
+        "label": "Independent review"
+      },
+      {
+        "id": "review-gate",
+        "from": "review",
+        "to": "gate",
+        "label": ""
+      },
+      {
+        "id": "gate-done",
+        "from": "gate",
+        "to": "done",
+        "label": "Yes"
+      },
+      {
+        "id": "gate-fix",
+        "from": "gate",
+        "to": "fix",
+        "label": "No, repair batch left"
+      },
+      {
+        "id": "fix-gate",
+        "from": "fix",
+        "to": "gate",
+        "label": ""
+      },
+      {
+        "id": "gate-stop",
+        "from": "gate",
+        "to": "stop",
+        "label": "Cap reached or blocked"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "canvas_review",
+        "kind": "skill",
+        "readOnly": true,
+        "requiredAt": [
+          "ship"
+        ],
+        "before": [
+          "canvas_done",
+          "done"
+        ]
+      },
+      {
+        "id": "canvas_gate",
+        "kind": "gate",
+        "before": [
+          "canvas_done",
+          "done"
+        ]
+      },
+      {
+        "id": "review",
+        "kind": "skill",
+        "readOnly": true,
+        "requiredAt": [
+          "ship"
+        ],
+        "before": [
+          "done"
+        ]
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "before": [
+          "done"
+        ]
+      },
+      {
+        "id": "ux_gate",
+        "kind": "gate",
+        "before": [
+          "ux_done"
+        ]
+      }
+    ],
+    "completionNodes": [
+      "ux_done",
+      "canvas_done",
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ],
+    "independentNodes": [
+      "review",
+      "canvas_review"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-content-designer",
+      "path": ".agents/skills/jado-content-designer/SKILL.md"
+    },
+    {
+      "id": "jado-evidence-contract",
+      "path": ".agents/skills/jado-evidence-contract/SKILL.md"
+    },
+    {
+      "id": "jado-researcher",
+      "path": ".agents/skills/jado-researcher/SKILL.md"
+    },
+    {
+      "id": "jado-ui-builder",
+      "path": ".agents/skills/jado-ui-builder/SKILL.md"
+    },
+    {
+      "id": "jado-ux-architect",
+      "path": ".agents/skills/jado-ux-architect/SKILL.md"
+    },
+    {
+      "id": "jado-visual-designer",
+      "path": ".agents/skills/jado-visual-designer/SKILL.md"
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "path": ".agents/skills/jado-visual-reviewer/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-ux",
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual",
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-visual-reviewer"
+      ]
+    },
+    {
+      "id": "jado-agent-frontend",
+      "procedure": ".agents/skills/jado-frontend/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ]
+    }
+  ],
+  "subflows": []
+}

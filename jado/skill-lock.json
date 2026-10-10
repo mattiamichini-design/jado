@@ -1,0 +1,261 @@
+{
+  "version": 3,
+  "skills": {
+    "animation-vocabulary": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skills.git",
+      "skillPath": "skills/animation-vocabulary/SKILL.md",
+      "skillFolderHash": "d49565744427887a1f719de1ceee04d941d4e681",
+      "installedAt": "2026-06-30T01:20:57.166Z",
+      "updatedAt": "2026-09-28T06:37:33.062Z"
+    },
+    "avoid-ai-writing": {
+      "source": "conorbronsdon/avoid-ai-writing",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/conorbronsdon/avoid-ai-writing.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "9b8d030ce5c846af9520a4f6e5eb7d3b8d80ff43",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-09-30T06:34:01.210Z"
+    },
+    "better-accessibility": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-accessibility/SKILL.md",
+      "skillFolderHash": "ebf9388ad7f6acc424584674ac97406e2118616f",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:35.584Z"
+    },
+    "better-colors": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-colors/SKILL.md",
+      "skillFolderHash": "2bf09c8493b760bc4449fed26079244368eaaa16",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:37.037Z"
+    },
+    "better-interface": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-interface/SKILL.md",
+      "skillFolderHash": "828b477582842f5890fe307b4f95cdf05bd88d92",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:38.702Z"
+    },
+    "better-layout": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-layout/SKILL.md",
+      "skillFolderHash": "8f1f1b163848cec18aea8143b9fe10cfb3226874",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:40.350Z"
+    },
+    "better-typography": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-typography/SKILL.md",
+      "skillFolderHash": "b0c51ed316e9cca63f5182bc569066985b25b9c0",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:42.100Z"
+    },
+    "better-ui": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-ui/SKILL.md",
+      "skillFolderHash": "710b8e9a1b4086594d24050bbb6768dbc421e9dc",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:43.732Z"
+    },
+    "better-writing": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-writing/SKILL.md",
+      "skillFolderHash": "f0637167d46253f6f5d2d09776552df4979ea562",
+      "installedAt": "2026-08-07T06:32:27.019Z",
+      "updatedAt": "2026-08-30T06:32:45.243Z"
+    },
+    "copy-editing": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/copy-editing/SKILL.md",
+      "skillFolderHash": "4d29a5bcbbf92f159f713c17db9d3d0bf6217b48",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-06-25T03:09:02.908Z"
+    },
+    "copywriting": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/copywriting/SKILL.md",
+      "skillFolderHash": "e5457b0306878bac731cda9a05e8b68d882b7b40",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-08-25T06:35:59.119Z"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skills.git",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "skillFolderHash": "db7a20dc1d8ad26a0307dcb45ebc79fc372f5c69",
+      "installedAt": "2026-06-25T04:30:04.303Z",
+      "updatedAt": "2026-09-28T06:37:29.788Z"
+    },
+    "find-animation-opportunities": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skills.git",
+      "skillPath": "skills/find-animation-opportunities/SKILL.md",
+      "skillFolderHash": "e6443880f38e33cf78e5d678471eed35e8566763",
+      "installedAt": "2026-07-16T20:00:39.226Z",
+      "updatedAt": "2026-09-28T06:37:34.734Z"
+    },
+    "fixing-accessibility": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/fixing-accessibility/SKILL.md",
+      "skillFolderHash": "e825388bce62e4456ed3b2b899c9bc58f5873c5b",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-06-25T03:09:02.908Z"
+    },
+    "fixing-metadata": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/fixing-metadata/SKILL.md",
+      "skillFolderHash": "2906fa056416dff36892d1ff17c37de3090625b6",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-06-25T03:09:02.908Z"
+    },
+    "fixing-motion-performance": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/fixing-motion-performance/SKILL.md",
+      "skillFolderHash": "76e5757bd2eb8ff38ff667eca9b665cbd707a386",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-06-25T03:09:02.908Z"
+    },
+    "humanizer": {
+      "source": "blader/humanizer",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/blader/humanizer.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+      "pluginName": "humanizer",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-09-28T06:37:25.292Z"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/pbakaus/impeccable.git",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "skillFolderHash": "98dc8642f86c9778ef343627045c50c9032f305c",
+      "installedAt": "2026-05-29T14:48:48.094Z",
+      "updatedAt": "2026-09-30T06:33:58.178Z"
+    },
+    "improve-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skills.git",
+      "skillPath": "skills/improve-animations/SKILL.md",
+      "skillFolderHash": "cf1f7aabac34c08f2cf833f039fa99af2f415183",
+      "installedAt": "2026-07-16T20:00:39.227Z",
+      "updatedAt": "2026-09-28T06:37:36.303Z"
+    },
+    "make-interfaces-feel-better": {
+      "source": "jakubkrehel/make-interfaces-feel-better",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/make-interfaces-feel-better.git",
+      "skillPath": "skills/make-interfaces-feel-better/SKILL.md",
+      "skillFolderHash": "e880ad90e8a0a8384f5cfae2cdd6a854e2de5d89",
+      "installedAt": "2026-06-25T04:28:55.707Z",
+      "updatedAt": "2026-07-24T11:57:23.902Z"
+    },
+    "mobbin-search": {
+      "source": "mobbin/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mobbin/skills.git",
+      "skillPath": "skills/search/SKILL.md",
+      "skillFolderHash": "a38a64b19f2cd787b3f04e4923a0ba866e1e5505",
+      "installedAt": "2026-05-20T12:05:15.438Z",
+      "updatedAt": "2026-06-25T03:09:02.908Z"
+    },
+    "oklch-skill": {
+      "source": "jakubkrehel/oklch-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jakubkrehel/oklch-skill.git",
+      "skillPath": "skills/oklch-skill/SKILL.md",
+      "skillFolderHash": "9831d14b4bf20f3267370470cc0912ca47798143",
+      "installedAt": "2026-06-30T01:27:31.190Z",
+      "updatedAt": "2026-06-30T01:27:31.190Z"
+    },
+    "product-marketing": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/product-marketing/SKILL.md",
+      "skillFolderHash": "1bca9cf1bf416c4809f06370aa5503b067d270ca",
+      "installedAt": "2026-06-25T03:09:02.908Z",
+      "updatedAt": "2026-07-22T06:32:55.647Z"
+    },
+    "research": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/engineering/research/SKILL.md",
+      "skillFolderHash": "0a6796c5667e95ed2301ba7381c123b4acb2ae1a",
+      "installedAt": "2026-07-08T15:16:45.378Z",
+      "updatedAt": "2026-08-21T06:33:10.783Z"
+    },
+    "review-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/emilkowalski/skills.git",
+      "skillPath": "skills/review-animations/SKILL.md",
+      "skillFolderHash": "0e0d3cb3e07ca307fe946ccaf57f6c82eb75124a",
+      "installedAt": "2026-06-25T04:45:01.341Z",
+      "updatedAt": "2026-09-28T06:37:31.389Z"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/ui.git",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "skillFolderHash": "b5791523e07794a4deb201e78eab3f3adbd022c0",
+      "installedAt": "2026-07-16T06:39:02.046Z",
+      "updatedAt": "2026-09-28T06:37:46.709Z"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
+      "installedAt": "2026-07-15T10:16:41.429Z",
+      "updatedAt": "2026-07-15T10:16:41.429Z"
+    },
+    "writing-for-agents": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/productivity/writing-for-agents/SKILL.md",
+      "skillFolderHash": "ad2925850efb8973a72d2e666f7a975f9a2d4a9b",
+      "installedAt": "2026-08-05T12:00:46.936Z",
+      "updatedAt": "2026-08-21T06:33:19.423Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}

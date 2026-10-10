@@ -1,0 +1,48 @@
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { refreshDue, refreshLocation, configureRefresh, refresh } from './refresh.mjs';
+
+const now = new Date('2026-10-02T12:00:00Z');
+assert.equal(refreshDue({enabled:false},now),false);
+assert.equal(refreshDue({enabled:true,everyDays:7,lastRun:'2026-09-26T12:00:00Z'},now),false);
+assert.equal(refreshDue({enabled:true,everyDays:7,lastRun:'2026-09-25T12:00:00Z'},now),true);
+assert.throws(()=>refreshDue({enabled:true,everyDays:0},now),/Frequency/);
+assert.throws(()=>refreshDue({enabled:true,everyDays:7,lastRun:'bad'},now),/date/);
+const fixture = await mkdtemp(path.join(tmpdir(),'jado-refresh-'));
+try {
+  const root = path.join(fixture,'.jado'); await mkdir(root);
+  await writeFile(path.join(root,'install.json'),JSON.stringify({scope:'global',tools:['codex']}));
+  const location = await refreshLocation({global:true,userRoot:fixture});
+  const calls = [], launch = async (...args) => calls.push(args);
+  const preview = await configureRefresh(location,{enable:true,dryRun:true,launch,platform:'darwin'});
+  assert(preview.content.includes('<integer>604800</integer>'));
+  assert(!preview.content.includes('RunAtLoad'),'The first automatic run waits for the configured interval');
+  await assert.rejects(()=>readFile(path.join(root,'refresh.json')),/ENOENT/);
+  await assert.rejects(()=>configureRefresh(location,{enable:true,launch,platform:'linux'}),/macOS/);
+  const enabled = await configureRefresh(location,{enable:true,launch,platform:'darwin'});
+  assert.equal(calls[0][1][0],'bootstrap');
+  assert.equal(enabled.settings.enabled,true);
+  const prepare = async options => { assert.equal(options.component,'skills'); return {changes:[{}],summary:{},revision:'revision'}; };
+  const apply = async ()=> { throw new Error('simulated failure'); };
+  await assert.rejects(()=>refresh(location,{due:true,yes:true,now,prepare,apply}),/simulated/);
+  assert.equal(JSON.parse(await readFile(path.join(root,'refresh.json'))).lastRun,null,'Failed refresh does not postpone retries');
+  const checked = await refresh(location,{due:true,checkOnly:true,now,prepare,apply});
+  assert.equal(checked.status,'updates_available');
+  const skipped = await refresh(location,{due:true,yes:true,now,prepare:()=>assert.fail('not due')});
+  assert.equal(skipped.status,'not_due');
+  await configureRefresh(location,{enable:false,launch,platform:'darwin'});
+  assert.equal(calls.at(-1)[1][0],'bootout');
+  const previous = await readFile(path.join(root,'refresh.json'));
+  await writeFile(path.join(root,'.refresh.lock'),'another writer');
+  await assert.rejects(()=>configureRefresh(location,{enable:true,launch,platform:'darwin'}),/EEXIST/);
+  await assert.rejects(()=>refresh(location,{due:true,prepare:()=>assert.fail('locked')}),/EEXIST/);
+  await rm(path.join(root,'.refresh.lock'));
+  await assert.rejects(()=>configureRefresh(location,{enable:true,platform:'darwin',launch:async()=>{throw new Error('bootstrap failed');}}),/bootstrap failed/);
+  assert((await readFile(path.join(root,'refresh.json'))).equals(previous),'Scheduler failure restores configuration');
+  await assert.rejects(()=>readFile(enabled.plist),/ENOENT/);
+  await writeFile(path.join(root,'install.json'),JSON.stringify({scope:'linked'}));
+  await assert.rejects(()=>refreshLocation({target:fixture}),/global/);
+} finally { await rm(fixture,{recursive:true,force:true}); }
+console.log('Refresh: opt-in, cadence, check-only, scheduler rollback and failed-update retry verified.');

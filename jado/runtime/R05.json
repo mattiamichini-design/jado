@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R05",
+    "title": "R05 · Explore alternatives",
+    "summary": "Produce comparable Paper alternatives fast, let the user pick or iterate, then record the selection.",
+    "notes": "Variant count: the user's number, otherwise the stage default (explore 4, refine 2). Each option tests a distinct structural or directional hypothesis with the same content; a palette or font swap alone is not an option. Explore has no independent review and at most one fix pass per artboard: speed and range matter more than polish. Refine adds jado-canvas-verify and, with a normal or deep budget, one independent review. Selection belongs to the user; in autopilot the coordinator records a provisional selection.",
+    "kind": "workflow",
+    "surface": "paper",
+    "stages": [
+      "explore",
+      "refine"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Brief and comparison question"
+    ],
+    "outputs": [
+      "Comparable alternatives and a recorded selection"
+    ],
+    "budget": {
+      "newDelegations": 4,
+      "concurrent": 3,
+      "repairBatches": 2
+    },
+    "entry": "p",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "p",
+        "kind": "start",
+        "label": "Frame the comparison",
+        "detail": "Record the question, shared content and state, and the resolved variant count; report a budget shortfall instead of silently changing the count."
+      },
+      {
+        "id": "evidence",
+        "kind": "decision",
+        "label": "Does missing evidence block the options?",
+        "detail": "Search only when a missing fact would change every option."
+      },
+      {
+        "id": "r",
+        "kind": "skill",
+        "label": "Collect blocking evidence",
+        "detail": "Answer only the blocking question.",
+        "ref": "jado-researcher"
+      },
+      {
+        "id": "d",
+        "kind": "skill",
+        "label": "Design the alternatives",
+        "detail": "Explore: divergent hypotheses at low fidelity, built quickly. Refine: develop the selected direction with project tokens and states.",
+        "ref": "jado-visual-designer"
+      },
+      {
+        "id": "self",
+        "kind": "action",
+        "label": "Self-check within the stage cap",
+        "detail": "Explore: fix only broken text, clipping, overlaps or missing content, at most one pass. Refine: jado-canvas-verify, at most two passes. List remaining issues instead of polishing."
+      },
+      {
+        "id": "check",
+        "kind": "decision",
+        "label": "Does the stage need an independent review?",
+        "detail": "Refine: when the budget is normal or deep. Explore: the self-check is enough."
+      },
+      {
+        "id": "review",
+        "kind": "skill",
+        "label": "Review the alternatives",
+        "detail": "Compare captures with the criteria read-only; report only issues that affect the choice.",
+        "ref": "jado-visual-reviewer"
+      },
+      {
+        "id": "fix",
+        "kind": "action",
+        "label": "Repair blocking findings",
+        "detail": "The same designer spends one fix pass and recaptures; the flow continues with the fresh capture."
+      },
+      {
+        "id": "present",
+        "kind": "action",
+        "label": "Present the options",
+        "detail": "Show each option with its hypothesis, capture and known issues; recommend one with reasons."
+      },
+      {
+        "id": "choose",
+        "kind": "human",
+        "label": "Select or iterate",
+        "detail": "Checkpoints and pair: ask with the native question tool (each option, combine, iterate, more options). Autopilot: record the recommended option as a provisional selection in the decision log."
+      },
+      {
+        "id": "next",
+        "kind": "decision",
+        "label": "What did the user decide?",
+        "detail": "Iteration rounds consume the same budget."
+      },
+      {
+        "id": "snap",
+        "kind": "action",
+        "label": "Record the selection",
+        "detail": "Preserve selected nodes, revision, content and the reasons behind the choice."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver the selection",
+        "detail": "Return the comparison and selection; implementation starts in R04 on request."
+      },
+      {
+        "id": "code",
+        "kind": "end",
+        "label": "Hand off to build",
+        "detail": "Continue to R04 only when code is in the mandate; in checkpoints involvement confirm first."
+      },
+      {
+        "id": "stop",
+        "kind": "end",
+        "label": "Deliver the unselected draft",
+        "detail": "Return the options and state the missing selection or reached budget."
+      }
+    ],
+    "edges": [
+      {
+        "id": "p-evidence",
+        "from": "p",
+        "to": "evidence",
+        "label": ""
+      },
+      {
+        "id": "evidence-r",
+        "from": "evidence",
+        "to": "r",
+        "label": "Yes"
+      },
+      {
+        "id": "evidence-d",
+        "from": "evidence",
+        "to": "d",
+        "label": "No"
+      },
+      {
+        "id": "r-d",
+        "from": "r",
+        "to": "d",
+        "label": ""
+      },
+      {
+        "id": "d-self",
+        "from": "d",
+        "to": "self",
+        "label": ""
+      },
+      {
+        "id": "self-check",
+        "from": "self",
+        "to": "check",
+        "label": ""
+      },
+      {
+        "id": "check-present",
+        "from": "check",
+        "to": "present",
+        "label": "No review",
+        "stages": [
+          "explore",
+          "refine"
+        ]
+      },
+      {
+        "id": "check-review",
+        "from": "check",
+        "to": "review",
+        "label": "Independent review",
+        "stages": [
+          "refine"
+        ]
+      },
+      {
+        "id": "review-present",
+        "from": "review",
+        "to": "present",
+        "label": "No blocking findings"
+      },
+      {
+        "id": "review-fix",
+        "from": "review",
+        "to": "fix",
+        "label": "Blocking findings"
+      },
+      {
+        "id": "fix-present",
+        "from": "fix",
+        "to": "present",
+        "label": ""
+      },
+      {
+        "id": "present-choose",
+        "from": "present",
+        "to": "choose",
+        "label": ""
+      },
+      {
+        "id": "choose-next",
+        "from": "choose",
+        "to": "next",
+        "label": ""
+      },
+      {
+        "id": "next-d",
+        "from": "next",
+        "to": "d",
+        "label": "Iterate with feedback"
+      },
+      {
+        "id": "next-snap",
+        "from": "next",
+        "to": "snap",
+        "label": "Selection made"
+      },
+      {
+        "id": "next-stop",
+        "from": "next",
+        "to": "stop",
+        "label": "Budget reached or no selection"
+      },
+      {
+        "id": "snap-done",
+        "from": "snap",
+        "to": "done",
+        "label": "Stop here"
+      },
+      {
+        "id": "snap-code",
+        "from": "snap",
+        "to": "code",
+        "label": "Code in the mandate"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "choose",
+        "kind": "human"
+      }
+    ],
+    "completionNodes": [
+      "done",
+      "code"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ],
+    "independentNodes": [
+      "review"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-researcher",
+      "path": ".agents/skills/jado-researcher/SKILL.md"
+    },
+    {
+      "id": "jado-visual-designer",
+      "path": ".agents/skills/jado-visual-designer/SKILL.md"
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "path": ".agents/skills/jado-visual-reviewer/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-ux",
+      "procedure": ".agents/skills/jado-ux/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-researcher",
+        "jado-ux-architect",
+        "jado-content-designer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual",
+      "procedure": ".agents/skills/jado-visual/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-visual-researcher",
+        "jado-art-direction",
+        "jado-visual-designer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-visual-reviewer"
+      ]
+    }
+  ],
+  "subflows": []
+}

@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "methodRevision": "131a7984853553dda61c707f406ca85e44f6da0049deec273dac262e20273f91",
+  "workflow": {
+    "id": "R04",
+    "title": "R04 · Build",
+    "summary": "Implement an approved direction or a selected canvas in code and verify it at the stage's rigor.",
+    "notes": "Refine verifies the affected states with a self-check and adds an independent review when the budget is normal or deep. Ship always requires the independent visual review, plus UX review when critical flows or states change. Engineering work only for a concrete technical problem. Repairs return to the same builder as one aggregated batch.",
+    "kind": "workflow",
+    "surface": "code",
+    "stages": [
+      "refine",
+      "ship"
+    ],
+    "status": "proposed",
+    "lastReviewed": "2026-10-06",
+    "stage": "operations",
+    "inputs": [
+      "Approved direction or selected canvas, and the authorization to implement"
+    ],
+    "outputs": [
+      "Implementation with current evidence and completed checks"
+    ],
+    "budget": {
+      "newDelegations": 4,
+      "concurrent": 2,
+      "repairBatches": 2
+    },
+    "entry": "p",
+    "requiredNodes": [],
+    "nodes": [
+      {
+        "id": "p",
+        "kind": "start",
+        "label": "Read the approved source",
+        "detail": "Identify the approved direction or selected canvas revision and the decision that authorizes implementation."
+      },
+      {
+        "id": "ready",
+        "kind": "decision",
+        "label": "Is the source complete and approved?",
+        "detail": "Check completeness and the authorization."
+      },
+      {
+        "id": "canvas",
+        "kind": "action",
+        "label": "Read the selected canvas",
+        "detail": "Read tree, tokens, text and captures of the selected revision."
+      },
+      {
+        "id": "map",
+        "kind": "skill",
+        "label": "Map tokens and components",
+        "detail": "Map canvas decisions to existing tokens and component APIs.",
+        "ref": "jado-design-systems"
+      },
+      {
+        "id": "b",
+        "kind": "skill",
+        "label": "Implement components and states",
+        "detail": "Use project tokens and components within scope; explain responsive adaptations.",
+        "ref": "jado-ui-builder"
+      },
+      {
+        "id": "proof",
+        "kind": "action",
+        "label": "Capture current browser evidence",
+        "detail": "Capture the current revision at target viewports and states; exercise keyboard and behavior that captures cannot prove."
+      },
+      {
+        "id": "risk",
+        "kind": "decision",
+        "label": "Is there a concrete technical problem?",
+        "detail": "A completed intervention does not reopen this branch."
+      },
+      {
+        "id": "eng",
+        "kind": "skill",
+        "label": "Resolve the technical problem",
+        "detail": "Fix only the assigned issue and recapture.",
+        "ref": "jado-ui-engineer"
+      },
+      {
+        "id": "check",
+        "kind": "decision",
+        "label": "Does the stage need an independent review?",
+        "detail": "Ship: always. Refine: when the budget is normal or deep."
+      },
+      {
+        "id": "rev",
+        "kind": "skill",
+        "label": "Review visual output",
+        "detail": "Check rendering and fidelity read-only against the source.",
+        "ref": "jado-visual-reviewer"
+      },
+      {
+        "id": "ux",
+        "kind": "skill",
+        "label": "Review critical flows and states",
+        "detail": "Check changed critical flows and states read-only.",
+        "ref": "jado-ux-reviewer"
+      },
+      {
+        "id": "parent",
+        "kind": "action",
+        "label": "Aggregate findings",
+        "detail": "Deduplicate findings into one repair batch; drop findings outside scope or stage."
+      },
+      {
+        "id": "gate",
+        "kind": "gate",
+        "label": "Did the required checks pass?",
+        "detail": "Verify completed checks against current evidence."
+      },
+      {
+        "id": "done",
+        "kind": "end",
+        "label": "Deliver verified implementation",
+        "detail": "Return implementation, passed checks and stated limits."
+      },
+      {
+        "id": "stop",
+        "kind": "end",
+        "label": "Report partial or blocked work",
+        "detail": "Identify unverified parts, the missing source or the budget block."
+      }
+    ],
+    "edges": [
+      {
+        "id": "p-ready",
+        "from": "p",
+        "to": "ready",
+        "label": ""
+      },
+      {
+        "id": "ready-stop",
+        "from": "ready",
+        "to": "stop",
+        "label": "No"
+      },
+      {
+        "id": "ready-canvas",
+        "from": "ready",
+        "to": "canvas",
+        "label": "Selected canvas"
+      },
+      {
+        "id": "ready-b",
+        "from": "ready",
+        "to": "b",
+        "label": "Direction with known mapping"
+      },
+      {
+        "id": "canvas-map",
+        "from": "canvas",
+        "to": "map",
+        "label": ""
+      },
+      {
+        "id": "map-b",
+        "from": "map",
+        "to": "b",
+        "label": ""
+      },
+      {
+        "id": "b-proof",
+        "from": "b",
+        "to": "proof",
+        "label": ""
+      },
+      {
+        "id": "proof-risk",
+        "from": "proof",
+        "to": "risk",
+        "label": ""
+      },
+      {
+        "id": "risk-eng",
+        "from": "risk",
+        "to": "eng",
+        "label": "Yes"
+      },
+      {
+        "id": "eng-proof",
+        "from": "eng",
+        "to": "proof",
+        "label": "Recapture after the fix"
+      },
+      {
+        "id": "risk-check",
+        "from": "risk",
+        "to": "check",
+        "label": "No or resolved"
+      },
+      {
+        "id": "check-parent",
+        "from": "check",
+        "to": "parent",
+        "label": "Self-check only",
+        "stages": [
+          "refine"
+        ]
+      },
+      {
+        "id": "check-rev",
+        "from": "check",
+        "to": "rev",
+        "label": "Independent review"
+      },
+      {
+        "id": "rev-ux",
+        "from": "rev",
+        "to": "ux",
+        "label": "Critical flows or states changed"
+      },
+      {
+        "id": "rev-parent",
+        "from": "rev",
+        "to": "parent",
+        "label": "Flows unchanged"
+      },
+      {
+        "id": "ux-parent",
+        "from": "ux",
+        "to": "parent",
+        "label": ""
+      },
+      {
+        "id": "parent-gate",
+        "from": "parent",
+        "to": "gate",
+        "label": ""
+      },
+      {
+        "id": "gate-done",
+        "from": "gate",
+        "to": "done",
+        "label": "Yes"
+      },
+      {
+        "id": "gate-b",
+        "from": "gate",
+        "to": "b",
+        "label": "Repair batch left"
+      },
+      {
+        "id": "gate-stop",
+        "from": "gate",
+        "to": "stop",
+        "label": "Cap reached or blocked"
+      }
+    ]
+  },
+  "guards": {
+    "required": [
+      {
+        "id": "rev",
+        "kind": "skill",
+        "readOnly": true,
+        "requiredAt": [
+          "ship"
+        ]
+      },
+      {
+        "id": "gate",
+        "kind": "gate"
+      }
+    ],
+    "completionNodes": [
+      "done"
+    ],
+    "checkpointNodes": [
+      "stop"
+    ],
+    "independentNodes": [
+      "rev",
+      "ux"
+    ]
+  },
+  "skills": [
+    {
+      "id": "jado-design-systems",
+      "path": ".agents/skills/jado-design-systems/SKILL.md"
+    },
+    {
+      "id": "jado-ui-builder",
+      "path": ".agents/skills/jado-ui-builder/SKILL.md"
+    },
+    {
+      "id": "jado-ui-engineer",
+      "path": ".agents/skills/jado-ui-engineer/SKILL.md"
+    },
+    {
+      "id": "jado-ux-reviewer",
+      "path": ".agents/skills/jado-ux-reviewer/SKILL.md"
+    },
+    {
+      "id": "jado-visual-reviewer",
+      "path": ".agents/skills/jado-visual-reviewer/SKILL.md"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "jado-agent-frontend",
+      "procedure": ".agents/skills/jado-frontend/SKILL.md",
+      "sandbox": "workspace-write",
+      "roles": [
+        "jado-design-systems",
+        "jado-ui-builder",
+        "jado-motion",
+        "jado-ui-engineer"
+      ]
+    },
+    {
+      "id": "jado-agent-visual-reviewer",
+      "procedure": ".agents/skills/jado-visual-reviewer/SKILL.md",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-visual-reviewer"
+      ]
+    },
+    {
+      "id": "jado-agent-ux-reviewer",
+      "procedure": ".agents/skills/jado-ux-reviewer/SKILL.md",
+      "sandbox": "read-only",
+      "roles": [
+        "jado-ux-reviewer"
+      ]
+    }
+  ],
+  "subflows": []
+}
