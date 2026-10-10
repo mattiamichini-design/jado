@@ -4,15 +4,29 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       next:
-        patterns: ["next", "eslint-config-next"]
-      fumadocs:
-        patterns: ["fumadocs-*"]
+        patterns: ["next", "eslint-config-next", "@next/*"]
       react:
         patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+      fumadocs:
+        patterns: ["fumadocs-*", "@fumadocs/*"]
+      minor-and-patch:
+        update-types: ["minor", "patch"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
