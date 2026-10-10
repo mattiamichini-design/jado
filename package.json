@@ -39,8 +39,8 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.31.0",
     "cn": "^0.3.0",
-    "fumadocs-core": "16.15.15",
-    "fumadocs-mdx": "15.4.5",
+    "fumadocs-core": "16.16.2",
+    "fumadocs-mdx": "15.4.6",
     "fumadocs-ui": "npm:@fumadocs/base-ui@16.15.15",
     "lucide-react": "^1.47.0",
     "mermaid": "^11.17.2",
