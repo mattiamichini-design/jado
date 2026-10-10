@@ -48,6 +48,7 @@ npm run build
 ## Pull requests
 
 - Keep each pull request to one change, and explain what it changes and why.
+- Open the pull request as a draft while you are still pushing changes. CI skips drafts; it runs when you mark the pull request ready for review and on each push after that.
 - Commit the source change together with the files it regenerates.
 - Add or update tests for installer or validator behaviour you change.
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages, for example `fix(installer): keep file modes when cutting a managed block`.
