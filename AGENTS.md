@@ -32,4 +32,6 @@ Every workflow has status, lastReviewed, stage, inputs and outputs, and its refe
 
 Work on a dedicated branch and open a pull request. Do not merge or release without the maintainer's approval. Keep concurrent work intact, keep builds reproducible and keep upstream attribution. Never commit credentials, client records or environment secrets.
 
+Run the checks in CONTRIBUTING.md locally before you push. Open pull requests as drafts while you iterate, push follow-up fixes together, and mark the pull request ready once: CI skips drafts, and each push to a ready pull request starts a full run.
+
 GitHub is the only distribution channel. Do not publish packages to a registry or add registry install instructions.
