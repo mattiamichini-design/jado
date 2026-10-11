@@ -1,4 +1,4 @@
-import { RootProvider } from 'fumadocs-ui/provider/next';
+import { RootProvider } from '@fumadocs/base-ui/provider/next';
 import './global.css';
 import { inter, rootMetadata } from '@/lib/root-layout';
 

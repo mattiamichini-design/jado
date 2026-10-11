@@ -1,6 +1,6 @@
 import { source } from '@/lib/source';
 import { notFound } from 'next/navigation';
-import { generateOGImage } from 'fumadocs-ui/og';
+import { generateOGImage } from '@fumadocs/base-ui/og';
 import { appName, getPageImageUrl } from '@/lib/shared';
 
 export const revalidate = false;

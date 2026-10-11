@@ -20,6 +20,9 @@ export function Mermaid({ chart }: { chart: string }) {
 
         mermaid.initialize({
           flowchart: { useMaxWidth: true },
+          // Mermaid 12 defaults to the ELK layout and the neo look; keep the playbook's dagre layout and classic look.
+          layout: 'dagre',
+          look: 'classic',
           startOnLoad: false,
           securityLevel: 'strict',
           theme,
