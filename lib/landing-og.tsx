@@ -1,4 +1,4 @@
-import { generateOGImage } from 'fumadocs-ui/og';
+import { generateOGImage } from '@fumadocs/base-ui/og';
 import { appName } from './shared';
 
 export const landingTitle = 'JADO · Just Another Design Orchestrator';

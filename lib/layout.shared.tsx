@@ -1,4 +1,4 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from '@fumadocs/base-ui/layouts/shared';
 import { JadoLockup } from '@/components/brand/jado-lockup';
 import { appName, docsRoute, repositoryUrl, workflowsRoute } from './shared';
 
