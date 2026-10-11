@@ -23,6 +23,7 @@ updates:
         patterns: ["fumadocs-*", "@fumadocs/*"]
       minor-and-patch:
         update-types: ["minor", "patch"]
+        exclude-patterns: ["fumadocs-*", "@fumadocs/*"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
