@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { AUTHOR_URL, INSTALL_COMMAND, INSTALL_URL, PLAYBOOK_URL, REPO_URL } from './constants';
 import { CopyCommand } from './copy-command';
 import { ExternalLink } from './external-link';
+import { HomeLink } from './home-link';
 import { BookIcon, ExternalIcon } from './icons';
 import s from './landing.module.css';
 
@@ -37,9 +37,9 @@ export function Footer() {
     <footer className={s.footer}>
       <div className={s.footerInner}>
         <div className={s.footBrand}>
-          <Link href="/" aria-label="JADO, home">
+          <HomeLink>
             <Image unoptimized src="/landing/jado-lockup-carved.webp" alt="" width={171} height={49} />
-          </Link>
+          </HomeLink>
         </div>
         <p className={s.footCenter}>
           Just Another Design Orchestrator · A method by{' '}
@@ -53,10 +53,10 @@ export function Footer() {
             <ExternalLink href={PLAYBOOK_URL}>Playbook</ExternalLink>
           </li>
           <li>
-            <a href={REPO_URL}>GitHub</a>
+            <ExternalLink href={REPO_URL}>GitHub</ExternalLink>
           </li>
           <li>
-            <a href={INSTALL_URL}>Install</a>
+            <ExternalLink href={INSTALL_URL}>Install</ExternalLink>
           </li>
         </ul>
       </div>

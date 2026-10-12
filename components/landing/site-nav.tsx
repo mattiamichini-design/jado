@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useId, useRef, useState } from 'react';
 import { INSTALL_URL, NAV_LINKS } from './constants';
 import { ExternalLink } from './external-link';
+import { HomeLink } from './home-link';
 import { GithubIcon } from './icons';
 import s from './landing.module.css';
 
@@ -40,10 +40,10 @@ export function SiteNav() {
     <header className={`${s.nav} ${s.hNav}`}>
       <nav className={s.navInner} aria-label="Primary">
         <div className={s.brandSlot}>
-          <Link href="/" aria-label="JADO, home">
+          <HomeLink>
             {/* eslint-disable-next-line @next/next/no-img-element -- SVG lockup, fixed size */}
             <img src="/landing/jado-lockup-cobalt.svg" alt="" width={123} height={32} />
-          </Link>
+          </HomeLink>
         </div>
         <ul id={menuId} ref={menuRef} className={s.menu} data-open={open} onClick={() => setOpen(false)}>
           {NAV_LINKS.map((link) => (
