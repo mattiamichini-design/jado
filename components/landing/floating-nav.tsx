@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useId, useRef, useState } from 'react';
 import { INSTALL_URL, NAV_LINKS } from './constants';
 import { ExternalLink } from './external-link';
+import { HomeLink } from './home-link';
 import { GithubIcon } from './icons';
 import s from './landing.module.css';
 
@@ -92,10 +92,10 @@ export function FloatingNav() {
   return (
     <header ref={rootRef} className={s.fnav} data-shown={shown} inert={!shown}>
       <nav className={s.fnavPill} aria-label="Quick">
-        <Link className={s.fnavMark} href="/" aria-label="JADO, home">
+        <HomeLink className={s.fnavMark}>
           {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, fixed size */}
           <img src="/landing/jado-mark-cobalt.svg" alt="" width={20} height={22} />
-        </Link>
+        </HomeLink>
         <ul id={menuId} ref={menuRef} className={s.fnavLinks} data-open={open} onClick={() => setOpen(false)}>
           {NAV_LINKS.map((link) => {
             const active = 'section' in link && link.section === current;
