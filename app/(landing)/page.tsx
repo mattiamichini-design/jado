@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { landingDescription, landingTitle } from '@/lib/landing-og';
+import { landingDescription, landingTitle } from '@/lib/landing-metadata';
 import { openGraphBase, twitterBase } from '@/lib/root-layout';
 import { FinalCta, Footer } from '@/components/landing/closing';
 import { FloatingNav } from '@/components/landing/floating-nav';
